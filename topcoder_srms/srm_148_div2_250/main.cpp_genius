@@ -1,0 +1,51 @@
+#include<iostream>
+#include<string>
+#include<set>
+
+using namespace std;
+
+class DivisorDigits{
+	
+public:
+    static int howMany(int number)
+    {
+        int count = 0;
+
+        for (int n = number; n != 0 ; n /= 10){
+			
+			cout << "n =" << n <<endl;
+			
+			cout << "n % 10 =" << n%10 <<endl;
+			
+			if (n % 10 != 0){
+				if (number % (n % 10) == 0){
+					count++;
+				}
+			}
+		}
+
+        return count;
+    }
+
+};
+
+
+int main()
+{
+	
+	DivisorDigits test;
+	
+	//int ret = test.howMany(12345);
+	
+	int ret = test.howMany(661232);
+	
+	//int ret = test.howMany(52527);
+	
+	//int ret = test.howMany(730000000);
+	
+	//int ret = test.howMany(999999999);
+	
+	cout << "return = "<< ret << endl;
+	
+}
+

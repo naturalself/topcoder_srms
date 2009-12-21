@@ -1,0 +1,20 @@
+#Makefile any
+
+#GFLIB=/home/Owner/work/gfpoly_ansi
+
+#マクロ定義部
+
+CC	=g++ -Wall
+OBJS	=main.o
+
+#生成規則部
+check: $(OBJS)
+	$(CC) -o $@ $(OBJS)
+
+.c.o:
+	$(CC) -c $<
+
+
+#.oファイル消去
+clean:
+	rm -f $(OBJS)
