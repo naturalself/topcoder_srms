@@ -14,7 +14,7 @@ public:
 	double cycleRange(double R){
 		double x = .25;
 
-		double min_num = 1000;
+		double min_num = 100000;
 
 		double max_num = 0;
 
