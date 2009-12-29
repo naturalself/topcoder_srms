@@ -12,7 +12,27 @@ using namespace std;
 class MostProfitable {
 public:
 	string bestItem(vector <int> costs, vector <int> prices, vector <int> sales, vector <string> items) {
-
+		
+		long int now_profit=0;
+		long int max_profit=0;
+		int max_profit_index=0;
+		
+		for(int i=0;i<(int)costs.size();i++){
+			
+			now_profit = (prices[i]-costs[i])*sales[i];
+			
+			if(now_profit > max_profit){
+				max_profit = now_profit;
+				max_profit_index = i;
+			}
+		}
+		
+		if(max_profit == 0){
+			return "";
+		}else{
+			return items[max_profit_index];
+		}
+		
 	}
 	
 // BEGIN CUT HERE

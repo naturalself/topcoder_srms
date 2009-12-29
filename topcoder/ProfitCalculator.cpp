@@ -12,7 +12,10 @@ using namespace std;
 class ProfitCalculator {
 public:
 	int percent(vector <string> items) {
-
+		
+		
+		
+	
 	}
 	
 // BEGIN CUT HERE
