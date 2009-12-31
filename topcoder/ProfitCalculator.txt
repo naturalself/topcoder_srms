@@ -10,7 +10,8 @@ For example, let's say you were given the following vector <string>:
      "099.99 050.00",
      "123.45 101.07" }
 
-The total cost is $159.80.  The total price is $236.43.  That means $76.63 was made on this sale.  This would be a 32.41128% margin.  Since we are rounding down, you would return 32.
+The total cost is $159.80.  The total price is $236.43.  That means $76.63 was made on this sale.  
+This would be a 32.41128% margin.  Since we are rounding down, you would return 32.
 
 DEFINITION
 Class:ProfitCalculator

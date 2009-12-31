@@ -6,6 +6,7 @@
 #include <string>
 #include <vector>
 #include <sstream>
+#include <math.h>
 
 using namespace std;
 
@@ -13,9 +14,40 @@ class ProfitCalculator {
 public:
 	int percent(vector <string> items) {
 		
+		stringstream ss;
 		
+		float cost=0;
+		float price=0;
 		
-	
+		float sum_cost=0;
+		float sum_price=0;
+		
+		for(int i=0;i<(int)items.size();i++){
+			
+			ss << items[i].substr(0,6);
+			
+			ss >> price;
+			
+			sum_price += price;
+			
+			ss.str("");
+			ss.clear(stringstream::goodbit);
+			
+			ss << items[i].substr(7,6);
+			
+			ss >> cost;
+			
+			sum_cost += cost;
+			
+			ss.str("");
+			ss.clear(stringstream::goodbit);
+		}
+		
+		//cout << "sum_price = " << sum_price << endl;
+		
+		//cout << "sum_cost = " << sum_cost << endl;
+		
+		return (int)( (((sum_price-sum_cost)*100)/sum_price) );
 	}
 	
 // BEGIN CUT HERE
