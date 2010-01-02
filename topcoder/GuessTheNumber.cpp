@@ -12,7 +12,21 @@ using namespace std;
 class GuessTheNumber {
 public:
 	int noGuesses(int upper, int answer) {
+	
+	int x=0;
+	int lower=1;
+	int count=0;
 
+	while(x!=answer){
+		count++;
+		x = (lower+upper)/2;
+		if(answer>x){
+			lower = x+1;
+		}else{
+			upper = x-1;
+		}
+	}
+	return count;
 	}
 	
 // BEGIN CUT HERE

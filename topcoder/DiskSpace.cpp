@@ -13,6 +13,22 @@ class DiskSpace {
 public:
 	int minDrives(vector <int> used, vector <int> total) {
 
+	vector <int> free;
+
+	int max_free_index=0;
+
+	for(int i=0;i<(int)used.size();i++){
+		free.push_back(total[i]-used[i]);
+		cout << "free=" << free[i] << endl;
+	}
+	
+	vector<int>::iterator max_it = max_element(free.begin(),free.end());
+
+	max_free_index = *max_it;
+
+	cout << "free_est=" << max_free_index << endl;
+
+	return 0;
 	}
 	
 // BEGIN CUT HERE
