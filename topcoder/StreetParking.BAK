@@ -13,24 +13,19 @@ class StreetParking {
 public:
 	int freeParks(string street) {
 
-	//string B = "--B";
-	//string S = "-S-";
-	int count=0;
-
-	for(int i=0;i<(int)street.size();i++){
-		if(street[i]=='-' && street[i+1]=='-' && street[i+2]=='B'){
-			i=i+2;
-		}else if(street[i]=='-' && street[i+1]=='S' && street[i+2]=='-'){
-			i=i+2;
-		}else if(street[i]=='-' && street[i+1]=='B'){
-			i++;
-		}else if(street[i]=='S' && street[i+1]=='-'){
-			i++;
-		}else if(street[i]=='-'){
-			count++;
-		}
+	string D = "D";
+	string B = "--B";
+	string S = "-S-";
+	
+	string ret;
+	
+	for(int i=0;i<street.size();i++){
+		
+		
 	}
-	return count;
+
+	return 
+
 	}
 	
 // BEGIN CUT HERE

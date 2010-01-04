@@ -1,0 +1,48 @@
+PROBLEM STATEMENT
+An Apple Word is a word that consists of only the letters A, P, L, and E, in that exact relative order. There must be exactly one A, two or more Ps, exactly one L and exactly one E. Case does not matter. For example, "Apple" and "apPpPPlE" are Apple Words, while "APLE", "Apples", "Aplpe" and "coconut" are not.
+
+
+You are given a string word which you must turn into an Apple Word. For each character in word, you can either replace it with a different letter or leave it unchanged. No other operations, like inserting new characters or deleting existing characters, are allowed. Return the minimal number of characters you must replace to get an Apple Word. If it's impossible, return -1.
+
+DEFINITION
+Class:AppleWord
+Method:minRep
+Parameters:string
+Returns:int
+Method signature:int minRep(string word)
+
+
+CONSTRAINTS
+-word will contain between 1 and 50 characters, inclusive.
+-Each character in word will be an uppercase letter ('A'-'Z') or a lowercase letter ('a'-'z').
+
+
+EXAMPLES
+
+0)
+"Apple"
+
+Returns: 0
+
+This is an Apple Word.
+
+1)
+"apPpPPlE"
+
+Returns: 0
+
+This is also an Apple Word.
+
+2)
+"APLE"
+
+Returns: -1
+
+An Apple Word must contain at least two 'P's.
+
+3)
+"TopCoder"
+
+Returns: 7
+
+For example, if you replace 7 characters, you can get "Appppple".

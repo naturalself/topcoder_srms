@@ -1,7 +1,7 @@
 // BEGIN CUT HERE
 
 // END CUT HERE
-#line 5 "StreetParking.cpp"
+#line 5 "AppleWord.cpp"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -9,28 +9,25 @@
 
 using namespace std;
 
-class StreetParking {
+class AppleWord {
 public:
-	int freeParks(string street) {
-
-	//string B = "--B";
-	//string S = "-S-";
-	int count=0;
-
-	for(int i=0;i<(int)street.size();i++){
-		if(street[i]=='-' && street[i+1]=='-' && street[i+2]=='B'){
-			i=i+2;
-		}else if(street[i]=='-' && street[i+1]=='S' && street[i+2]=='-'){
-			i=i+2;
-		}else if(street[i]=='-' && street[i+1]=='B'){
-			i++;
-		}else if(street[i]=='S' && street[i+1]=='-'){
-			i++;
-		}else if(street[i]=='-'){
-			count++;
+	int minRep(string word) {
+		
+		int len = word.size();
+		int count = 0;
+		
+		if(len < 5) return -1;
+		
+		if(word[0] != 'a' && word[0] != 'A') count++;
+		//See from back
+		if(word[len-1] != 'e' && word[len-1] != 'E') count++;
+		if(word[len-2] != 'l' && word[len-2] != 'L') count++;
+		
+		//See from forward
+		for(int i=1;i<len-2;i++){
+			if(word[i] != 'p' && word[i] != 'P') count++;
 		}
-	}
-	return count;
+		return count;
 	}
 	
 // BEGIN CUT HERE
@@ -39,10 +36,10 @@ public:
 	private:
 	template <typename T> string print_array(const vector<T> &V) { ostringstream os; os << "{ "; for (typename vector<T>::const_iterator iter = V.begin(); iter != V.end(); ++iter) os << '\"' << *iter << "\","; os << " }"; return os.str(); }
 	void verify_case(int Case, const int &Expected, const int &Received) { cerr << "Test Case #" << Case << "..."; if (Expected == Received) cerr << "PASSED" << endl; else { cerr << "FAILED" << endl; cerr << "\tExpected: \"" << Expected << '\"' << endl; cerr << "\tReceived: \"" << Received << '\"' << endl; } }
-	void test_case_0() { string Arg0 = "---B--S-D--S--"; int Arg1 = 4; verify_case(0, Arg1, freeParks(Arg0)); }
-	void test_case_1() { string Arg0 = "DDBDDBDDBDD"; int Arg1 = 0; verify_case(1, Arg1, freeParks(Arg0)); }
-	void test_case_2() { string Arg0 = "--S--S--S--S--"; int Arg1 = 2; verify_case(2, Arg1, freeParks(Arg0)); }
-	void test_case_3() { string Arg0 = "SSD-B---BD-DDSB-----S-S--------S-B----BSB-S--B-S-D"; int Arg1 = 14; verify_case(3, Arg1, freeParks(Arg0)); }
+	void test_case_0() { string Arg0 = "Apple"; int Arg1 = 0; verify_case(0, Arg1, minRep(Arg0)); }
+	void test_case_1() { string Arg0 = "apPpPPlE"; int Arg1 = 0; verify_case(1, Arg1, minRep(Arg0)); }
+	void test_case_2() { string Arg0 = "APLE"; int Arg1 = -1; verify_case(2, Arg1, minRep(Arg0)); }
+	void test_case_3() { string Arg0 = "TopCoder"; int Arg1 = 7; verify_case(3, Arg1, minRep(Arg0)); }
 
 // END CUT HERE
 
@@ -50,7 +47,7 @@ public:
 
 // BEGIN CUT HERE
 int main() {
-	StreetParking ___test;
+	AppleWord ___test;
 	___test.run_test(-1);
 }
 // END CUT HERE

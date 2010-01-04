@@ -15,7 +15,6 @@ public:
 	int minDrives(vector <int> used, vector <int> total) {
 
 	int sum = accumulate(used.begin(),used.end(),0);
-	
 	sort(total.rbegin(),total.rend());
 
 	for(int i=0;i<(int)total.size();i++){

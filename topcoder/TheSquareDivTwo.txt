@@ -1,0 +1,110 @@
+PROBLEM STATEMENT
+John and Brus like puzzles. They have been playing a new game which involves placing checkers on a square board. The board is a grid containing the same number of columns and rows.
+
+The game begins with John placing checkers on specific cells of the board.  Then, R[i] is calculated for each row i, where R[i] is the number of checkers in the i-th row.  Brus must then move the checkers in such a way that for each column i in the final board, the number of checkers in that column is equal to R[i].  Note that R[i] is calculated for the initial placement of checkers and is not modified afterwards.  In a single turn, Brus can move a checker up, down, left or right into an adjacent empty cell.  He may use as many turns as necessary to reach the goal.
+
+You are given a vector <string> board, where the j-th character of the i-th element is uppercase 'C' if the cell at row i, column j contains a checker and '.' otherwise.  Return the final placement of checkers using the same format as the input.  Since there may be many possible final placements, return the one that comes first lexicographically.
+
+DEFINITION
+Class:TheSquareDivTwo
+Method:solve
+Parameters:vector <string>
+Returns:vector <string>
+Method signature:vector <string> solve(vector <string> board)
+
+
+NOTES
+-The lexicographically earlier of two vector <string>s is the one that has the lexicographically earlier string in the first position at which they differ.
+-The lexicographically earlier of two strings is the one that has the earlier character (using ASCII ordering) at the first position at which they differ.
+-In ASCII ordering, a dot character '.' comes before 'C'.
+
+
+CONSTRAINTS
+-board will contain exactly n elements, where n is between 1 and 50, inclusive.
+-Each element of board will contain exactly n characters.
+-Each element of board will contain only uppercase 'C' or '.' .
+
+
+EXAMPLES
+
+0)
+{"..",
+ "C."}
+
+Returns: {"..", ".C" }
+
+R[0] is 0. R[1] is 1.
+
+The final placement needs to have 0 checkers in the first column and 1 checker in the last column. Brus can move the checker to two different positions in order to accomplish the goal:
+
+
+..   .C
+.C , ..
+
+Note that the first one comes first lexicographically.
+
+1)
+{"CC",
+ ".C"}
+
+Returns: {"C.", "CC" }
+
+
+CC -> CC -> C.
+.C    C.    CC
+
+
+2)
+{".C..",
+ "CC.C",
+ "..C.",
+ "CCCC"}
+
+Returns: {"...C", ".C.C", ".C.C", "CCCC" }
+
+
+
+3)
+{"...CCC",
+ "...CCC",
+ "...CCC",
+ "CCC...",
+ "CCC...",
+ "CCC..."}
+
+Returns: {"......", "......", "......", "CCCCCC", "CCCCCC", "CCCCCC" }
+
+
+
+4)
+{".....C",
+ "....CC",
+ "...CCC",
+ "..CCCC",
+ ".CCCCC",
+ "CCCCCC"}
+
+Returns: {".....C", "....CC", "...CCC", "..CCCC", ".CCCCC", "CCCCCC" }
+
+No move was necessary in this case.
+
+5)
+{"C.C..C.C..C..C.",
+ "CCC...C..CCC.C.",
+ "......CC...CCCC",
+ ".C..CC.C.C.C.C.",
+ "C....C.C......C",
+ ".....C..CCCCC.C",
+ "CCC.......CCCCC",
+ "..C.C..C.C...C.",
+ "CCC....CCC.CC..",
+ "CC.CCCC.CCCC...",
+ ".C..C.CC.C.CC.C",
+ "C.CCCC..CC..C.C",
+ ".CCCC.CCCCCC...",
+ "..C...C.CCC.CC.",
+ "CCCC..CCC.C...."}
+
+Returns: {"...............", "...............", "...............", "...............", "...............", ".........C..C..", ".........C.CC..", ".C....C.CCCCC.C", ".C.C.CC.CCCCCCC", "CCCC.CC.CCCCCCC", "CCCC.CCCCCCCCCC", "CCCCCCCCCCCCCCC", "CCCCCCCCCCCCCCC", "CCCCCCCCCCCCCCC", "CCCCCCCCCCCCCCC" }
+
+
