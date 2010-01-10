@@ -13,6 +13,24 @@ class Substitute {
 public:
 	int getValue(string key, string code) {
 
+	stringstream ss;
+	int ss_int=0;
+
+	for(int i=0;i<(int)code.size();i++){
+
+		string::size_type index = key.find((char)code[i]);
+
+		if(index != string::npos){
+			if(index == 9){
+				ss <<  0;
+			}else{
+				ss << (index+1);
+			}
+		}
+	}
+	ss >> ss_int;
+
+	return ss_int;
 	}
 	
 // BEGIN CUT HERE

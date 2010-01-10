@@ -14,7 +14,7 @@ SRM 156 DIV2 250	DiskSpace
 SRM 157 DIV2 250	GuessTheNumber		completed.
 SRM 158 DIV2 250	TireRotation		completed.
 SRM 159 DIV2 250	StreetParking		completed.
-SRM 160 DIV2 250	Substitute		
+SRM 160 DIV2 250	Substitute		completed.
 SRM 161 DIV2 250	CardCount		
 SRM 162 DIV2 250	LCMRange		
 
