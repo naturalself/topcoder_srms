@@ -15,9 +15,13 @@ SRM 157 DIV2 250	GuessTheNumber		completed.
 SRM 158 DIV2 250	TireRotation		completed.
 SRM 159 DIV2 250	StreetParking		completed.
 SRM 160 DIV2 250	Substitute		completed.
-SRM 161 DIV2 250	CardCount		
-SRM 162 DIV2 250	LCMRange		
-
+SRM 161 DIV2 250	CardCount		completed.
+SRM 162 DIV2 250	LCMRange		completed.
+SRM 163 DIV2 250	Inchworm		
+SRM 164 DIV2 250	Justifier		
+SRM 165 DIV2 250	BritishCoins		completed.
+SRM 166 DIV2 250	Workshop		
+SRM 167 DIV2 250	EyeDrops		
 
 
 ~

@@ -1,7 +1,7 @@
 // BEGIN CUT HERE
 
 // END CUT HERE
-#line 5 "LCMRange.cpp"
+#line 5 "Substitute.cpp"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -9,39 +9,28 @@
 
 using namespace std;
 
-class LCMRange {
+class Substitute {
 public:
-	int lcm(int first, int last) {
+	int getValue(string key, string code) {
 
-	int result=first;
+	stringstream ss;
+	int ss_int=0;
 
-	for(int i=first+1;i<=last;i++){
-		result = lcd(result,i);
-	}
+	for(int i=0;i<(int)code.size();i++){
 
-	return result;
-	}
-private:
-	int gcb(int a,int b){
-		int n=0;
+		string::size_type index = key.find((char)code[i]);
 
-		if(a==b) return a;
-		while(1){
-			if(a<b){
-				n=b-a;
-				b=n;
-				if(n==a) return n;
+		if(index != string::npos){
+			if(index == 9){
+				ss <<  0;
 			}else{
-				n=a-b;
-				a=n;
-				if(n==b) return n;
+				ss << (index+1);
 			}
 		}
-		return -1;
 	}
+	ss >> ss_int;
 
-	int lcd(int p,int q){
-		return (p * q)/gcb(p,q);
+	return ss_int;
 	}
 	
 // BEGIN CUT HERE
@@ -50,9 +39,9 @@ private:
 	private:
 	template <typename T> string print_array(const vector<T> &V) { ostringstream os; os << "{ "; for (typename vector<T>::const_iterator iter = V.begin(); iter != V.end(); ++iter) os << '\"' << *iter << "\","; os << " }"; return os.str(); }
 	void verify_case(int Case, const int &Expected, const int &Received) { cerr << "Test Case #" << Case << "..."; if (Expected == Received) cerr << "PASSED" << endl; else { cerr << "FAILED" << endl; cerr << "\tExpected: \"" << Expected << '\"' << endl; cerr << "\tReceived: \"" << Received << '\"' << endl; } }
-	void test_case_0() { int Arg0 = 1; int Arg1 = 5; int Arg2 = 60; verify_case(0, Arg2, lcm(Arg0, Arg1)); }
-	void test_case_1() { int Arg0 = 4; int Arg1 = 5; int Arg2 = 20; verify_case(1, Arg2, lcm(Arg0, Arg1)); }
-	void test_case_2() { int Arg0 = 1; int Arg1 = 12; int Arg2 = 27720; verify_case(2, Arg2, lcm(Arg0, Arg1)); }
+	void test_case_0() { string Arg0 = "TRADINGFEW"; string Arg1 = "LGXWEV"; int Arg2 = 709; verify_case(0, Arg2, getValue(Arg0, Arg1)); }
+	void test_case_1() { string Arg0 = "ABCDEFGHIJ"; string Arg1 = "XJ"; int Arg2 = 0; verify_case(1, Arg2, getValue(Arg0, Arg1)); }
+	void test_case_2() { string Arg0 = "CRYSTALBUM"; string Arg1 = "MMA"; int Arg2 = 6; verify_case(2, Arg2, getValue(Arg0, Arg1)); }
 
 // END CUT HERE
 
@@ -60,7 +49,7 @@ private:
 
 // BEGIN CUT HERE
 int main() {
-	LCMRange ___test;
+	Substitute ___test;
 	___test.run_test(-1);
 }
 // END CUT HERE
