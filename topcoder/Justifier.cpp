@@ -13,6 +13,26 @@ class Justifier {
 public:
 	vector <string> justify(vector <string> textIn) {
 
+	vector <string> result(textIn.size());
+
+	string blank;
+
+	int max_length = 0;
+
+	for(int i = 0;i<(int)textIn.size();i++){
+		if(max_length < (int)textIn[i].size()) max_length = textIn[i].size();
+	}
+
+	for(int i = 0;i<(int)textIn.size();i++){
+		for(int j=0;j<(max_length - (int)textIn[i].size());j++){
+			blank += " ";
+ 		}
+		textIn[i].insert(0,blank);
+		result[i] = textIn[i];
+		blank ="";
+	}
+
+	return result;
 	}
 	
 // BEGIN CUT HERE

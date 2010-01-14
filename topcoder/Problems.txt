@@ -18,7 +18,7 @@ SRM 160 DIV2 250	Substitute		completed.
 SRM 161 DIV2 250	CardCount		completed.
 SRM 162 DIV2 250	LCMRange		completed.
 SRM 163 DIV2 250	Inchworm		
-SRM 164 DIV2 250	Justifier		
+SRM 164 DIV2 250	Justifier		completed.
 SRM 165 DIV2 250	BritishCoins		completed.
 SRM 166 DIV2 250	Workshop		
 SRM 167 DIV2 250	EyeDrops		
