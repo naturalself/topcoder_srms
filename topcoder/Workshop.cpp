@@ -13,6 +13,26 @@ class Workshop {
 public:
 	int pictureFrames(vector <int> pieces) {
 
+	int	formed_count = 0;
+
+	for(int i=0;i<(int)pieces.size();i++){
+		for(int j=i+1;j<(int)pieces.size();j++){
+			for(int k=j+1;k<(int)pieces.size();k++){
+				if(Isformed(pieces[i],pieces[j],pieces[k]) == true)	formed_count++;
+			}
+		}
+	}
+
+	return formed_count;
+	}
+private:
+	bool Isformed(int p,int q,int r){
+	
+	if(p+q <= r) return false; 
+	if(p+r <= q) return false;
+	if(q+r <= p) return false;
+
+	return true;
 	}
 	
 // BEGIN CUT HERE
