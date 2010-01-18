@@ -13,8 +13,40 @@ class Inchworm {
 public:
 	int lunchtime(int branch, int rest, int leaf) {
 
-	}
+	int yum = 1;
+	int lcm_num = lcm(rest,leaf);
+	int tmp = lcm_num;
 	
+	for(int i=0;i<(branch/lcm_num);i++){
+		if(tmp <= branch){
+			yum++;
+		}
+		tmp += lcm_num;
+	}
+	return yum;
+	}
+private:
+	int gcb(int a,int b){
+		int n=0;
+
+		if(a==b) return a;
+		while(1){
+			if(a<b){
+				n=b-a;
+				b=n;
+				if(n==a) return n;
+			}else{
+				n=a-b;
+				a=n;
+				if(n==b) return n;
+			}
+		}
+		return -1;
+	}
+	int lcm(int p,int q){
+		return (p * q)/gcb(p,q);
+	}
+
 // BEGIN CUT HERE
 	public:
 	void run_test(int Case) { if ((Case == -1) || (Case == 0)) test_case_0(); if ((Case == -1) || (Case == 1)) test_case_1(); if ((Case == -1) || (Case == 2)) test_case_2(); if ((Case == -1) || (Case == 3)) test_case_3(); if ((Case == -1) || (Case == 4)) test_case_4(); if ((Case == -1) || (Case == 5)) test_case_5(); if ((Case == -1) || (Case == 6)) test_case_6(); }

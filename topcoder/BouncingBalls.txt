@@ -1,0 +1,67 @@
+PROBLEM STATEMENT
+John is playing with balls. All of the balls are identical in weight and considered to have a zero radius. All balls are located on the same straight line and can move only along this line. If a ball rolling to the right and a ball rolling to the left at the same speed collide, they do not change speed, but they change direction.
+
+
+You are given vector <int> x. x[i] is the initial position of the i-th ball. John decides the direction for each ball (right or left) with equal probability. At time 0, he rolls the balls in the chosen directions simultaneously at a speed of one unit per second. Return the expected number of bounces between all balls during T seconds (including those collisions that happen exactly at T seconds).
+
+DEFINITION
+Class:BouncingBalls
+Method:expectedBounces
+Parameters:vector <int>, int
+Returns:double
+Method signature:double expectedBounces(vector <int> x, int T)
+
+
+NOTES
+-There is no friction. Each ball continues rolling at the same speed forever.
+-Your return value must have an absolute or relative error less than 1e-9.
+
+
+CONSTRAINTS
+-x will contain between 1 and 12 elements, inclusive.
+-Each element of x will be between 0 and 100,000,000, inclusive.
+-All elements of x will be distinct.
+-T will be between 1 and 100,000,000, inclusive.
+
+
+EXAMPLES
+
+0)
+{5, 8}
+2
+
+Returns: 0.25
+
+If he rolls the left ball to the right and right ball to the left, they collide at time 1.5. Otherwise, they don't collide.
+
+1)
+{5, 8}
+1
+
+Returns: 0.0
+
+x is the same as in example 0, but T is too small.
+
+2)
+{91, 857, 692, 54, 8679, 83, 792, 86, 9537, 913, 64, 592}
+458
+
+Returns: 11.5
+
+
+
+3)
+{75432}
+386
+
+Returns: 0.0
+
+
+
+4)
+{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
+3
+
+Returns: 12.75
+
+
