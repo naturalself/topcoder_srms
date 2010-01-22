@@ -6,12 +6,23 @@
 #include <string>
 #include <vector>
 #include <sstream>
+#include <stdio.h>
 
 using namespace std;
 
 class EyeDrops {
 public:
 	double closest(int sleepTime, int k) {
+
+	long double awake =(long double)(24.0-sleepTime);
+
+	if(k == 1) return 1440.0/k;
+
+	if(sleepTime > 24.0/k){
+		return (awake*60.0)/(k-1.0);
+	}else{
+		return 1440.0/k;
+	}
 
 	}
 	

@@ -1,0 +1,78 @@
+PROBLEM STATEMENT
+
+
+Every schoolgirl (and the occasional schoolboy) likes to skip rope. It's 
+fine to go solo, but it's better still to have partners who can swing
+the rope and chant along. Ideally, the two children holding the rope are about
+as tall as the one doing the skipping.
+
+
+
+
+In this problem, we shall measure height in centimeters. Given a
+vector <int> containing the heights of your prospective partners, return
+the two that are closest to your own height, which is specified by a 
+separate int. Break ties in favor of taller candidates, 
+and sort the return values in non-descending order.
+
+ 
+
+
+DEFINITION
+Class:SkipRope
+Method:partners
+Parameters:vector <int>, int
+Returns:vector <int>
+Method signature:vector <int> partners(vector <int> candidates, int height)
+
+
+NOTES
+-It's possible for multiple candidates to have the same height.
+
+
+CONSTRAINTS
+-candidates contains between 2 and 50 elements, inclusive
+-each element of candidates is between 75 and 175, inclusive
+-height is between 75 and 175, inclusive       
+
+
+EXAMPLES
+
+0)
+{102, 99, 104}
+100
+
+Returns: { 99,  102 }
+
+The closest height is 99, and the second closest is 102.
+
+1)
+{102, 97, 104}
+100
+
+Returns: { 97,  102 }
+
+Now the closest is 102, and second closest is 97.
+
+2)
+{101, 100, 99}
+100
+
+Returns: { 100,  101 }
+
+The closest height is 100, while 99 and 101 are tied for second closest. Since we favor larger values in the event of a tie, our choice for second closest is 101.
+
+3)
+{75, 117, 170, 175, 168, 167, 167, 142, 170, 85, 89, 170}
+169
+
+Returns: { 170,  170 }
+
+The two heights closest to 169 are both 170.
+
+4)
+{134, 79, 164, 86, 131, 78, 99, 150, 105, 163, 150, 110, 90, 137, 127, 130, 121, 
+ 93, 97, 131, 170, 137, 171, 153, 137, 138, 92, 103, 149, 110, 156}
+82
+
+Returns: { 79,  86 }
