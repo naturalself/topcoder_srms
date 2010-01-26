@@ -27,12 +27,12 @@ SRM 167 DIV2 Easy	EyeDrops		completed.
 
 SRM 168 DIV2 Easy	StairClimb		
 SRM 169 DIV2 Easy	Swimmers		
-SRM 170 DIV2 Easy	LevelUp			
-SRM 171 DIV2 Easy	RPG			
+SRM 170 DIV2 Easy	LevelUp			completed.
+SRM 171 DIV2 Easy	RPG			completed.
 SRM 172 DIV2 Easy	SkipRope		
 SRM 173 DIV2 Easy	ProgressBar		
 SRM 174 DIV2 Easy	CrossWord		
-SRM 175 DIV2 Easy	ClockWalk		
+SRM 175 DIV2 Easy	ClockWalk		completed.
 
 
 ~
