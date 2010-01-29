@@ -1,6 +1,6 @@
 SRM 144 DIV2 Easy	Time			completed.
 SRM 145 DIV2 Easy	ImageDitherin		
-SRM 146 DIV2 Easy	Yahtzee			completed.
+SRM 146 DIV2 Easy	YahtzeeScore		completed.
 SRM 147 DIV2 Easy	CCipher			completed.
 SRM 148 DIV2 Easy	DivDigits		completed.
 SRM 149 DIV2 Easy	FormatAmt		completed.
@@ -25,8 +25,8 @@ SRM 165 DIV2 Easy	BritishCoins		completed.
 SRM 166 DIV2 Easy	Workshop		completed.
 SRM 167 DIV2 Easy	EyeDrops		completed.
 
-SRM 168 DIV2 Easy	StairClimb		
-SRM 169 DIV2 Easy	Swimmers		
+SRM 168 DIV2 Easy	StairClimb		completed.
+SRM 169 DIV2 Easy	Swimmers		completed.
 SRM 170 DIV2 Easy	LevelUp			completed.
 SRM 171 DIV2 Easy	RPG			completed.
 SRM 172 DIV2 Easy	SkipRope		
@@ -43,4 +43,4 @@ SRM 458 DIV2 Medium	BouncingBalls
 SRM 459 DIV2 Easy	RecursiveFigures	completed.
 SRM 459 DIV2 Medium	Inequalities		
 
-21/38
+27/38
