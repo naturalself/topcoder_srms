@@ -50,6 +50,10 @@ The closest height is 99, and the second closest is 102.
 {102, 97, 104}
 100
 
+{2, -3, 4}
+
+{-3, 2, 4}
+
 Returns: { 97,  102 }
 
 Now the closest is 102, and second closest is 97.

@@ -1,0 +1,64 @@
+PROBLEM STATEMENT
+
+Installation programs often run several tasks, one after another. Each task is assigned an integer, the expected execution time of this task. During the installation, a progress bar shows the user what percentage of the installation time has elapsed. In this problem, the bar will be represented by a string containing exactly 20 characters. If X% of the installation has been completed, then the leftmost X% of these characters should be a '#', while the remaining characters should be '.'. 
+If necessary, round down the number of '#' characters to the nearest integer less than or equal to the actual value (see example 0). The bar starts at 0% and is only updated each time a task finishes execution.
+
+
+
+Create a class ProgressBar containing the method showProgress which takes a vector <int> taskTimes, the expected execution time for each task in the order they are run, and an int tasksCompleted, the number of these tasks that have been completed. The method should return a string containing exactly 20 characters showing the progress bar according to the descriptions above.
+
+
+DEFINITION
+Class:ProgressBar
+Method:showProgress
+Parameters:vector <int>, int
+Returns:string
+Method signature:string showProgress(vector <int> taskTimes, int tasksCompleted)
+
+
+CONSTRAINTS
+-taskTimes will contain between 1 and 50 elements, inclusive.
+-Each element in taskTimes will be between 1 and 1000, inclusive.
+-tasksCompleted will be between 0 and the number of elements in taskTimes, inclusive.
+
+
+EXAMPLES
+
+0)
+{19,6,23,17}
+3
+
+Returns: "##############......"
+
+This installation consist of 4 tasks, and the expected execution times for these are 19, 6, 23 and 17, respectively. Since the first 3 tasks have been completed, the total execution time for the installation so far has been 19+6+23 = 48 and the total expected time is 19+6+23+17 = 65. Thus 48/65 = 73.84615% of the installation has been completed, so the first 20*0.7384615 = 14.76923 = 14 (round down) characters in the string should be '#', and the remaining 6 should be '.'. Thus the method returns "##############......"
+
+
+1)
+{2,3,7,1,4,3}
+4
+
+Returns: "#############......."
+
+The installation has run for 2+3+7+1 = 13 units and the total execution is 2+3+7+1+4+3 = 20.
+
+
+2)
+{553,846,816,203,101,120,161,818,315,772}
+4
+
+Returns: "##########.........."
+
+3)
+{7,60,468,489,707,499,350,998,1000,716,457,104,597,583,396,862}
+2
+
+Returns: "...................."
+
+4)
+{419,337,853,513,632,861,336,594,94,367,336,297,966,627,399,433,846,859,80,2}
+19
+
+Returns: "###################."
+
+Even though about 99.98% of the installation has been completed, the last character should still be a '.' since we always round down.
+

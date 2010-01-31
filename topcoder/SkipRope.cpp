@@ -13,6 +13,52 @@ class SkipRope {
 public:
 	vector <int> partners(vector <int> candidates, int height) {
 
+	vector <int> diff(candidates.size());
+	vector <int> ret(2);
+	ret[0] = 10000;
+	ret[1] = 10000;
+	int idx1 = 0;
+	int idx2 = 0;
+	
+	for(int i=0;i<(int)candidates.size();i++){
+		diff[i] = candidates[i]-height;
+	}
+	sort(diff.begin(),diff.end());
+
+	for(int i=0;i<(int)diff.size();i++){
+		if(ret[0]>abs(diff[i]) || (ret[0]==abs(diff[i]) && candidates[idx1]<=candidates[i] )){
+			ret[0] = abs(diff[i]);
+			idx1 = i;
+			//cout << "idx1=" << idx1 << endl;
+		}
+	}
+	
+	if(idx1 == 0){
+		idx2 = idx1+1;
+	if(idx1 == (int)diff.size()-1)
+		idx2 = idx1-1;
+	}else if(diff[idx1-1] == diff[idx1+1]){
+		idx2 = idx1+1;
+	}else{
+		//cout << "enter" << endl;
+		if(abs(diff[idx1-1]) < abs(diff[idx1+1]) ||
+		   ((abs(diff[idx1-1] == abs(diff[idx1+1]))) && ((height+diff[idx1-1])<(height+diff[idx1+1])))
+			){
+			idx2 = idx1-1;
+		}else{
+			idx2 = idx1+1;
+		}
+	}
+
+	//cout << "idx1 = " << idx1 << endl;
+	//cout << "idx2 = " << idx2 << endl;
+
+	ret[0] = height + diff[idx1];
+	ret[1] = height + diff[idx2];
+
+	sort(ret.begin(),ret.end());
+
+	return ret;
 	}
 	
 // BEGIN CUT HERE

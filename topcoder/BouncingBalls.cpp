@@ -13,6 +13,19 @@ class BouncingBalls {
 public:
 	double expectedBounces(vector <int> x, int T) {
 
+	int n = (int)x.size();
+	int c=0;
+
+	for(int i=0;i<n;i++){
+		for(int j=i+1;j<n;j++){
+			cout << "abs(x[i]-x[j])=" << abs(x[i]-x[j]) << endl;
+			cout << "2*T=" << 2*T << endl;
+
+			if(abs(x[i]-x[j]) <= 2*T) c++;
+		}
+	}
+
+	return (double)c/4.0;
 	}
 	
 // BEGIN CUT HERE

@@ -1,0 +1,56 @@
+PROBLEM STATEMENT
+A simple calculator accepts the following kinds of strings as input:
+
+	 1) NUM+NUM 
+	 2) NUM-NUM 
+	 3) NUM*NUM 
+	 4) NUM/NUM 	
+
+where NUM is a positive integer, between 1 and 10000 inclusive that can contain leading zeros.  Return the value produced by the given expression.  Here +,-,*, and / denote addition, subtraction, multiplication and division respectively.  All operations are done on integers, so "5/3" returns 1.
+
+DEFINITION
+Class:SimpleCalculator
+Method:calculate
+Parameters:string
+Returns:int
+Method signature:int calculate(string input)
+
+
+CONSTRAINTS
+-input will contain between 3 and 50 characters inclusive.
+-input will have the form <NUM><OP><NUM> where<NUM> is a positive integer between 1 and 10000 inclusive, that may contain leading zeros and <OP> is one of (quotes for clarity) '+','*','-', or '/'.
+-input will not contain any spaces.
+
+
+EXAMPLES
+
+0)
+"5/3"
+
+Returns: 1
+
+Remember integer division is used, so results are truncated.
+
+1)
+"15*3"
+
+Returns: 45
+
+2)
+"1-10000"
+
+Returns: -9999
+
+Negative results are allowed.
+
+3)
+"17+18"
+
+Returns: 35
+
+4)
+"0000000000000018/00000000000000000009"
+
+Returns: 2
+
+The long way of writing 18/9.
