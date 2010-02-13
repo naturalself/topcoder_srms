@@ -1,0 +1,59 @@
+PROBLEM STATEMENT
+There is a grass field that is represented by a 1000 by 1000 grid. Initially, a rabbit is present on the square located at coordinates (1,1) (1-based). The rabbit can move to a horizontally or vertically adjacent square in one second and can only move that way.
+
+
+You are going to trap the rabbit. To do so, you have set some traps. The i-th trap is located on a square given by trapX[i] and trapY[i] as its X and Y coordinates (1-based) respectively.
+
+
+Return the minimum number of seconds so that after this time has passed there is a non-zero chance that the rabbit has fallen into one of your traps (the rabbit falls into one of your traps if it is in the same square as one of your traps).
+
+DEFINITION
+Class:TrappingRabbit
+Method:findMinimumTime
+Parameters:vector <int>, vector <int>
+Returns:int
+Method signature:int findMinimumTime(vector <int> trapX, vector <int> trapY)
+
+
+CONSTRAINTS
+-trapX will contain between 1 and 50 elements, inclusive.
+-trapY will contain between 1 and 50 elements, inclusive.
+-trapX and trapY will contain the same number of elements.
+-Each element of trapX and trapY will be between 1 and 1000, inclusive.
+-All traps will have distinct locations.
+-No trap will be located at coordinates (1,1).
+
+
+EXAMPLES
+
+0)
+{4,6,8}
+{1,2,1}
+
+Returns: 3
+
+If the rabbit goes 3 squares in the positive X direction it will fall to your first trap. Going 3 squares requires 3 seconds.
+
+1)
+{5,4,3}
+{5,4,3}
+
+Returns: 4
+
+The rabbit will be trapped within 4 seconds if it moves 2 squares in the positive X direction and 2 squares in the positive Y direction.
+
+2)
+{3,4,5}
+{5,4,3}
+
+Returns: 6
+
+
+
+3)
+{958,375,195,686,483,629,377}
+{104,505,882,357,759,400,869}
+
+Returns: 878
+
+

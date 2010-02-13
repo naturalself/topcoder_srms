@@ -1,0 +1,78 @@
+PROBLEM STATEMENT
+
+John and Brus have become very famous people all over the world, especially in Bolivia.
+Stories written about them by a Bolivian man have become very popular in that country.
+John and Brus have decided to visit their fans in Bolivia, but unfortunately, they only have time to visit one city each.
+
+
+
+John will randomly choose one city.
+Each city has the same probability of being chosen.
+If he chooses the i-th city, he will meet between minJ[i] and maxJ[i] fans, inclusive.
+Each possible number of fans is equally likely.
+Brus will go through the exact same process, but in his case, the number of fans he would meet in the i-th city is between minB[i] and maxB[i], inclusive.
+Note that John and Brus are not required to visit different cities.
+Return the probability that John and Brus will each meet the same number of fans.
+
+
+
+DEFINITION
+Class:TheFansAndMeetingsDivTwo
+Method:find
+Parameters:vector <int>, vector <int>, vector <int>, vector <int>
+Returns:double
+Method signature:double find(vector <int> minJ, vector <int> maxJ, vector <int> minB, vector <int> maxB)
+
+
+NOTES
+-The returned value must be accurate to within a relative or absolute value of 1E-9.
+
+
+CONSTRAINTS
+-minJ will contain between 1 and 50 elements, inclusive.
+-minJ, maxJ, minB and maxB will contain the same number of elements.
+-Each element of minJ, maxJ, minB and maxB will be between 1 and 50, inclusive.
+-The i-th element of minJ will be less than or equal to the i-th element of maxJ.
+-The i-th element of minB will be less than or equal to the i-th element of maxB.
+
+
+EXAMPLES
+
+0)
+{1}
+{3}
+{1}
+{1}
+
+Returns: 0.3333333333333333
+
+Brus will definitely meet one fan, and the probability of John meeting one fan as well is 1/3.
+
+
+1)
+{5, 7, 7, 1, 6, 1, 1}
+{8, 9, 7, 3, 9, 5, 3}
+{9, 12, 10, 14, 50, 9, 10}
+{9, 13, 50, 15, 50, 12, 11}
+
+Returns: 0.014880952380952378
+
+The only possible same number of fans that John and Brus can meet is 9. In order for them to meet 9 fans, John must visit city 1 or city 4 and Brus must visit city 0 or city 5.
+
+2)
+{44}
+{47}
+{4}
+{7}
+
+Returns: 0.0
+
+No chance to meet the same number of fans.
+
+3)
+{1, 6, 3, 1, 4, 3, 5, 1}
+{7, 8, 5, 7, 9, 7, 9, 3}
+{5, 1, 5, 3, 1, 2, 4, 1}
+{9, 2, 7, 9, 4, 5, 4, 9}
+
+Returns: 0.11562305130385474

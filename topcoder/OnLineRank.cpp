@@ -15,18 +15,25 @@ public:
 
 	vector <int> vi;
 	int sum = 0;
-	int lank = 0;
+	int rank = 0;
 
 	int j=0;
 
 	for(int i=0;i<(int)scores.size();i++){
-		for(j=i;j<i+k;j++){
-			vi.push_back(scores[j]);
+		vi.push_back(scores[i]);
+
+		sort(vi.begin(),vi.end());
+
+		for(int j=0;j<(int)vi.size();j++){
+			
+			cout << vi[j] << endl;
+			if(vi[j]==scores[i]){
+				//cout << j+1 << endl;
+				sum += (j+1);
+				break;
+			}
 		}
-		for(j=0;j<k;j++){
-			sort(vi.begin()+j,vi.end());	
-		}
-		vi.clear();
+		cout << "\n" << endl;
 	}
 
 	return sum;

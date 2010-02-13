@@ -13,6 +13,28 @@ class CrossWord {
 public:
 	int countWords(vector <string> board, int size) {
 
+	if((int)board.size()<size) return 0;
+
+	int count = 0;
+	int res = 0;
+
+	//cout << dots << endl;
+
+	for(int i=0;i<(int)board.size();i++){
+		
+		count = 0;
+		for(int j=0;j<(int)board[i].size();j++){
+			if(board[i][j]=='.'){
+				count++;
+			}else{
+				if(count==size) res++;
+				count = 0;
+			}  
+		}
+		if(count==size) res++;
+	}
+
+	return res;
 	}
 	
 // BEGIN CUT HERE

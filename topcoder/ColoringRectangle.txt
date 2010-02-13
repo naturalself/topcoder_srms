@@ -1,0 +1,87 @@
+PROBLEM STATEMENT
+NOTE: This problem statement contains images that may not display properly if viewed outside of the applet.
+
+
+You are given a white rectangle of size width by height. A green horizontal line (parallel to the width of the rectangle) is drawn through the middle of the rectangle so that it divides the rectangle into two congruent rectangles. This line extends infinitely out of the rectangle. You are asked to place red and blue disks (a disk is a circle and its interior) on the rectangle so that the entire rectangle is covered. The center of every disk must be placed on the green line, not necessarily within the rectangle bounds. Disks are placed sequentially from left to right, i.e., the center of each next placed disk must lie strictly to the right of the center of the last previously placed disk. Each disk is placed on top of all previously placed disks, i.e., when a disk is placed it covers any parts of previously placed disks that overlap. To challenge yourself, you have decided to only allow disk placements that satisfy the following additional constraint.
+
+
+Every point covered by a newly placed disk must either
+
+ not be covered by any previous disk or
+ if covered by some previous disk then the topmost previous disk covering this point must be a different color than the newly placed disk.
+
+You are given vector <int> red and vector <int> blue. The number of elements in red and blue corresponds to the number of red and blue disks you have, respectively. Each element of red or blue is the diameter of a red or blue disk, respectively. Note that each disk can only be used at most once. Find the smallest number of disks that can be placed as described above such that every point in the rectangle is covered by at least one disk. Return -1 if this is not possible.
+
+高さに従ったサイズ幅の白い長方形をあなたに与えます。 緑色の水平な線(長方形の幅に平行な)は、長方形を2つの一致している長方形に分割するように、長方形の中央を通って描かれます。 この線は長方形から無限に広がっています。 全体の長方形がカバーされているように、赤くて青いディスク(ディスクは、円とその内部である)を長方形に置いてください。 必ず長方形領域ではなく、グリーンラインにあらゆるディスクのセンターを置かなければなりません。 ディスクは左から右まで連続して置かれます、すなわち、次のそれぞれの置かれたディスクのセンターが厳密に以前に最後に置かれたディスクのセンターの右に位置しなければなりません。 各ディスクはすべての以前に置かれたディスクの上に置かれます、ディスクが置かれるとき、すなわち、それが、重なる以前に置かれたディスクのどんな一部も覆っています。 自分に挑戦するために、あなたは、以下の付加制約を満たすディスクプレースメントを許容するだけであると決めました。 どんな前のディスクでも新たに置かれたディスクでカバーされたあらゆるポイントをカバーしていなければならないというわけではない、前のあるディスクで覆われるなら、さもなければ、このポイントをカバーする前の最上のディスクは、新たに置かれたディスクより異なった色であるに違いありません。
+あなたは、特定のベクトル<int>赤とベクトル<int>青です。 赤と青の素子数はあなたがそれぞれ持っている赤くて青いディスクの数に対応しています。 赤か青の各要素はそれぞれ赤の、または、青いディスクの直径です。 高々一度各ディスクを使用できるだけであることに注意してください。 長方形のあらゆるポイントが少なくとも1個のディスクでカバーされているように上で説明されるように、置くことができるディスクの最も少ない数を見つけてください。 これが可能でないなら、-1を返してください。
+
+
+DEFINITION
+Class:ColoringRectangle
+Method:chooseDisks
+Parameters:int, int, vector <int>, vector <int>
+Returns:int
+Method signature:int chooseDisks(int width, int height, vector <int> red, vector <int> blue)
+
+
+CONSTRAINTS
+-width and height will be between 1 and 10000, inclusive.
+-red will contain between 1 and 50 elements, inclusive.
+-blue will contain between 1 and 50 elements, inclusive.
+-Every element of red will be between 1 and 10000, inclusive.
+-Every element of blue will be between 1 and 10000, inclusive.
+-To avoid precision problems, if the answer for an input is X >= 1, then it will be possible to cover a rectangle with height of height and width of width + 1e-5 with X disks (given the same set of disks). Furthermore, for any input with answer X, it will not be possible to cover a rectangle with height of height and width of width - 1e-5 using fewer than X disks from the same set (or using any amount of disks if X is -1).
+
+
+EXAMPLES
+
+0)
+11
+3
+{5,5}
+{2,5}
+
+Returns: 3
+
+A possible placement is as follows:
+
+
+1)
+30
+5
+{4,10,7,8,10}
+{5,6,11,7,5}
+
+Returns: 4
+
+
+
+2)
+16
+4
+{6,5,7}
+{5}
+
+Returns: -1
+
+There are not enough blue disks.
+
+3)
+4
+4
+{5}
+{6}
+
+Returns: 1
+
+The blue disk alone is enough to cover the rectangle.
+
+4)
+6
+2
+{6,6}
+{2}
+
+Returns: 3
+
+

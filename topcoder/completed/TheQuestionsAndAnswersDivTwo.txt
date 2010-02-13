@@ -1,0 +1,74 @@
+PROBLEM STATEMENT
+
+John and Brus have become very famous people all over the world, especially in Bolivia.
+A man in Bolivia decided to write a story about them.
+To make the story more truthful, he set up an interview with John.
+He prepared a list of distinct simple "Yes" or "No" questions and he enlisted the help of two friends to transcribe the interview.
+Each time he asked a question, one friend wrote down the question while the other friend wrote down the answer.
+He was very nervous when conducting the interview, so he might have asked some of the questions multiple times.
+However, John's answers always remained the same for the same questions.
+
+
+
+Unfortunately, the friend who was writing down John's answers lost his list.
+You are given a vector <string> questions, where the i-th element is the i-th question asked.
+In a desperate attempt to remember the answers, the Bolivian has decided to write down all the possible ways that John might have answered the questions.
+By doing this, he hopes that he will be able to recognize the correct combination of answers.
+Return the total number of combinations that he will have to write down.
+
+
+
+DEFINITION
+Class:TheQuestionsAndAnswersDivTwo
+Method:find
+Parameters:vector <string>
+Returns:int
+Method signature:int find(vector <string> questions)
+
+
+NOTES
+-Two questions are considered to be the same if corresponding elements of questions are absolutely the same strings.
+-All questions are case-sensitive, i.e., lowercase and uppercase equivalents of the same letter are considered to be different characters.
+
+
+CONSTRAINTS
+-questions will contain between 1 and 10 elements, inclusive.
+-Each element of questions will contain between 1 and 50 characters, inclusive.
+-Each character in questions will be a lowercase letter ('a'-'z'), uppercase letter ('A'-'Z'), question mark ('?') or underscore ('_').
+
+
+EXAMPLES
+
+0)
+{"How_are_you_doing?", "How_do_you_like_our_country?", "How_are_you_doing?"}
+
+Returns: 4
+
+There are four ways to answer this sequence of questions:
+
+"Yes", "Yes", "Yes";
+"Yes", "No", "Yes";
+"No", "Yes", "No";
+"No", "No", "No".
+
+
+1)
+{"Whazzup?"}
+
+Returns: 2
+
+Just a single question.
+
+2)
+{"Are_you_ready?", "Are_you_ready?", "Are_you_ready?", "Are_you_ready?"}
+
+Returns: 2
+
+All these questions are the same.
+
+3)
+{"Do_you_like_my_story?", "Do_you_like_my_story", "DO_YOU_LIKE_MY_STORY?", "Do__you__like__my__story?"}
+
+Returns: 16
+
+All these questions are distinct.

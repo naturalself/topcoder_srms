@@ -1,7 +1,11 @@
 PROBLEM STATEMENT
 You are in the process of creating a crossword puzzle. You've already designed the board, but now you need to come up with words of various sizes to put in the puzzle. An empty crossword puzzle consists of filled squares ('X') and empty squares ('.').  Here is an example of a board with 5 rows and 6 columns:
 
-X....XX.XX.X...X..X.XX.X..X...
+X....X
+X.XX.X
+...X..
+X.XX.X
+..X...
 
 A "slot" of length N is defined as exactly N empty squares in a row, surrounded on either side by either a filled square or the edge of the board.  N must be at least 2.  There are five horizontal slots in the example puzzle above:
 First row, length = 4
