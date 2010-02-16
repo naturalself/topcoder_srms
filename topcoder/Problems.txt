@@ -37,7 +37,7 @@ SRM 175 DIV2 Easy	ClockWalk		completed.
 SRM 176 DIV2 Easy	RGBColor		
 SRM 177 DIV2 Easy	Stairs			
 SRM 178 DIV2 Easy	SimpleCalculator	completed.
-SRM 179 DIV2 Easy	OnLineRank		
+SRM 179 DIV2 Easy	OnLineRank		completed.
 SRM 180 DIV2 Easy	DinkyFish		completed.
 SRM 181 DIV2 Easy	KiloMan			completed.
 SRM 182 DIV2 Easy	IBEvaluator		completed.
@@ -52,9 +52,9 @@ SRM 458 DIV2 Medium	BouncingBalls
 SRM 459 DIV2 Easy	RecursiveFigures	completed.
 SRM 459 DIV2 Medium	Inequalities		
 SRM 460 DIV2 Easy	TheQuestionsAndAnswersDivTwo	completed.
-SRM 460 DIV2 Medium	TheFansAndMeetingsDivTwo	
+SRM 460 DIV2 Medium	TheFansAndMeetingsDivTwo	completed.
 SRM 461 DIV2 Easy	TrappingRabbit		completed.
 SRM 461 DIV2 Medium	ColoringRectangle	
 
 
-31/46
+36/50
