@@ -1,0 +1,58 @@
+PROBLEM STATEMENT
+
+A magic square is a 3x3 array of numbers, such that the sum of each row, column, and diagonal are all the same.  For example:
+
+
+
+    8 1 6
+    3 5 7
+    4 9 2
+
+
+In this example, all rows, columns, and diagonals sum to 15.
+
+
+You will be given a vector <int> representing the nine numbers of a magic square, listed left-to-right, top-to-bottom.  However, one of these numbers will be replaced by a -1.  Write a method to determine which number was removed.  For example, if the 7 was removed from the magic square above, you would be given { 8, 1, 6, 3, 5, -1, 4, 9, 2 }, and your program should return 7.
+
+
+The completed magic square will consist of exactly 9 distinct positive integers.
+
+
+DEFINITION
+Class:MagicSquare
+Method:missing
+Parameters:vector <int>
+Returns:int
+Method signature:int missing(vector <int> square)
+
+
+CONSTRAINTS
+-square will contain exactly 9 elements.
+-Each element of square will either be -1 or be between 1 and 100, inclusive.
+-Exactly one element of square will be -1.
+-The eight elements of square that are not -1 will be distinct.
+-The input will be such that a number between 1 and 100, inclusive, can be found to complete the magic square, and it will not be equal to any of the other 8 numbers in the square.
+
+
+EXAMPLES
+
+0)
+{ 8, 1, 6, 3, 5, -1, 4, 9, 2 }
+
+Returns: 7
+
+This is the example from the problem statement.
+
+1)
+{ -1, 1, 6, 3, 5, 7, 4, 9, 2 }
+
+Returns: 8
+
+The same square, but this time with the number 8 removed.
+
+2)
+{ 5, 15, 13, 19, 11, 3, 9, 7, -1 }
+
+Returns: 17
+
+The missing number is 17.

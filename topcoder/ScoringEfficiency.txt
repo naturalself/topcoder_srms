@@ -1,0 +1,105 @@
+PROBLEM STATEMENT
+In basketball, players can attempt either two point or three point field goals, and if they are fouled, they can also attempt one point free throws. Since missing a free throw or a field goal often results in losing possession of the ball, it is important to make the most of each shot attempt. Traditionally, this efficiency has been measured by shooting percentage, which is defined as:
+
+
+                            Field goals made
+   Shooting percentage = ---------------------
+                         Field goals attempted
+
+
+Unfortunately, this formula is problematic since it does not account for either free throws or the different types of field goals. Therefore, a new formula, called points per shot, is gaining prominence. This is given by:
+
+
+                                         Total points
+   Points per shot = -----------------------------------------------------
+                     (Field goals attempted) + 0.5*(Free throws attempted)
+
+
+Consider, for example, a player that makes 4 of 5 two point field goals, 3 of 7 three point field goals, and 7 of 9 free throws. The player has earned 4*2 + 3*3 + 7*1 = 24 points with 5+7=12 field goal attempts and 9 free throw attempts. Thus, the player has earned 24/16.5 = 1.45454545... points per shot.
+
+
+
+Create a class ScoringEfficiency that contains a method getPointsPerShot, which is given a vector <string> gameLog. This will give the history of one player's shot attempts, with each element being equal to one of the following strings (quotes for clarity):
+
+  - "Made 2 point field goal"
+  - "Missed 2 point field goal"
+  - "Made 3 point field goal"
+  - "Missed 3 point field goal"
+  - "Made free throw"
+  - "Missed free throw"
+
+Given this history, the method should return the player's points per shot, as computed above.
+
+
+DEFINITION
+Class:ScoringEfficiency
+Method:getPointsPerShot
+Parameters:vector <string>
+Returns:double
+Method signature:double getPointsPerShot(vector <string> gameLog)
+
+
+NOTES
+-Return values with either a relative or absolute error less than 1.0E-9 will be accepted.
+
+
+CONSTRAINTS
+-gameLog will contain between 1 and 50 elements inclusive.
+-Each element of gameLog will be one of the six strings listed above.
+
+
+EXAMPLES
+
+0)
+{"Made 3 point field goal",
+ "Missed 2 point field goal"}
+
+Returns: 1.5
+
+This player has 3 total points, 2 field goals attempted, and 0 free throws attempted, so he has earned 3/2 = 1.5 points per shot.
+
+1)
+{"Made free throw",
+ "Missed free throw",
+ "Missed free throw",
+ "Missed free throw",
+ "Made free throw"}
+
+
+Returns: 0.8
+
+This player has 2 total points, 0 field goals attempted, and 5 free throws attempted, so he has earned 2/2.5 = 0.8 points per shot.
+
+2)
+{"Made 2 point field goal", "Made 2 point field goal", "Made 2 point field goal", 
+ "Made 2 point field goal", "Missed 2 point field goal",
+ "Made 3 point field goal", "Made 3 point field goal", "Made 3 point field goal",
+ "Missed 3 point field goal", "Missed 3 point field goal", 
+ "Missed 3 point field goal", "Missed 3 point field goal",
+ "Made free throw", "Made free throw", "Made free throw", 
+ "Made free throw", "Made free throw", "Made free throw", 
+ "Made free throw", "Missed free throw", "Missed free throw"}
+
+Returns: 1.4545454545454546
+
+This is the example from the problem statement.
+
+3)
+{"Made 2 point field goal", "Missed free throw",
+ "Made free throw", "Missed free throw", "Made free throw", 
+ "Made 2 point field goal", "Made 2 point field goal",
+ "Missed 2 point field goal", "Missed 2 point field goal",
+ "Made 3 point field goal", "Missed 2 point field goal",
+ "Made 2 point field goal", "Missed 2 point field goal",
+ "Made 3 point field goal", "Missed 2 point field goal",
+ "Missed 2 point field goal", "Missed 3 point field goal",
+ "Made free throw", "Made free throw", 
+ "Missed 3 point field goal", "Missed 2 point field goal",
+ "Missed 2 point field goal", "Made 2 point field goal",
+ "Missed 2 point field goal", "Made 2 point field goal",
+ "Missed 3 point field goal"}
+ 
+
+Returns: 0.9565217391304348
+
+This log is from a game by NBA superstar Vince Carter. He had 22 points, 20 field goals attempted, and 6 free throws attempted, so he earned 22/23 = 0.956521739... points per shot.

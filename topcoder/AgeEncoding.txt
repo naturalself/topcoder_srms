@@ -1,0 +1,90 @@
+PROBLEM STATEMENT
+NOTE: This problem statement contains superscripts that may not display properly if viewed outside of the applet.
+
+
+Your friend's birthday is approaching, and he wants his age to be written in candles on his cake.  In fact, he has already placed several candles on the cake.  The candles are arranged in a single row, and there are two different colors of candles.  One color represents the digit '0' and the other color represents the digit '1'.  You don't want to relayout the candles from scratch, so you have to determine if there's a base for which the existing candles spell out your friend's age.  To simplify the task, you can choose any strictly positive base, not necessarily an integer one.
+
+
+For example, if the candles are "00010" and your friend's age is 10, then the candles spell out 10 in base 10 (decimal). If the candles are "10101" and your friend's age is 21, then you can say that "10101" is 21 in base 2 (binary). If the candles are "10100" and your friend's age is 6, then the candles spell out 6 in base sqrt(2)=1.41421356237.... Note that you are not allowed to rotate the cake, so "10" cannot be read as "01".
+
+
+You are given a string candlesLine, where the i-th character is the digit ('0' or '1') represented by the i-th candle in the row of candles on the cake.  You are also given an int age, which is your friend's age.  Return the positive base for which the candles represent your friend's age.  If there is no such base, return -1, and if there are multiple such bases, return -2.
+
+DEFINITION
+Class:AgeEncoding
+Method:getRadix
+Parameters:int, string
+Returns:double
+Method signature:double getRadix(int age, string candlesLine)
+
+
+NOTES
+-The number anan-1...a1a0 in base B is equal to an*Bn + an-1*Bn-1 + ... + a1*B + a0.
+-The returned value must have an absolute or relative error less than 1e-9.
+
+
+CONSTRAINTS
+-age will be between 1 and 100, inclusive.
+-candlesLine will contain between 1 and 50 characters, inclusive.
+-Each character in candlesLine will be '0' (zero) or '1' (one).
+
+
+EXAMPLES
+
+0)
+10
+"00010"
+
+Returns: 10.0
+
+This is the first example from the statement: simply a decimal notation of the given age. Note that notation can have leading zeroes.
+
+1)
+21
+"10101"
+
+Returns: 2.0
+
+This is the second example from the statement: "10101" is a binary notation of the given age.
+
+2)
+6
+"10100"
+
+ 54321
+
+Returns: 1.414213562373095
+
+This is the third example from the statement.
+
+3)
+21
+"10111111110111101111111100111111110111111111111100"
+
+Returns: 0.9685012944510603
+
+
+
+4)
+16
+"1"
+
+Returns: -1.0
+
+In any base, "1" represents the age of 1, so it's impossible to get the age of 16.
+
+5)
+1
+"1"
+
+Returns: -2.0
+
+In any base, "1" represents the age of 1.
+
+6)
+1
+"001000"
+
+Returns: 1.0
+
+

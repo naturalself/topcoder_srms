@@ -1,0 +1,81 @@
+PROBLEM STATEMENT
+If a runner races a distance D in time T, and later races a distance 2D, that runner will likely take more than 2T time to finish it.  An examination of how times change with distances for a given runner can lead to the following approximation for the time it will take that runner to finish a given distance.  Given two races with distances D1 and D2 which a runner ran in times T1 and T2, respectively, the approximate time it will take a runner to run a distance D is given by:
+T1*e^(ln(T2/T1)*ln(D1/D)/ln(D1/D2)).
+
+When you race it is nice to have a time in mind that you'd like to be able to finish your race in.  You are somewhat new to running and have only run two races of different distances.  You are running a third race soon, and you want to use this equation to give you an estimate of how fast you should run.  Since your upcoming race is a distance that falls between your first and second races' distances, you know this approximation will probably be fairly accurate.  Create a class RaceApproximator with a method timeToBeat that takes ints d1, t1, d2, t2, and raceDistance, and returns a string that is the time you should be able to run in your upcoming race.  d1, t1, d2 and t2 represent your shorter race's distance, your time in that race, your longer race's distance, and your time in that race, respectively.  raceDistance is the distance of your upcoming race.  All distances are in meters and all times are in seconds.  Your return value should be truncated to an integer value, and formatted as "h:mm:ss" (all quotes are for clarity only) with"h" being the number of hours, "mm" being the number of minutes, and "ss" being the number of seconds.
+
+
+DEFINITION
+Class:RaceApproximator
+Method:timeToBeat
+Parameters:int, int, int, int, int
+Returns:string
+Method signature:string timeToBeat(int d1, int t1, int d2, int t2, int raceDistance)
+
+
+NOTES
+-In C++ e^x can be done with exp(x), and the natural log, ln(x), can be done with log(x), both functions are in math.h.
+-In C# e^x can be done with Math.Exp(x), and the natural log, ln(x), can be done with Math.Log(x).  The Math class is in the System namespace.
+-In Java e^x can be done with Math.exp(x), and the natural log, ln(x), can be done with Math.log(x).
+-In Visual Basic e^x can be done with Exp(x), and the natural log, ln(x), can be done with Log(x), both functions are in the System.Math namespace.
+
+
+CONSTRAINTS
+-d1, t1, d2, t2, and raceDistance will all be between 1 and 10000, inclusive.
+-d1 will be less than d2
+-t1 will be less than t2
+-raceDistance will be greater than d1 and less than d2
+-To make the approximation reliable, all speeds (distance/time) will be between 1 meter/second and 10 meters/second, inclusive.
+-To avoid rounding errors, the return will never be within 1e-9 of an integer value.
+
+
+EXAMPLES
+
+0)
+800
+118
+5000
+906
+1500
+
+Returns: "0:03:57"
+
+Suzy Favor Hamilton's times for 800 meters and 5000 meters indicate that she should run 1500 meters in 3:57, which, in fact, is her time for 1500 meters.
+
+1)
+400
+65
+1600
+350
+800
+
+Returns: "0:02:30"
+
+You can run 400 meters in 65 seconds, and 1600 meters in 5 minutes and 50 seconds, so you can probably run 800 meters in about 2 minutes and 30 seconds.
+
+2)
+1600
+299
+10000
+2360
+5000
+
+Returns: "0:18:00"
+
+3)
+100
+17
+10000
+4500
+9000
+
+Returns: "1:06:00"
+
+4)
+156
+117
+3863
+2754
+1755
+
+Returns: "0:21:06"

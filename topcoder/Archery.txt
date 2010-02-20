@@ -1,0 +1,60 @@
+PROBLEM STATEMENT
+In archery, you shoot an arrow at a target and you get some number of points depending on where the arrow hits the target.  In this problem, the target is a circle divided into N concentric rings and a central circle.  The width of each ring and the radius of the central circle are equal.  The point values assigned to each section of the target are given in the vector <int> ringPoints.  The values are given in order, from innermost to outermost section,  so ringPoints[0] is the number of points you get for hitting the central circle, and ringPoints[N] is the number of points you get for hitting the outermost ring.
+
+
+You are a beginning archer.  Whenever you take a shot, the arrow always lands somewhere on the target, but it hits a random point, and all points on the target have an equal probability of being hit.  Return the expected point value of your shot.
+
+DEFINITION
+Class:Archery
+Method:expectedPoints
+Parameters:int, vector <int>
+Returns:double
+Method signature:double expectedPoints(int N, vector <int> ringPoints)
+
+
+NOTES
+-The probability of hitting a specific section of the target is defined as the area of the section divided by the total area of the target.
+-The expected point value of a shot is calculated as follows.  
+For each section of the target, multiply its point value by the probability of hitting that section.  
+The expected point value is the sum of all these values.
+
+-The returned value must have an absolute or relative error less than 1e-9.
+
+
+CONSTRAINTS
+-N will be between 1 and 49, inclusive.
+-ringPoints will contain exactly N+1 elements.
+-Each element of ringPoints will be between 0 and 100, inclusive.
+
+
+EXAMPLES
+
+0)
+1
+{10, 0}
+
+Returns: 2.5
+
+You score 10 if you hit the central circle, and 0 otherwise. The area of the central circle is 0.25 of the total target area.
+
+1)
+3
+{1, 1, 1, 1}
+
+Returns: 1.0
+
+Regardless of what part of the target you hit, you get 1 point.
+
+2)
+4
+{100, 0, 100, 0, 100}
+
+Returns: 60.0
+
+Only even rings of the target give you points.
+
+3)
+9
+{69, 50, 79, 16, 52, 71, 17, 96, 56, 32}
+
+Returns: 51.96

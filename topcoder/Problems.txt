@@ -43,6 +43,15 @@ SRM 181 DIV2 Easy	KiloMan			completed.
 SRM 182 DIV2 Easy	IBEvaluator		completed.
 SRM 183 DIV2 Easy	CountGame		
 
+SRM 184 DIV2 Easy	RaceApproximator	
+SRM 185 DIV2 Easy	PassingGrade		
+SRM 186 DIV2 Easy	GolfScore		
+SRM 187 DIV2 Easy	OfficeParking		
+SRM 188 DIV2 Easy	MagicSquare		
+SRM 189 DIV2 Easy	CutoffRounder		
+SRM 190 DIV2 Easy	ScoringEfficiency	
+SRM 191 DIV2 Easy	BettingMoney		
+
 
 ~
 SRM 456 DIV2 Easy	AppleWord		Incompleted.

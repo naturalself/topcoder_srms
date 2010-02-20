@@ -19,12 +19,12 @@ count to 20 on your next turn.  Similarly, if you end your turn by saying 12, th
 what your opponent
 does you can end your next turn by saying 16, and thus win on your following turn.
 
-Create a class CountGame to help you play this game. It should contain a method
-howMany that is given maxAdd, the
+Create a class CountGame to help you play this game. 
+It should contain a method howMany that is given maxAdd, the
 most numbers you may say on each turn, goal, the goal number, and next, the number 
-that you must start counting on.  The method
-should return how many numbers you should say. If there is no way for you to force
-a win, then the method should return -1.
+that you must start counting on.  
+The method should return how many numbers you should say. 
+If there is no way for you to force a win, then the method should return -1.
 
 
 
