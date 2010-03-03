@@ -6,6 +6,7 @@
 #include <string>
 #include <vector>
 #include <sstream>
+#include <numeric>
 
 using namespace std;
 
@@ -13,6 +14,8 @@ class BettingMoney {
 public:
 	int moneyMade(vector <int> amounts, vector <int> centsPerDollar, int finalResult) {
 
+	return (accumulate(amounts.begin(),amounts.end(),0)-amounts[finalResult])*100
+		-amounts[finalResult]*centsPerDollar[finalResult];
 	}
 	
 // BEGIN CUT HERE

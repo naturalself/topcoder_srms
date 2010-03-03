@@ -45,12 +45,12 @@ SRM 183 DIV2 Easy	CountGame
 
 SRM 184 DIV2 Easy	RaceApproximator	
 SRM 185 DIV2 Easy	PassingGrade		
-SRM 186 DIV2 Easy	GolfScore		
+SRM 186 DIV2 Easy	GolfScore		completed.
 SRM 187 DIV2 Easy	OfficeParking		
-SRM 188 DIV2 Easy	MagicSquare		
+SRM 188 DIV2 Easy	MagicSquare		completed.
 SRM 189 DIV2 Easy	CutoffRounder		
 SRM 190 DIV2 Easy	ScoringEfficiency	
-SRM 191 DIV2 Easy	BettingMoney		
+SRM 191 DIV2 Easy	BettingMoney		completed.
 
 
 ~
@@ -64,6 +64,11 @@ SRM 460 DIV2 Easy	TheQuestionsAndAnswersDivTwo	completed.
 SRM 460 DIV2 Medium	TheFansAndMeetingsDivTwo	completed.
 SRM 461 DIV2 Easy	TrappingRabbit		completed.
 SRM 461 DIV2 Medium	ColoringRectangle	
+SRM 462 DIV2 Easy	Archery			completed.
+SRM 462 DIV2 Medium	AgeEncoding		
+SRM 463 DIV2 Easy	BunnyPuzzle		completed.
+SRM 463 DIV2 Medium	RabbitNumbering		completed.
+SRM 463 DIV2 Hard	Nisoku			
 
 
 36/50

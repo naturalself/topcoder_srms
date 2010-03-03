@@ -1,0 +1,66 @@
+PROBLEM STATEMENT
+Taro and Hanako are playing a game called Nisoku, which is played as follows. Initially, there is a pile of cards. Each card contains a real number between 1.5 and 10.0, inclusive. You are given a vector <double> cards, the i-th element of which is the number written on the i-th card.
+
+
+Repeat the following step until there is only one card left in the pile: Remove any two cards from the pile, and add one new card to the pile. Write either a+b or a*b on the new card, where a and b are the numbers written on the two cards that were removed.
+
+
+Return the maximal possible number written on the final card in the pile.
+
+DEFINITION
+Class:Nisoku
+Method:theMax
+Parameters:vector <double>
+Returns:double
+Method signature:double theMax(vector <double> cards)
+
+
+NOTES
+-Your return value must have an absolute or relative error less than 1e-9.
+
+
+CONSTRAINTS
+-cards will contain between 2 and 50 elements, inclusive.
+-Each element of cards will be between 1.5 and 10.0, inclusive.
+
+
+EXAMPLES
+
+0)
+{5, 8}
+
+Returns: 40.0
+
+5 * 8 = 40.
+
+1)
+{1.5, 1.8}
+
+Returns: 3.3
+
+1.5 + 1.8 = 3.3.
+
+2)
+{8.26, 7.54, 3.2567}
+
+Returns: 202.82857868
+
+
+
+3)
+{1.5, 1.7, 1.6, 1.5}
+
+Returns: 9.920000000000002
+
+
+
+4)
+{10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 
+10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 
+10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 
+10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 
+10, 10, 10, 10, 10, 10, 10, 10, 10, 10}
+
+Returns: 1.0E50
+
+The answer can be extremely big.
