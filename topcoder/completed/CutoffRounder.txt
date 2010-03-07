@@ -1,0 +1,67 @@
+PROBLEM STATEMENT
+Often, when we round a real valued number to an integer, we round up if the fractional part is 0.5 or greater, and down if the fractional part is less than 0.5.  In this problem, you are to write a method round, which takes a real valued number as a string, num, and a cutoff as a string, cutoff.  cutoff will be formatted exactly as "0.####", where each '#' represents a digit ('0'-'9').  At least one of the digits to the right of the decimal point in cutoff will be non-zero.  Your task is to round num up if its fractional part is greater than cutoff, and down otherwise, and return the result as an int.  To avoid issues with double imprecision, the fractional part of num will not be exactly equal to cutoff
+Hence, the traditional rounding method described in the opening sentence would be represented by cutoff = "0.5000"
+
+DEFINITION
+Class:CutoffRounder
+Method:round
+Parameters:string, string
+Returns:int
+Method signature:int round(string num, string cutoff)
+
+
+CONSTRAINTS
+-cutoff will be formatted exactly as "0.####", where each '#' represents a digit ('0'-'9').
+-num will be a sequence of one or more digits ('0'-'9'), with an optional decimal point ('.').
+-num will contain between 1 and 10 characters, inclusive.
+-The fractional part of num will not be exactly equal to cutoff.
+-num will be between 0 and 2,000,000,000, inclusive.
+
+
+EXAMPLES
+
+0)
+"003.656930"
+"0.5000"
+
+Returns: 4
+
+0.65693 is greater than 0.5000, so we round up.
+
+1)
+".001"
+"0.0001"
+
+Returns: 1
+
+A very low cutoff.
+
+2)
+"1.99999999"
+"0.9999"
+
+Returns: 2
+
+3)
+"135"
+"0.6531"
+
+Returns: 135
+
+4)
+"135."
+"0.6531"
+
+Returns: 135
+
+5)
+"1356.13671"
+"0.1367"
+
+Returns: 1357
+
+6)
+"0.00010001"
+"0.0001"
+
+Returns: 1

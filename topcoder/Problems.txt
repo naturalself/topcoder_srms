@@ -44,11 +44,11 @@ SRM 182 DIV2 Easy	IBEvaluator		completed.
 SRM 183 DIV2 Easy	CountGame		
 
 SRM 184 DIV2 Easy	RaceApproximator	
-SRM 185 DIV2 Easy	PassingGrade		
+SRM 185 DIV2 Easy	PassingGrade		fix?
 SRM 186 DIV2 Easy	GolfScore		completed.
-SRM 187 DIV2 Easy	OfficeParking		
+SRM 187 DIV2 Easy	OfficeParking		completed.
 SRM 188 DIV2 Easy	MagicSquare		completed.
-SRM 189 DIV2 Easy	CutoffRounder		
+SRM 189 DIV2 Easy	CutoffRounder		completed.
 SRM 190 DIV2 Easy	ScoringEfficiency	
 SRM 191 DIV2 Easy	BettingMoney		completed.
 

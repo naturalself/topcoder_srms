@@ -13,6 +13,22 @@ class Nisoku {
 public:
 	double theMax(vector <double> cards) {
 
+	int n = (int)cards.size();
+
+	sort(cards.rbegin(),cards.rend());
+
+	long double ans1=cards[0];
+	long double ans2=cards[0];
+	long double sum=0.0;
+
+	for(int i=1;i<n;i++){
+		ans1 += cards[i];
+		ans2 *= cards[i];
+
+		sum = max(ans1,ans2);
+	}
+
+	return sum;
 	}
 	
 // BEGIN CUT HERE
