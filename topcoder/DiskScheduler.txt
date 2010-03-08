@@ -1,0 +1,57 @@
+PROBLEM STATEMENT
+Disk Scheduling is an important component of an operating system. The disk (or hard-drive) is composed of a number of cylinders. Each cylinder contains circular tracks, which in turn are divided into sectors. To read a particular sector the operating system must determine the cylinder and track it belongs to. It then rotates the cylinder so that the disk head is positioned at the desired sector. If the file being used is located on numerous sectors, scattered across the track, the disk scheduler must read all those sectors in such a way that minimizes total head movement.
+
+In practice it is impossible to implement an optimal disk scheduling algorithm, because requests to read sectors arrive one after another, instead of being known from the start. However, in our problem the order that the sectors are read can be changed to suit the fastest retrieval. The results of a theoretical optimal algorithm are useful when comparing the effectiveness of various real-life scheduling algorithms. 
+
+For the purpose of this problem assume that a track has 100 sectors numbered from 1 to 100 inclusive. The cylinder can be rotated either clockwise or counter-clockwise. The cylinder is circular meaning that sector 1 is adjacent to sector 100. Given the start location of the head determine the minimal head movement required to read all the vector <int> sectors.
+
+
+DEFINITION
+Class:DiskScheduler
+Method:optimize
+Parameters:int, vector <int>
+Returns:int
+Method signature:int optimize(int start, vector <int> sectors)
+
+
+CONSTRAINTS
+-start will be between 1 and 100 inclusive.
+-sectors will contain between 1 and 50 elements inclusive.
+-each element in sectors will be between 1 and 100 inclusive.
+-sectors will not have any repeated elements.
+-start will never be an element of sectors.
+
+
+EXAMPLES
+
+0)
+5
+{6,8,65,71}
+
+Returns: 46
+
+The path 5->6->8->71->65 gives us the least head movement.  In other words, rotate forward from 5 to 8, moving the head 3 sectors.  Then rotate from 8 backwards to 71 for a total of (8-1) + (100-71) + 1 = 37.  Finally rotate from 71 to 65, for a total of 3 + 37 + 16 = 46.
+
+1)
+5
+{55,65,71}
+
+Returns: 50
+
+If we do 5->55->65->71 then we require 66 head movements. However if we go in the opposite direction 5->71->65->55 we only require 50 head movements, which is more efficient. Note that going from 5 to 71 requires only 5 + 29 = 34 head movements.
+
+2)
+20
+{1,21,99}
+
+Returns: 23
+
+If we go 20->1->99->21 that will take 99 head movements. If we go 20->21->99->1 that will take 81 head movements. Finally, if we go 20->21->1->99 that will only take 23 head movements.
+
+3)
+99
+{55,56,61,70,76,78,80,83,84,90,1,4,6,26,27,33,38,46,47,49}
+
+Returns: 87
+
+The sorted array is {1,4,6,26,27,33,38,46,47,49,55,56,61,70,76,78,80,83,84,90}. The most efficient way is to go right until we reach 6 and then go in the reverse direction until we reach 26.

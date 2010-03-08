@@ -1,0 +1,90 @@
+PROBLEM STATEMENT
+A matrix is a rectangular (two-dimensional) array of numbers. A vector is a linear sequence of numbers, a one dimensional array.
+There are row vectors and column vectors. We use only column vectors in this problem. How to multiply a matrix by a column vector (vector on the right) to yield another column vector is described in the notes section.
+
+A right eigenvector, X, of a square matrix, A, is a (nonzero) column vector that satisfies AX=kX, where k is a scalar constant called an eigenvalue (usually represented by lambda). In other words, multiplying the matrix by the eigenvector yields a vector which is proportional to the eigenvector. For the vectors to be proportional by the factor k, each element of the resulting vector is k times the corresponding element of X, k*X[i]. In this problem we are looking for eigenvectors which corespond to nonzero eigenvalues.
+
+Given a matrix, find the lexicographically smallest right eigenvector (with a nonzero eigenvalue) that has an L1 norm that is between 1 and 9 inclusive.  Each element of the eigenvector will be an integer. The first nonzero element of the eigenvector should be positive (if it is not positive, multiply all the elements by -1). The L1 norm is the sum of the absolute values of the elements of the vector.  A vector v1 comes before v2 lexicographically if v1 has a smaller element in the first position for which the two vectors differ.
+
+To simplify this problem, the input matrix, A, will be at most 5 by 5 and will always have an integer eigenvector (corresponding to a nonzero eigenvalue) with L1 norm between 1 and 9 inclusive.
+
+
+Some valid vectors (L1 = 5, in lexicographic order):
+{0,0,0,5}
+{0,0,2,-3}
+{1,0,-2,2}
+{1,0,1,3}
+
+Some invalid vectors:
+{0,0,0} vector must be nonzero
+{0,0,-1} first nonzero element must be positive
+{0,-1,3} first nonzero element must be positive
+{-1,2,3} first nonzero element must be positive
+
+For example:
+
+{"1 0 0 0 0",
+ "0 1 0 0 0",
+ "0 0 1 0 0",
+ "0 0 0 1 0",
+ "0 0 0 0 1"}
+
+The identity matrix, I, is unusual in terms of eigenvalues and eigenvectors. All the eigenvalues are 1, and every nonzero vector is an eigenvector. The  first one in our ordering is {0,0,0,0,1}.
+
+DEFINITION
+Class:EigenVector
+Method:findEigenVector
+Parameters:vector <string>
+Returns:vector <int>
+Method signature:vector <int> findEigenVector(vector <string> A)
+
+
+NOTES
+-To calculate matrix-column vector multiplication, AX = Y,  where A is an n by n matrix, and X and Y are length n column vectors, use something like: for(i) { Y[i] = 0 ; for(j) { Y[i] = Y[i] + A[i,j] * X[j] ; } }
+
+
+CONSTRAINTS
+-A will be the string representation of an n by n integer matrix where n is between 2 and 5 inclusive. Each element of A represents a row of the matrix with n integer elements in each row.
+-A will contain exactly n elements (rows).
+-Each element of A will contain exactly n integers (characters between '0' and '9' inclusive, optionally preceded by a minus sign '-'), each separated by a single space.
+-There will be no leading or trailing spaces in each element of A. For example: "10 2 0 -4" (quotes for clarity)
+-Each of the integers in A will be between -1000 and 1000 inclusive, with no leading zeros.
+-The matrix A will have at least one integer right eigenvector (corresponding to a nonzero eigenvalue) having an L1 norm between 1 and 9 inclusive.
+-The lexicographically first eigenvector will have the lowest L1 norm.
+
+
+EXAMPLES
+
+0)
+{"1 0 0 0 0",
+ "0 1 0 0 0",
+ "0 0 1 0 0",
+ "0 0 0 1 0",
+ "0 0 0 0 1"}
+
+Returns: { 0,  0,  0,  0,  1 }
+
+The example from above, the identity matrix.
+
+1)
+{"100 0 0 0",
+ "0 200 0 0",
+ "0 0 333 0",
+ "0 0 0 42"}
+
+Returns: { 0,  0,  0,  1 }
+
+All diagonal matrices (including the identity matrix) will have the same answer: n-1 zeros followed by a one.
+
+2)
+{"10 -10 -10 10",
+ "20 40 -10 -10",
+ "10 -10 10 20",
+ "10 10 20 5"}
+
+Returns: { 1,  -5,  2,  0 }
+
+3)
+{"30 20","87 2"}
+
+Returns: { 2,  3 }

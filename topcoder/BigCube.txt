@@ -1,0 +1,75 @@
+PROBLEM STATEMENT
+This problem contains HTML superscripts which may not display properly for plugin users. Please use the applet to view the problem statement and examples
+
+You are given a list of integer intervals, ranges, where each interval is specified by a string of the form "<low>-<high>" (quotes for clarity). Here "<low>" and "<high>" represent non-negative integers (sequences of characters between '0' and '9' inclusive with no leading zeros) which are separated by a single hyphen '-'.
+
+
+Your task is to find the largest integer that is in at least one of the intervals and is a perfect cube. Return this integer in a string with no extra leading zeros and only the digits '0'-'9'. In other words, find the largest integer in the intervals that is equal to n3 for some integer n. If there is no perfect cube in the intervals, return the empty string, "" (quotes for clarity).
+
+For example {"1-1000000000001"} would return "1000000000000" which is 100003.
+
+
+
+DEFINITION
+Class:BigCube
+Method:largestCube
+Parameters:vector <string>
+Returns:string
+Method signature:string largestCube(vector <string> range)
+
+
+NOTES
+-C++ users: the 64 bit integer type is long long.
+
+
+CONSTRAINTS
+-range will have between 1 and 50 elements inclusive.
+-Each element of range will contain between 3 and 31 characters inclusive.
+-Each element of range will be of the form "<low>-<high>" where <low> and <high> are separated by exactly one hyphen, '-'.
+-Each character of <low> and <high> will be a digit between '0' and '9' inclusive.
+-<low> and <high> will contain no leading zeros.
+-<low> and <high> will be between 0 and 1000000000000000 (1e15) inclusive.
+-<low> will be less than or equal to <high>
+
+
+EXAMPLES
+
+0)
+{"1-1000000000001"}
+
+Returns: "1000000000000"
+
+The example from above: 100003
+
+1)
+{"10-999999999999990","11-999999999999991","12-999999999999992",
+ "13-999999999999993","14-999999999999994","15-999999999999995",
+ "16-999999999999996","17-999999999999993","18-999999999999994",
+ "19-999999999999999"}
+
+Returns: "999970000299999"
+
+999993
+
+2)
+{"0-3","10-20","30-60","80-120"}
+
+Returns: "1"
+
+3)
+{"999700030000-999999999999","999400119993-999700029998",
+ "999100269974-999400119991","998800479937-999100269972"}
+
+Returns: ""
+
+4)
+{"0-0","2-2","3-3","4-4","5-5","6-6","7-7","9-9","10-10","12-12",
+ "14-14","16-16","18-18","20-20","22-22","24-24","26-26","28-28",
+ "30-30","32-32","34-34","36-36","38-38","40-40","42-42","44-44",
+ "46-46","48-48","50-50","52-52","54-54","56-56","58-58","60-60",
+ "62-62","65-65","67-67","69-69","71-71","73-73","75-75","77-77",
+ "79-79","81-81","83-83","85-85","87-87","89-89","99-99",
+  "999970000300000-999999999999999" }
+ 
+
+Returns: "0"
