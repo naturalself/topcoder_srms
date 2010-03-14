@@ -32,6 +32,37 @@ class BigCube {
 public:
 	string largestCube(vector <string> range) {
 
+	stringstream ss;
+
+	long long low=0;
+	long long high=0;
+
+	vector <long long> vll;
+
+	for(long long i=0;i<100009;i++){
+		vll.push_back(i*i*i);
+	}
+    
+	long long ret = -1;
+
+	forv(i,range){
+		ss << range[i];
+		
+		sscanf(range[i].c_str(),"%llu-%llu",&low,&high);
+		
+		forv(j,vll){
+			if(vll[j] >= low && vll[j] <= high){
+				ret >?= vll[j];
+			}
+		}
+
+		ss.str("");
+	}
+
+	ss << ret;
+
+	if(ret == -1)	return "";
+	return ss.str();
 	}
 	
 // BEGIN CUT HERE

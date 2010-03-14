@@ -53,16 +53,16 @@ SRM 190 DIV2 Easy	ScoringEfficiency
 SRM 191 DIV2 Easy	BettingMoney		completed.
 
 SRM 192 DIV2 Easy	BoxLoader		
-SRM 192 DIV2 Medium	BigCube			
+SRM 192 DIV2 Medium	BigCube			saw answer.
 SRM 192 DIV2 Hard	EigenVector		
 SRM 194 DIV2 Easy	Soccer			
 SRM 194 DIV2 Medium	ThirtyOne		
 SRM 194 DIV2 Hard	DiskScheduler		
-SRM 195 DIV2 Easy	BettingMoney		
-SRM 196 DIV2 Easy	BettingMoney		
-SRM 197 DIV2 Easy	BettingMoney		
-SRM 198 DIV2 Easy	BettingMoney		
-SRM 199 DIV2 Easy	BettingMoney		
+SRM 195 DIV2 Easy	Rounder			
+SRM 196 DIV2 Easy	Education		
+SRM 197 DIV2 Easy	GardenHose		
+SRM 198 DIV2 Easy	Reppity			
+SRM 199 DIV2 Easy	StringMult		
 
 ~
 SRM 456 DIV2 Easy	AppleWord		Incompleted.

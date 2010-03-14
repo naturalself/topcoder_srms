@@ -1,0 +1,84 @@
+PROBLEM STATEMENT
+Even students who hate math find one calculation very useful -- what is the lowest
+score I can get on the last test and pull out a certain grade? Let's
+write a program to help them minimize their education.
+
+We will assume that an average score of 90 or higher is rewarded with an A grade,
+80 or higher (but less than 90) is a B, 70 or higher (but less than 80) is a C, 60 or higher (but less 
+than 70) is a D.  All test scores
+are integers between 0 and 100 inclusive and the average is NOT rounded -- for
+example an average of 89.99 does NOT get you an A.
+
+Create a class Education that contains a method minimize that is given a string desire
+indicating the desired
+grade and a vector <int> tests containing the scores on all but the final test.
+The method returns the lowest possible
+test score for the final test that will earn at least the desired grade.  If even
+a perfect score won't get the desired grade, return -1.
+
+The desired grade will be given as a string of length 1, either "A", "B", "C", or "D". 
+
+
+
+DEFINITION
+Class:Education
+Method:minimize
+Parameters:string, vector <int>
+Returns:int
+Method signature:int minimize(string desire, vector <int> tests)
+
+
+CONSTRAINTS
+-desire will be  "A", "B", "C", or "D"
+-tests will contain between 0 and 20 elements inclusive.
+-Each element of tests will be between 0 and 100 inclusive.
+
+
+EXAMPLES
+
+0)
+"A"
+{0,70}
+
+Returns: -1
+
+
+
+   Even a perfect 100 on the last test will only produce an average score of
+   56.66 so it is not possible to earn an A.
+
+
+
+1)
+"D"
+{100,100,100,100,100,100}
+
+Returns: 0
+
+
+   Nice scores!  Even the worst possible score of 0 will give an average of 85.7
+   earning a B which satisfies your meager desire.
+
+
+2)
+"B"
+{80,80,80,73}
+
+Returns: 87
+
+
+
+    An 87 added to these scores will just exactly improve your average from 78.25 to 80.
+
+
+3)
+"B"
+{80,80,80,73,79}
+
+Returns: 88
+
+4)
+"A"
+{80}
+
+Returns: 100

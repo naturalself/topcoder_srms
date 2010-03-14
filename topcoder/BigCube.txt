@@ -39,7 +39,7 @@ EXAMPLES
 
 Returns: "1000000000000"
 
-The example from above: 100003
+The example from above: (10000)^3
 
 1)
 {"10-999999999999990","11-999999999999991","12-999999999999992",

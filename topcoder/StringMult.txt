@@ -1,0 +1,62 @@
+PROBLEM STATEMENT
+The definition of how to multiply a string by an integer follows:
+The empty string ("") multiplied by any integer is the empty string ("").
+For example: "" * 9 = ""
+Any string multiplied by 0 is the empty string ("").
+For example: "Terrific" * 0 = ""
+A non-empty string S multiplied by a positive integer k is the concatenation
+of k occurrences of S.
+For example: "Great" * 4 = "GreatGreatGreatGreat"
+A non-empty string S multiplied by a negative integer k is the concatenation
+of k occurrences of the reverse of S.
+For example: "Great" * -4 = "taerGtaerGtaerGtaerG"
+
+Your method will take a string and an int and return their product.
+
+
+DEFINITION
+Class:StringMult
+Method:times
+Parameters:string, int
+Returns:string
+Method signature:string times(string sFactor, int iFactor)
+
+
+CONSTRAINTS
+-sFactor will have length between 0 and 50 inclusive.
+-iFactor will be between -50 and 50 inclusive.
+-sFactor will contain only letters ('A'-'Z' and 'a'-'z').
+-The length of the returned string (sFactor*iFactor) will be between 0 and 50, inclusive.
+
+
+EXAMPLES
+
+0)
+"wOw"
+0
+
+Returns: ""
+
+1)
+"AbC"
+-3
+
+Returns: "CbACbACbA"
+
+2)
+"Boo"
+4
+
+Returns: "BooBooBooBoo"
+
+3)
+""
+50
+
+Returns: ""
+
+4)
+"Racecar"
+-5
+
+Returns: "racecaRracecaRracecaRracecaRracecaR"

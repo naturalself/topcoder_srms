@@ -31,7 +31,14 @@ using namespace std;
 class Soccer {
 public:
 	int maxPoints(vector <int> wins, vector <int> ties) {
+	
+	int max_s=0;
 
+	forv(i,wins){
+		max_s = max(max_s,wins[i]*3 + ties[i]);
+	}
+
+	return max_s;
 	}
 	
 // BEGIN CUT HERE
