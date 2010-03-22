@@ -1,0 +1,63 @@
+PROBLEM STATEMENT
+
+Given a string, input, with up to 50 characters, find the length of the longest substring that appears at least twice (non-overlapping) in input. If no substring appears twice, non-overlapping, return 0.
+Strings are case sensitive, and only upper case letters and lower case letters are allowed in input.
+
+For example, in the string "ABCDEXXXYYYZZZABCDEZZZYYYXXX" the longest substring which appears at least twice is "ABCDE". These two substrings do not overlap so you would return 5.
+
+
+DEFINITION
+Class:Reppity
+Method:longestRep
+Parameters:string
+Returns:int
+Method signature:int longestRep(string input)
+
+
+NOTES
+-We are looking for subSTRINGS not subSEQUENCES. All of the elements of a substring appear consecutively in the original string. In other words, the substring can be formed from the original string by deleting zero or more characters from the begining and deleting zero or more characters from the end, but NO deletions from the middle are allowed.
+
+
+CONSTRAINTS
+-input will contain between 1 and 50 characters inclusive.
+-Each character in input will be between 'a' and 'z' inclusive or between 'A' and 'Z' inclusive.
+
+
+EXAMPLES
+
+0)
+"ABCDEXXXYYYZZZ
+ ABCDEZZZYYYXXX"
+
+Returns: 5
+
+The example from above.
+
+1)
+"abcdabcd abcdab CD"
+
+Returns: 6
+
+"abcdab"+"cd"+"abcdab"+"CD"
+
+2)
+"abcdefghijklmnopqrstuvwxy
+ abcdefghijklmnopqrstuvwxy"
+
+Returns: 25
+
+3)
+"againANDagainANDagainAND againANDagainANDagain"
+
+Returns: 21
+
+4)
+"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWX"
+
+Returns: 0
+
+5)
+"aabbaaabbbaaaa bbbbaaaaabbbbb aaaaaab bbbbbaaaaabbbbb"
+
+Returns: 14
+

@@ -29,13 +29,13 @@ SRM 168 DIV2 Easy	StairClimb		completed.
 SRM 169 DIV2 Easy	Swimmers		completed.
 SRM 170 DIV2 Easy	LevelUp			completed.
 SRM 171 DIV2 Easy	RPG			completed.
-SRM 172 DIV2 Easy	SkipRope		
+SRM 172 DIV2 Easy	SkipRope		need fix.
 SRM 173 DIV2 Easy	ProgressBar		completed.
-SRM 174 DIV2 Easy	CrossWord		
+SRM 174 DIV2 Easy	CrossWord		completed.
 SRM 175 DIV2 Easy	ClockWalk		completed.
 
 SRM 176 DIV2 Easy	RGBColor		
-SRM 177 DIV2 Easy	Stairs			
+SRM 177 DIV2 Easy	Stairs			completed.
 SRM 178 DIV2 Easy	SimpleCalculator	completed.
 SRM 179 DIV2 Easy	OnLineRank		completed.
 SRM 180 DIV2 Easy	DinkyFish		completed.
@@ -52,17 +52,28 @@ SRM 189 DIV2 Easy	CutoffRounder		completed.
 SRM 190 DIV2 Easy	ScoringEfficiency	
 SRM 191 DIV2 Easy	BettingMoney		completed.
 
-SRM 192 DIV2 Easy	BoxLoader		
+SRM 192 DIV2 Easy	BoxLoader		saw answer.
 SRM 192 DIV2 Medium	BigCube			saw answer.
 SRM 192 DIV2 Hard	EigenVector		
-SRM 194 DIV2 Easy	Soccer			
+SRM 194 DIV2 Easy	Soccer			completed.
 SRM 194 DIV2 Medium	ThirtyOne		
 SRM 194 DIV2 Hard	DiskScheduler		
 SRM 195 DIV2 Easy	Rounder			
-SRM 196 DIV2 Easy	Education		
-SRM 197 DIV2 Easy	GardenHose		
-SRM 198 DIV2 Easy	Reppity			
-SRM 199 DIV2 Easy	StringMult		
+SRM 196 DIV2 Easy	Education		completed.
+SRM 197 DIV2 Easy	GardenHose		completed.
+SRM 198 DIV2 Easy	Reppity			completed.
+SRM 199 DIV2 Easy	StringMult		completed.
+
+SRM 200 DIV2 Easy	NoOrderOfOperations	
+SRM 201 DIV2 Easy	Multiples		
+SRM 202 DIV2 Easy	LetterStrings		
+SRM 203 DIV2 Easy	UserName		
+SRM 204 DIV2 Easy	Medici			
+SRM 205 DIV2 Easy	Average			
+SRM 206 DIV2 Easy	Bits			
+SRM 207 DIV2 Easy	TransportCounting	
+SRM 208 DIV2 Easy	ImageDithering		
+
 
 ~
 SRM 456 DIV2 Easy	AppleWord		Incompleted.
@@ -80,6 +91,8 @@ SRM 462 DIV2 Medium	AgeEncoding
 SRM 463 DIV2 Easy	BunnyPuzzle		completed.
 SRM 463 DIV2 Medium	RabbitNumbering		completed.
 SRM 463 DIV2 Hard	Nisoku			
+SRM 464 DIV2 Easy	ColorfulBoxesAndBalls	completed.
+SRM 464 DIV2 Medium	ColorfulStrings		
 
 
 36/50

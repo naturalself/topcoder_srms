@@ -1,0 +1,89 @@
+PROBLEM STATEMENT
+Your company has a new box loading robot. It is your job to program it to pack items into the shipping boxes. The robot does not have a very large program memory so you are restricted to placing all the items into the boxes in the same orientation. Each item is a rectangular solid with dimensions itemX by itemY by itemZ. The box is also rectangular with the dimensions boxX by boxY by boxZ. The items can be placed in the box in any orthogonal orientation (ie. the sides of the items must be parallel to the sides of the box), but only whole items can be placed in the box.
+Your task here is to determine the greatest number of items that can be packed into the box (with all the items in the same orientation).
+
+
+For example, if the box is 100x98x81 units and the items are 3x5x7 units, then orienting the items so they are 5x7x3, allows them to fit in the box in a 20x14x27 grid, filling the entire box, which is optimal: 7560 items.					  5x 7x 3=105
+						  4x 2x 9=72
+						 
+DEFINITION
+Class:BoxLoader
+Method:mostItems
+Parameters:int, int, int, int, int, int
+Returns:int
+Method signature:int mostItems(int boxX, int boxY, int boxZ, int itemX, int itemY, int itemZ)
+
+
+NOTES
+-There are six possible orientations for an item.
+
+
+CONSTRAINTS
+-boxX, boxY and boxZ will be between 1 and 1000 inclusive.
+-itemX, itemY and itemZ will be between 1 and 1000 inclusive.
+
+
+EXAMPLES
+
+0)
+100
+98
+81
+
+3
+5
+7
+
+Returns: 7560
+
+The example from above.
+
+1)
+10
+10
+10
+
+9
+9
+11
+
+Returns: 0
+
+That's not going to fit!
+
+2)
+201
+101
+301
+
+100
+30
+20
+
+Returns: 100
+
+There is going to be some empty space in this box, as none of the box dimensions is an exact multiple of an item dimension. Orienting the items so that the 30 unit dimension goes in the box's 301 unit direction wastes theleast space. 10 items can fit leaving only one unit of waste in that dimension.
+
+3)
+913
+687
+783
+
+109
+93
+53
+
+Returns: 833
+
+A less obvious example of minimizing the wasted space.
+
+4)
+6
+5
+4
+
+3
+2
+1
+
+Returns: 20
