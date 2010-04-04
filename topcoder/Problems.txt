@@ -1,5 +1,5 @@
 SRM 144 DIV2 Easy	Time			completed.
-SRM 145 DIV2 Easy	ImageDitherin		
+SRM 145 DIV2 Easy	ImageDithering		completed.	same as 208 div2 easy
 SRM 146 DIV2 Easy	YahtzeeScore		completed.
 SRM 147 DIV2 Easy	CCipher			completed.
 SRM 148 DIV2 Easy	DivDigits		completed.
@@ -49,14 +49,14 @@ SRM 186 DIV2 Easy	GolfScore		completed.
 SRM 187 DIV2 Easy	OfficeParking		completed.
 SRM 188 DIV2 Easy	MagicSquare		completed.
 SRM 189 DIV2 Easy	CutoffRounder		completed.
-SRM 190 DIV2 Easy	ScoringEfficiency	
+SRM 190 DIV2 Easy	ScoringEfficiency	completed.
 SRM 191 DIV2 Easy	BettingMoney		completed.
 
 SRM 192 DIV2 Easy	BoxLoader		saw answer.
 SRM 192 DIV2 Medium	BigCube			saw answer.
 SRM 192 DIV2 Hard	EigenVector		
 SRM 194 DIV2 Easy	Soccer			completed.
-SRM 194 DIV2 Medium	ThirtyOne		
+SRM 194 DIV2 Medium	ThirtyOne		completed.
 SRM 194 DIV2 Hard	DiskScheduler		
 SRM 195 DIV2 Easy	Rounder			
 SRM 196 DIV2 Easy	Education		completed.
@@ -64,15 +64,15 @@ SRM 197 DIV2 Easy	GardenHose		completed.
 SRM 198 DIV2 Easy	Reppity			completed.
 SRM 199 DIV2 Easy	StringMult		completed.
 
-SRM 200 DIV2 Easy	NoOrderOfOperations	
-SRM 201 DIV2 Easy	Multiples		
-SRM 202 DIV2 Easy	LetterStrings		
+SRM 200 DIV2 Easy	NoOrderOfOperations	completed.
+SRM 201 DIV2 Easy	Multiples		completed.	Too easy.
+SRM 202 DIV2 Easy	LetterStrings		completed.
 SRM 203 DIV2 Easy	UserName		
-SRM 204 DIV2 Easy	Medici			
-SRM 205 DIV2 Easy	Average			
-SRM 206 DIV2 Easy	Bits			
+SRM 204 DIV2 Easy	Medici			completed.
+SRM 205 DIV2 Easy	Average			completed.
+SRM 206 DIV2 Easy	Bits			completed.	Too easy.
 SRM 207 DIV2 Easy	TransportCounting	
-SRM 208 DIV2 Easy	ImageDithering		
+SRM 208 DIV2 Easy	ImageDithering		completed.
 
 
 ~
@@ -93,6 +93,12 @@ SRM 463 DIV2 Medium	RabbitNumbering		completed.
 SRM 463 DIV2 Hard	Nisoku			
 SRM 464 DIV2 Easy	ColorfulBoxesAndBalls	completed.
 SRM 464 DIV2 Medium	ColorfulStrings		
+SRM 465 DIV2 Easy	NumberNeighbours	
+SRM 465 DIV2 Medium	TurretPlacement		
+SRM 465 DIV2 Hard	WeirdTimes		
+SRM 466 DIV2 Easy	LotteryTicket		completed.
+SRM 466 DIV2 Medium	LotteryCheating		completed.
+SRM 466 DIV2 Hard	MatrixGame		
 
 
 36/50

@@ -30,7 +30,7 @@ using namespace std;
 
 class TransportCounting {
 public:
-	int countBuses(int speed, vector <int> positions, vector <int> velocities, int time) {
+	int countBuses(int speed, vector <int> pos, vector <int> vel, int time) {
 
 	}
 	

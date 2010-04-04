@@ -32,6 +32,45 @@ class UserName {
 public:
 	string newMember(vector <string> existingNames, string newName) {
 
+	vector <string> nears;
+	stringstream ss;
+	string name;
+	int num=0;
+	int care=0;
+
+	sort(all(existingNames));
+
+	forv(i,existingNames){
+		if(newName==existingNames[i].substr(0,newName.size())){
+
+			cout << existingNames[i] << endl;
+
+			num = IsNumber(existingNames[i]);
+			cout << num << endl;
+			care++;
+		}
+	}
+
+	if(care==0)	return newName;
+
+	return "";
+	}
+private:
+	int IsNumber(string str){
+	
+	int digit=1;
+	int n=0;
+		
+	for(int j=(int)str.size()-1;j>=0;j--){
+		if(str[j]>='0' && str[j]<='9'){
+
+			n += (str[j]-48)*digit;
+			digit *= 10;
+		}else{
+			break;
+		}
+	}
+	return n;
 	}
 	
 // BEGIN CUT HERE

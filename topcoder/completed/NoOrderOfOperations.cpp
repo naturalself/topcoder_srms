@@ -1,7 +1,7 @@
 // BEGIN CUT HERE
 
 // END CUT HERE
-#line 5 "Multiples.cpp"
+#line 5 "NoOrderOfOperations.cpp"
 #include <cstdio>
 #include <cstdlib>
 #include <cmath>
@@ -28,17 +28,27 @@ using namespace std;
 #define fors(i, s) for (int i = 0; i < (int)(s.length()); ++i)
 #define all(a) a.begin(), a.end() 
 
-class Multiples {
+class NoOrderOfOperations {
 public:
-	int number(int min, int max, int factor) {
+	int evaluate(string expr) {
 
-	int cnt=0;
+	int res=(expr[0]-48);
 
-	for(int i=min;i<=max;i++){
-		if(i%factor==0)	cnt++;
+	for(int i=1;i<(int)expr.size()-1;i++){
+		if(expr[i]=='+'){
+			res += (expr[i+1]-48);
+			i++;
+		}else if(expr[i]=='-'){
+			res -= (expr[i+1]-48);
+			i++;
+		}else if(expr[i]=='*'){
+			res *= (expr[i+1]-48);
+			i++;
+		}else{
+		}
 	}
 
-	return cnt;
+	return res;
 	}
 	
 // BEGIN CUT HERE
@@ -47,10 +57,10 @@ public:
 	private:
 	template <typename T> string print_array(const vector<T> &V) { ostringstream os; os << "{ "; for (typename vector<T>::const_iterator iter = V.begin(); iter != V.end(); ++iter) os << '\"' << *iter << "\","; os << " }"; return os.str(); }
 	void verify_case(int Case, const int &Expected, const int &Received) { cerr << "Test Case #" << Case << "..."; if (Expected == Received) cerr << "PASSED" << endl; else { cerr << "FAILED" << endl; cerr << "\tExpected: \"" << Expected << '\"' << endl; cerr << "\tReceived: \"" << Received << '\"' << endl; } }
-	void test_case_0() { int Arg0 = 0; int Arg1 = 14; int Arg2 = 5; int Arg3 = 3; verify_case(0, Arg3, number(Arg0, Arg1, Arg2)); }
-	void test_case_1() { int Arg0 = 7; int Arg1 = 24; int Arg2 = 3; int Arg3 = 6; verify_case(1, Arg3, number(Arg0, Arg1, Arg2)); }
-	void test_case_2() { int Arg0 = -123456; int Arg1 = 654321; int Arg2 = 997; int Arg3 = 780; verify_case(2, Arg3, number(Arg0, Arg1, Arg2)); }
-	void test_case_3() { int Arg0 = -75312; int Arg1 = 407891; int Arg2 = 14; int Arg3 = 34515; verify_case(3, Arg3, number(Arg0, Arg1, Arg2)); }
+	void test_case_0() { string Arg0 = "3+5*7"; int Arg1 = 56; verify_case(0, Arg1, evaluate(Arg0)); }
+	void test_case_1() { string Arg0 = "4-8*9*1"; int Arg1 = -36; verify_case(1, Arg1, evaluate(Arg0)); }
+	void test_case_2() { string Arg0 = "0"; int Arg1 = 0; verify_case(2, Arg1, evaluate(Arg0)); }
+	void test_case_3() { string Arg0 = "1*2*3*4*5*6*7*8*9"; int Arg1 = 362880; verify_case(3, Arg1, evaluate(Arg0)); }
 
 // END CUT HERE
 
@@ -58,7 +68,7 @@ public:
 
 // BEGIN CUT HERE
 int main() {
-	Multiples ___test;
+	NoOrderOfOperations ___test;
 	___test.run_test(-1);
 }
 // END CUT HERE

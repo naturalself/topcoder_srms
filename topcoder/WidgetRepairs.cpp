@@ -13,6 +13,19 @@ class WidgetRepairs {
 public:
 	int days(vector <int> arrivals, int numPerDay) {
 
+	int n=0;
+	int d=0;
+
+	for(int i=0;i<(int)arrivals.size();i++){
+		while(n < arrivals[i]){
+			n += numPerDay;
+			d++;
+		}
+		cout << i << ":" << d << endl;
+		n = 0;
+	}
+
+	return d;
 	}
 	
 // BEGIN CUT HERE

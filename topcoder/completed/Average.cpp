@@ -1,7 +1,7 @@
 // BEGIN CUT HERE
 
 // END CUT HERE
-#line 5 "Multiples.cpp"
+#line 5 "Average.cpp"
 #include <cstdio>
 #include <cstdlib>
 #include <cmath>
@@ -28,14 +28,19 @@ using namespace std;
 #define fors(i, s) for (int i = 0; i < (int)(s.length()); ++i)
 #define all(a) a.begin(), a.end() 
 
-class Multiples {
+class Average {
 public:
-	int number(int min, int max, int factor) {
+	int belowAvg(vector <int> math, vector <int> verbal) {
 
+	vector <int> sum(math.size());
 	int cnt=0;
 
-	for(int i=min;i<=max;i++){
-		if(i%factor==0)	cnt++;
+	forv(i,math)	sum[i] += math[i] + verbal[i];
+
+	double avg=accumulate(all(sum),0)/((double)math.size());
+
+	forv(i,math){
+		if((double)sum[i]<avg)	cnt++;	
 	}
 
 	return cnt;
@@ -47,10 +52,10 @@ public:
 	private:
 	template <typename T> string print_array(const vector<T> &V) { ostringstream os; os << "{ "; for (typename vector<T>::const_iterator iter = V.begin(); iter != V.end(); ++iter) os << '\"' << *iter << "\","; os << " }"; return os.str(); }
 	void verify_case(int Case, const int &Expected, const int &Received) { cerr << "Test Case #" << Case << "..."; if (Expected == Received) cerr << "PASSED" << endl; else { cerr << "FAILED" << endl; cerr << "\tExpected: \"" << Expected << '\"' << endl; cerr << "\tReceived: \"" << Received << '\"' << endl; } }
-	void test_case_0() { int Arg0 = 0; int Arg1 = 14; int Arg2 = 5; int Arg3 = 3; verify_case(0, Arg3, number(Arg0, Arg1, Arg2)); }
-	void test_case_1() { int Arg0 = 7; int Arg1 = 24; int Arg2 = 3; int Arg3 = 6; verify_case(1, Arg3, number(Arg0, Arg1, Arg2)); }
-	void test_case_2() { int Arg0 = -123456; int Arg1 = 654321; int Arg2 = 997; int Arg3 = 780; verify_case(2, Arg3, number(Arg0, Arg1, Arg2)); }
-	void test_case_3() { int Arg0 = -75312; int Arg1 = 407891; int Arg2 = 14; int Arg3 = 34515; verify_case(3, Arg3, number(Arg0, Arg1, Arg2)); }
+	void test_case_0() { int Arr0[] = {200,250,700,700}; vector <int> Arg0(Arr0, Arr0 + (sizeof(Arr0) / sizeof(Arr0[0]))); int Arr1[] = {400,400,400,400}; vector <int> Arg1(Arr1, Arr1 + (sizeof(Arr1) / sizeof(Arr1[0]))); int Arg2 = 2; verify_case(0, Arg2, belowAvg(Arg0, Arg1)); }
+	void test_case_1() { int Arr0[] = {500,400}; vector <int> Arg0(Arr0, Arr0 + (sizeof(Arr0) / sizeof(Arr0[0]))); int Arr1[] = {300,400}; vector <int> Arg1(Arr1, Arr1 + (sizeof(Arr1) / sizeof(Arr1[0]))); int Arg2 = 0; verify_case(1, Arg2, belowAvg(Arg0, Arg1)); }
+	void test_case_2() { int Arr0[] = {293}; vector <int> Arg0(Arr0, Arr0 + (sizeof(Arr0) / sizeof(Arr0[0]))); int Arr1[] = {799}; vector <int> Arg1(Arr1, Arr1 + (sizeof(Arr1) / sizeof(Arr1[0]))); int Arg2 = 0; verify_case(2, Arg2, belowAvg(Arg0, Arg1)); }
+	void test_case_3() { int Arr0[] = {400,400,400,400,400,400,401}; vector <int> Arg0(Arr0, Arr0 + (sizeof(Arr0) / sizeof(Arr0[0]))); int Arr1[] = {400,400,400,400,400,400,400}; vector <int> Arg1(Arr1, Arr1 + (sizeof(Arr1) / sizeof(Arr1[0]))); int Arg2 = 6; verify_case(3, Arg2, belowAvg(Arg0, Arg1)); }
 
 // END CUT HERE
 
@@ -58,7 +63,7 @@ public:
 
 // BEGIN CUT HERE
 int main() {
-	Multiples ___test;
+	Average ___test;
 	___test.run_test(-1);
 }
 // END CUT HERE

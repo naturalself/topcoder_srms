@@ -1,0 +1,74 @@
+PROBLEM STATEMENT
+
+The celebrated general Archibald Waving took charge of the second army in the occidental front. 
+After losing the first army, Waving has become obsessed with effective organization of the army. 
+As a part of this endeavor he has assigned numbers to each of his soldiers. He has also devised a rule 
+which allows two soldiers to work together if and only if the numbers assigned to the soldiers are 
+neighbouring numbers. 
+
+Two numbers x and y are neighbouring numbers if there exists a permutation of digits 
+of x and a permutation of digits of y such that they are equal if we ignore the leading 
+zeros in the permutations.
+
+For example, the numbers 40020 and 204 are neighboring. To see this, permute the digits of 40020 to achieve 
+00042 and the digits of 204 to achieve 042. If you ignore the leading zeros, both numbers become equal to 42, 
+so they are neighboring.
+
+
+
+You are given a vector <int> numbers representing soldiers' numbers. Waving needs 
+to pick two soldiers to send a telegram. He would like to know how many different pairs of soldiers are 
+there who can work together to accomplish the task. 
+
+Help Waving by returning the number of pairs of neighbouring numbers in the vector <int> numbers.
+
+
+
+DEFINITION
+Class:NumberNeighbours
+Method:numPairs
+Parameters:vector <int>
+Returns:int
+Method signature:int numPairs(vector <int> numbers)
+
+
+CONSTRAINTS
+-numbers will contain between 2 and 50 elements, inclusive.
+-Each element of numbers will be between 1 and 1,000,000, inclusive.
+-All elements of numbers will be distinct.
+
+
+EXAMPLES
+
+0)
+{10, 1, 100, 20, 2, 3}
+
+Returns: 4
+
+The pairs of neighbouring numbers are (10, 1), (1, 100), (20, 2) and (10, 100).
+
+1)
+{204, 42, 40020, 200}
+
+(204,42),(204,40020),(42,40020)
+
+Returns: 3
+
+2)
+{1, 10, 100, 1000, 10000, 100000, 1000000}
+
+Returns: 21
+
+Any two numbers are neighbouring.
+
+3)
+{3, 33, 333, 3333}
+
+Returns: 0
+
+There are no two numbers that are neighbouring.
+
+4)
+{1024, 4021, 204, 303, 33, 603, 36, 55, 505}
+
+Returns: 4
