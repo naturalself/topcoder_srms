@@ -1,0 +1,47 @@
+PROBLEM STATEMENT
+Two lines (or queues) of people often have to merge into a single-file line.  But, chivalry is not dead!  When a man and a woman are about to merge, the man will always let the woman go first.
+
+Given two lines of both men and women, write a method getOrder which will determine the genders of the people in the final line.  If two women are at the front of both lines, the woman from the first line goes first. Likewise, if two men are at the front of both lines, the man from the first line goes first.  Then, the people at the front of both lines are compared again.
+
+Each input line will be a string of letters, each one representing either a man or a woman.  Each man will be represented by an 'M' and each woman by a 'W'.  The output should be of the same form.  The front of each line is the left-most character of the string.
+
+DEFINITION
+Class:Chivalry
+Method:getOrder
+Parameters:string, string
+Returns:string
+Method signature:string getOrder(string first, string second)
+
+
+CONSTRAINTS
+-first and second will each be between 1 and 50 characters long, inclusive.
+-first and second will consist of the characters 'M' and 'W' only.
+
+
+EXAMPLES
+
+0)
+"M"
+"W"
+
+Returns: "WM"
+
+1)
+"MM"
+"MW"
+
+Returns: "MMMW"
+
+Because of the 'tie breaker' rules, the first man from the first line goes first.  Then, the second man from the first line goes, then the rest of the people (both from the second line.)
+
+2)
+"MMMM"
+"W"
+
+Returns: "WMMMM"
+
+3)
+"M"
+"WWW"
+
+Returns: "WWWM"

@@ -2,7 +2,7 @@ SRM 144 DIV2 Easy	Time			completed.
 SRM 145 DIV2 Easy	ImageDithering		completed.	same as 208 div2 easy
 SRM 146 DIV2 Easy	YahtzeeScore		completed.
 SRM 147 DIV2 Easy	CCipher			completed.
-SRM 148 DIV2 Easy	DivDigits		completed.
+SRM 148 DIV2 Easy	DivisorDigits		completed.
 SRM 149 DIV2 Easy	FormatAmt		completed.
 SRM 150 DIV2 Easy	WidgetRepairs		
 SRM 151 DIV2 Easy	PrefixCode		completed.
@@ -74,6 +74,18 @@ SRM 206 DIV2 Easy	Bits			completed.	Too easy.
 SRM 207 DIV2 Easy	TransportCounting	
 SRM 208 DIV2 Easy	ImageDithering		completed.
 
+SRM 209 DIV2 Easy	MovingAverages		completed.
+SRM 210 DIV2 Easy	TitleString		completed.
+SRM 210 DIV2 Medium	DrivingDirections	need fix.
+SRM 211 DIV2 Easy	grafixClick		
+SRM 212 DIV2 Easy	YahtzeeScore		completed.	same as 146 div2 easy
+SRM 212 DIV2 Medium	WinningRecord		
+SRM 213 DIV2 Easy	Chivalry		
+SRM 214 DIV2 Easy	bloggoShortcuts		completed.
+SRM 215 DIV2 Easy	DivisorDigits		completed.	same as148 DIV2 Easy
+SRM 215 DIV2 Medium	Mailbox			completed.
+SRM 216 DIV2 Easy	CultureShock		completed.
+SRM 217 DIV2 Easy	FuelConsumption		completed.
 
 ~
 SRM 456 DIV2 Easy	AppleWord		Incompleted.

@@ -1,0 +1,56 @@
+PROBLEM STATEMENT
+A common word-processing task is capitalizing the first letter of each word in a title.  Write a class TitleString with a method toFirstUpperCase that takes a string title containing lowercase words separated by one or more space characters and returns a string that is identical to title except with the first character of each word capitalized.
+
+DEFINITION
+Class:TitleString
+Method:toFirstUpperCase
+Parameters:string
+Returns:string
+Method signature:string toFirstUpperCase(string title)
+
+
+NOTES
+-title may have leading or trailing spaces.
+
+
+CONSTRAINTS
+-title will contain between 0 and 50 characters, inclusive.
+-Each character of title will either be a space or a lowercase letter ('a' to 'z').
+
+
+EXAMPLES
+
+0)
+"introduction to algorithms"
+
+Returns: "Introduction To Algorithms"
+
+1)
+"more than  one   space    between     words"
+
+Returns: "More Than  One   Space    Between     Words"
+
+2)
+"  lord of the rings   the fellowship of the ring  "
+
+Returns: "  Lord Of The Rings   The Fellowship Of The Ring  "
+
+3)
+"  "
+
+Returns: "  "
+
+4)
+"i"
+
+Returns: "I"
+
+5)
+"the king and i"
+
+Returns: "The King And I"
+
+6)
+""
+
+Returns: ""
