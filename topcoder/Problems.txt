@@ -1,5 +1,5 @@
 SRM 144 DIV2 Easy	Time			completed.
-SRM 145 DIV2 Easy	ImageDithering		completed.	same as 208 div2 easy
+SRM 145 DIV2 Easy	ImageDithering		completed.
 SRM 146 DIV2 Easy	YahtzeeScore		completed.
 SRM 147 DIV2 Easy	CCipher			completed.
 SRM 148 DIV2 Easy	DivisorDigits		completed.
@@ -72,20 +72,51 @@ SRM 204 DIV2 Easy	Medici			completed.
 SRM 205 DIV2 Easy	Average			completed.
 SRM 206 DIV2 Easy	Bits			completed.	Too easy.
 SRM 207 DIV2 Easy	TransportCounting	
-SRM 208 DIV2 Easy	ImageDithering		completed.
+SRM 208 DIV2 Easy	ImageDithering		completed.	same as 145 div2 easy
 
 SRM 209 DIV2 Easy	MovingAverages		completed.
 SRM 210 DIV2 Easy	TitleString		completed.
 SRM 210 DIV2 Medium	DrivingDirections	need fix.
 SRM 211 DIV2 Easy	grafixClick		
-SRM 212 DIV2 Easy	YahtzeeScore		completed.	same as 146 div2 easy
+SRM 212 DIV2 Easy	YahtzeeScore		completed.	same as 146 Div2 Easy
 SRM 212 DIV2 Medium	WinningRecord		
 SRM 213 DIV2 Easy	Chivalry		
 SRM 214 DIV2 Easy	bloggoShortcuts		completed.
-SRM 215 DIV2 Easy	DivisorDigits		completed.	same as148 DIV2 Easy
+SRM 215 DIV2 Easy	DivisorDigits		completed.	same as 148 DIV2 Easy
 SRM 215 DIV2 Medium	Mailbox			completed.
 SRM 216 DIV2 Easy	CultureShock		completed.
+
 SRM 217 DIV2 Easy	FuelConsumption		completed.
+SRM 218 DIV2 Easy	AccessLevel		completed.	most easy.
+SRM 218 DIV2 Easy	AccessLevel		completed.
+SRM 219 DIV2 Easy	WaiterTipping		completed.
+SRM 220 DIV2 Easy	LeapAge			completed.
+SRM 221 DIV2 Easy	EqualSubstrings
+SRM 222 DIV2 Easy	TextCompressor		completed.
+SRM 223 DIV2 Easy	MostProfitable		completed.	same as 153 DIV2 Easy
+SRM 224 DIV2 Easy	InsideOut		completed.
+
+SRM 225 DIV2 Easy	SignatureDecorator	completed.
+SRM 226 DIV2 Easy	VLNString		completed.
+SRM 227 DIV2 Easy	StringCompare		completed.	foolish easy.
+SRM 228 DIV2 Easy	ProfitCalculator	completed.	same as 154 DIV2 Easy
+SRM 229 DIV2 Easy	Highscore		
+SRM 230 DIV2 Easy	InequalityChecker	completed.
+SRM 231 DIV2 Easy	GolfScore		completed.	same as 186 DIV2 Easy
+SRM 232 DIV2 Easy	BritishCoins		completed.	same as 165 DIV2 Easy
+
+SRM 233 DIV2 Easy	JustifyText		completed.
+SRM 234 DIV2 Easy	ComboLength		completed.
+SRM 235 DIV2 Easy	NoisySensor		completed.
+SRM 236 DIV2 Easy	MassiveNumbers		completed.
+SRM 237 DIV2 Easy	Cards			completed.
+SRM 238 DIV2 Easy	ArrayHash		completed.
+SRM 239 DIV2 Easy	Barbecue		completed.	DP. difficult.
+SRM 240 DIV2 Easy	Pronunciation		completed.
+
+SRM 241 DIV2 Easy	BlackjackWinner		completed.
+
+
 
 ~
 SRM 456 DIV2 Easy	AppleWord		Incompleted.
@@ -111,6 +142,16 @@ SRM 465 DIV2 Hard	WeirdTimes
 SRM 466 DIV2 Easy	LotteryTicket		completed.
 SRM 466 DIV2 Medium	LotteryCheating		completed.
 SRM 466 DIV2 Hard	MatrixGame		
+SRM 467 DIV2 Easy	ShorterSuperSum		completed.
+SRM 468 DIV2 Easy	RoadOrFlightEasy	completed.
+SRM 469 DIV2 Easy	TheMoviesLevelOneDivTwo			DP.
+SRM 470 DIV2 Easy	LinearTravellingSalesmancompleted.
+SRM 471 DIV2 Easy	PrimeContainers		completed.
+SRM 472 DIV2 Easy	ColorfulTilesEasy	completed.
+SRM 472 DIV2 Medium	PotatoGame		
+SRM 472 DIV2 Hard	RectangularIsland	
+
+
 
 
 36/50

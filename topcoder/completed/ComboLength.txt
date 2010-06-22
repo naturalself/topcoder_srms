@@ -1,0 +1,46 @@
+PROBLEM STATEMENT
+You are given a string composed of A's and B's.  Each A and B denotes a move performed by players A and B, respectively.  Return the length of the longest combo performed by either player.  A combo is a string of moves executed by a player that is not interrupted by the opposing player (see the examples for further clarification).
+
+DEFINITION
+Class:ComboLength
+Method:howLong
+Parameters:string
+Returns:int
+Method signature:int howLong(string moves)
+
+
+CONSTRAINTS
+-moves will contain between 2 and 50 characters inclusive.
+-Each character of moves will be A or B.
+
+
+EXAMPLES
+
+0)
+"AAA"
+
+Returns: 3
+
+Player A executes 3 moves in a row.
+
+1)
+"AAABBBBAA"
+
+Returns: 4
+
+Player A executes 2 combos of length 3 and 2 respectively.  Player B executes a single combo of length 4.
+
+2)
+"BBAABBAABBAABBAA"
+
+Returns: 2
+
+3)
+"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+
+Returns: 50
+
+4)
+"AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA"
+
+Returns: 25

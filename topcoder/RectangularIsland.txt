@@ -1,0 +1,81 @@
+PROBLEM STATEMENT
+Taro is standing on a rectangular island. The island is divided into width x height cells. The coordinate system is introduced so that cell in the bottom left corner has coordinates (0, 0) and cell in the top right corner has coordinates (width-1, height-1). Initially he is standing on cell (x, y).
+
+
+He decides to take a random walk. Each step consists of walking one cell in a randomly chosen direction. Only the four cardinal directions are allowed, and each direction has an equal probability of being chosen on each step. If he steps off the island, he will fall into the sea. Taro's walk will consist of exactly steps steps, unless he falls into the sea before he finishes walking.
+
+
+Return the probability that he will still be standing on the island after steps steps.
+
+DEFINITION
+Class:RectangularIsland
+Method:theProbablity
+Parameters:int, int, int, int, int
+Returns:double
+Method signature:double theProbablity(int width, int height, int x, int y, int steps)
+
+
+CONSTRAINTS
+-width will be between 1 and 1000, inclusive.
+-height will be between 1 and 1000, inclusive.
+-x will be between 0 and width - 1, inclusive.
+-y will be between 0 and height - 1, inclusive.
+-steps will be between 1 and 5000, inclusive.
+
+
+EXAMPLES
+
+0)
+5
+8
+4
+3
+1
+
+Returns: 0.75
+
+If Taro chooses up, down or left, he will remain on the island.
+
+1)
+5
+8
+4
+7
+1
+
+Returns: 0.5
+
+If Taro chooses down or left, he will remain on the island.
+
+2)
+2
+2
+0
+1
+5
+
+Returns: 0.03125
+
+From any cell, the probability of remaining after one step is 1/2, so the answer is (1/2)^5.
+
+3)
+58
+85
+47
+74
+1000
+
+Returns: 0.13056659769966347
+
+
+
+4)
+1000
+1000
+123
+456
+5000
+
+Returns: 0.9868611148475199
+
+

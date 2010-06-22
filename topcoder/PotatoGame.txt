@@ -1,0 +1,41 @@
+PROBLEM STATEMENT
+Taro and Hanako like potatoes very much. Today they decided to play Potato Game.
+
+
+Initially there is a box containing n potatoes. Taro and Hanako alternate turns, and Taro goes first. In each turn, the player must eat some potatoes from the box. The number of eaten potatoes must be a power of four, i.e., 1, 4, 16, 64 and so on. The first player who cannot eat a valid number of potatoes loses. Return the name of the winner assuming that they both play optimally.
+
+
+DEFINITION
+Class:PotatoGame
+Method:theWinner
+Parameters:int
+Returns:string
+Method signature:string theWinner(int n)
+
+
+CONSTRAINTS
+-n will be between 1 and 1,000,000,000 (10^9), inclusive.
+
+
+EXAMPLES
+
+0)
+1
+
+Returns: "Taro"
+
+Taro will win if he eats 1 potato in the first turn.
+
+1)
+2
+
+Returns: "Hanako"
+
+Taro must eat exactly 1 potato in the first turn. In the second turn, Hanako will eat 1 potato and she will win.
+
+2)
+3
+
+Returns: "Taro"
+
+

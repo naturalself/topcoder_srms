@@ -1,0 +1,57 @@
+PROBLEM STATEMENT
+You will be given a string str consisting of lowercase letters.  You will return a vector <string> containing elements x and y in that order.  The returned strings x and y must satisfy:
+
+1) The string xy (x with y concatenated on the end) must equal str.
+2) The number of a's in x must equal the number of b's in y.
+3) If multiple solutions are possible, use the one that maximizes the length of x.
+  See the examples for further clarifications.
+
+DEFINITION
+Class:EqualSubstrings
+Method:getSubstrings
+Parameters:string
+Returns:vector <string>
+Method signature:vector <string> getSubstrings(string str)
+
+
+CONSTRAINTS
+-str will contain between 1 and 50 characters inclusive.
+-Each character in str will be a lowercase letter ('a'-'z').
+
+
+EXAMPLES
+
+0)
+"aaabbb"
+
+Returns: { "aaa",  "bbb" }
+
+Here we can split str right down the center.
+
+1)
+"bbbaaa"
+
+Returns: { "bbb",  "aaa" }
+
+Again the center works.
+
+2)
+"bbbbbb"
+
+Returns: { "bbbbbb",  "" }
+
+y can be empty.
+
+3)
+"aaaaaa"
+
+Returns: { "",  "aaaaaa" }
+
+x can be empty.
+
+4)
+"abjlkbjalkbjaljsbljbalb"
+
+Returns: { "abjlkbjalkbjaljs",  "bljbalb" }
+
+Make sure to maximize the length of x.

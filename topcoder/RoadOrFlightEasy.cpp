@@ -32,6 +32,7 @@ class RoadOrFlightEasy {
 public:
 	int minTime(int N, vector <int> rTime, vector <int> fTime, int K) {
 
+#if 0
 	int ret = 100000;
 	int tmp = 0;
 	vector <int> n(N);
@@ -58,6 +59,23 @@ public:
 	}while(next_permutation(all(n)));
 
 	return ret;
+#else
+	int ret = 0;
+	vector <int> reduce(N);
+	for(int i=0;i<N;i++){
+		reduce[i] = max(0,rTime[i]-fTime[i]);
+		cout << reduce[i] << endl;
+	}
+	sort(reduce.rbegin(),reduce.rend());
+
+	ret = accumulate(all(rTime),0);
+
+	for(int i=0;i<K;i++){
+		ret -= reduce[i];
+	}
+
+	return ret;
+#endif
 	}
 	
 // BEGIN CUT HERE

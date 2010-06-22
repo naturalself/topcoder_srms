@@ -1,0 +1,57 @@
+PROBLEM STATEMENT
+
+Your printer has been infected by a virus and is printing gibberish.  After staring at several printed pages for a while, you realize that it is printing every line inside-out.  In other words, the left half of each line is being printed starting in the middle of the page and proceeding out toward the left margin.  Similarly, the right half of each line is being printed starting at the right margin and proceeding in toward the middle of the page.
+For example, the line
+
+
+    THIS LINE IS GIBBERISH
+
+is being printed as
+
+    I ENIL SIHTHSIREBBIG S
+
+Your task is to unscramble a string line from its printed form back into its original order.
+You can assume that line contains an even number of characters.
+
+DEFINITION
+Class:InsideOut
+Method:unscramble
+Parameters:string
+Returns:string
+Method signature:string unscramble(string line)
+
+
+CONSTRAINTS
+-line contains between 2 and 50 characters, inclusive.
+-line contains an even number of characters.
+-line contains only uppercase letters ('A'-'Z') and spaces (' ').
+
+
+EXAMPLES
+
+0)
+"I ENIL SIHTHSIREBBIG S"
+
+Returns: "THIS LINE IS GIBBERISH"
+
+The example above.
+
+1)
+"LEVELKAYAK"
+
+Returns: "LEVELKAYAK"
+
+2)
+"H YPPAHSYADILO"
+
+Returns: "HAPPY HOLIDAYS"
+
+3)
+"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+Returns: "MLKJIHGFEDCBAZYXWVUTSRQPON"
+
+4)
+"RUT OWT SNEH HCNERF EERHTEGDIRTRAP A DNA  SEVODELT"
+
+Returns: "THREE FRENCH HENS TWO TURTLEDOVES  AND A PARTRIDGE"

@@ -1,0 +1,51 @@
+PROBLEM STATEMENT
+Peter has problems with pronouncing difficult words. In particular he can't pronounce words that contain three or more consecutive consonants (such as "street" or "first"). Furthermore he can't pronounce words that contain two or more consecutive vowels that are different (such as "goal" or "beauty"). He can pronounce words with two consecutive equal vowels though  (such as "need").
+
+
+
+Is this problem we consider the 'y' to be always a consonant, even in words like "any". So the vowels are 'a', 'e', 'i', 'o' and 'u'. You are given a vector <string> words. If Peter can pronounce all the words, return an empty string; otherwise return the first word he can't pronounce.
+
+DEFINITION
+Class:Pronunciation
+Method:canPronounce
+Parameters:vector <string>
+Returns:string
+Method signature:string canPronounce(vector <string> words)
+
+
+CONSTRAINTS
+-words contains between 1 and 50 elements, inclusive.
+-Each element of words has length between 1 and 50, inclusive.
+-Each element of words consists of upper- and lowercase letters.
+
+
+EXAMPLES
+
+0)
+{"All","of","these","are","not","difficult"}
+
+Returns: ""
+
+1)
+{"The","word","REALLY","is","really","hard"}
+
+Returns: "REALLY"
+
+2)
+{"TRiCKy"}
+
+Returns: "TRiCKy"
+
+Since the 'y' is a consonant, this word contain three consecutive consonants.
+
+3)
+{"irresistable","prerogative","uttermost","importance"}
+
+Returns: ""
+
+Peter can pronounce these words.
+
+4)
+{"Aa"}
+
+Returns: ""
