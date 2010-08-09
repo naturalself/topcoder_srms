@@ -1,0 +1,66 @@
+PROBLEM STATEMENT
+The king and the queen want to go on a vacation together. Since the queen seldom asks for anything, the king is more than willing to reschedule his meetings if they conflict with the vacation.
+
+The vacation must last for K contiguous days, and must lie between day 1 and day N inclusive. You are given vector <int> workingDays, where each element is a day on which the king has a meeting scheduled. The king will have at most one meeting scheduled per day. Return the minimum number of meetings that must be rescheduled so that the king and the queen can have a happy vacation.
+
+
+DEFINITION
+Class:VacationTime
+Method:bestSchedule
+Parameters:int, int, vector <int>
+Returns:int
+Method signature:int bestSchedule(int N, int K, vector <int> workingDays)
+
+
+CONSTRAINTS
+-N will be between 1 and 1000, inclusive.
+-K will be between 1 and N, inclusive.
+-workingDays will contain between 1 and 50 elements, inclusive.
+-Each element of workingDays will be between 1 and N, inclusive.
+-Elements of workingDays will be distinct.
+
+
+EXAMPLES
+
+0)
+3
+3
+{2}
+
+Returns: 1
+
+The vacation must last from day 1 to day 3. Hence, the meeting on day 2 must be rescheduled. 
+
+1)
+4
+3
+{3, 1, 2}
+
+Returns: 2
+
+There are two options for the vacation: days 1 to 3, or days 2 to 4. The first option would require 3 meetings to be rescheduled, and the second requires 2 meetings to be rescheduled. 
+
+2)
+5
+3
+{4, 1}
+
+Returns: 1
+
+Any 3 consecutive days have exactly one meeting within them. 
+
+3)
+9
+2
+{7, 4, 5, 6, 2}
+
+Returns: 0
+
+The king will not have to reschedule any meetings, but the queen will have to wait until day 8 for the vacation to start. 
+
+4)
+1000
+513
+{808, 459, 792, 863, 715, 70, 336, 731}
+
+Returns: 2

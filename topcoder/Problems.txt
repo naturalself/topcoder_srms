@@ -115,7 +115,19 @@ SRM 239 DIV2 Easy	Barbecue		completed.	DP. difficult.
 SRM 240 DIV2 Easy	Pronunciation		completed.
 
 SRM 241 DIV2 Easy	BlackjackWinner		completed.
+SRM 242 DIV2 Easy	TeamSplit		completed.
+SRM 243 DIV2 Easy	ComputationalComplexity
+SRM 244 DIV2 Easy	CircleDance		
+SRM 245 DIV2 Easy	Straights		completed.
+SRM 246 DIV2 Easy	CalcTest		completed.
+SRM 247 DIV2 Easy	TriangleType		completed.
+SRM 248 DIV2 Easy	SyllableCounter		completed.
 
+SRM 249 DIV2 Easy	ChatTranscript		completed.
+SRM 250 DIV2 Easy	ColorCode		completed.
+SRM 251 DIV2 Easy	Elections		completed.
+SRM 251 DIV2 Medium	SMS			
+SRM 252 DIV2 Easy	WarCry			
 
 
 ~
@@ -151,6 +163,9 @@ SRM 472 DIV2 Easy	ColorfulTilesEasy	completed.
 SRM 472 DIV2 Medium	PotatoGame		
 SRM 472 DIV2 Hard	RectangularIsland	
 
+SRM 474 DIV2 Easy	PalindromesCount	completed.
+SRM 475 DIV2 Easy	RabbitVoting		completed.
+SRM 475 DIV2 Medium	RabbitStepping		completed.
 
 
 

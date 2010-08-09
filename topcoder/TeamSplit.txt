@@ -1,0 +1,83 @@
+PROBLEM STATEMENT
+
+You want to split some people into two teams to play a game.
+In order to make the split, you first designate two
+team captains who take alternate turns selecting players for their teams.
+During each turn, the captain selects a single player for his team.
+Since each captain wants to make the strongest possible team, he will
+always select the best available player.
+The players have strengths, which are given in the vector <int>
+strengths, where higher numbers indicate better players. After all
+the players have been selected, the team strength
+is computed as the sum of the strengths of the players on that team.
+
+
+
+For example, if strengths={5,7,8,4,2}, then the first captain selects
+the player with strength 8 for his team, the second captain gets the player
+with strength 7, the first gets the one with strength 5, the second the
+one with strength 4, and the last one (strength 2) goes to the first team.
+The first team now has a total strength 8+5+2=15, and the second team has
+strength 7+4=11.
+
+
+
+Return the absolute strength difference between the two teams. For the
+example above you should return 4 (=15-11).
+
+
+
+DEFINITION
+Class:TeamSplit
+Method:difference
+Parameters:vector <int>
+Returns:int
+Method signature:int difference(vector <int> strengths)
+
+
+CONSTRAINTS
+-strengths will have between 1 and 50 elements, inclusive.
+-Each element of strengths will be between 1 and 1000, inclusive.
+
+
+EXAMPLES
+
+0)
+{5,7,8,4,2}
+
+Returns: 4
+
+The example from the problem statement.
+
+1)
+{100}
+
+Returns: 100
+
+A boring game with only one player. The second team has strength 0 (no players).
+
+2)
+{1000,1000}
+
+Returns: 0
+
+Both teams with equal strength.
+
+3)
+{9,8,7,6}
+
+Returns: 2
+
+4)
+{1,5,10,1,5,10}
+
+Returns: 0
+
+5)
+{824, 581,   9, 776, 149, 493, 531, 558, 995, 637,
+ 394, 526, 986, 548, 344, 509, 319,  37, 790, 491,
+ 479,  34, 776, 321, 258, 851, 711, 365, 763, 355,
+ 386, 877, 596,  96, 151, 166, 558, 109, 874, 959,
+ 845, 181, 976, 335, 930,  22,  78, 120, 907, 584}
+
+Returns: 478

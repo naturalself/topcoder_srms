@@ -1,0 +1,45 @@
+PROBLEM STATEMENT
+Short message service (SMS) has become a fast and quick method for communication. Most service providers place a restriction on the size of messages and hence it is important to write concise messages. Mobile phone users have found methods for compressing their messages such that the content of the messages remains unaltered. One such method is to take the original message and remove all interior vowels from each word. A vowel is interior if there is at least one consonant to the left and right (not necessarily adjacent) of the vowel in the same word.
+
+Given a string originalMessage with words separated by spaces return the compressed version of the message.
+
+
+DEFINITION
+Class:SMS
+Method:compress
+Parameters:string
+Returns:string
+Method signature:string compress(string originalMessage)
+
+
+NOTES
+-Vowels are 'a', 'e', 'i', 'o' and 'u' (in both upper and lower cases).
+
+
+CONSTRAINTS
+-originalMessage will contain between 0 and 50 characters inclusive.
+-originalMessage will contain only letters ('a'-'z', 'A'-'Z') and spaces.
+
+
+EXAMPLES
+
+0)
+"Lets meet tomorrow"
+
+Returns: "Lts mt tmrrw"
+
+"Lets" becomes "Lts". "meet" becomes "mt". "tomorrow" becomes "tmrrw".
+
+1)
+"Please come to my party"
+
+Returns: "Plse cme to my prty"
+
+Note that vowels on the end of words are not compressed.
+
+2)
+" I  like your   style "
+
+Returns: " I  lke yr   style "
+
+Note that 'y' is always considered a consonant in this problem.

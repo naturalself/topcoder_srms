@@ -1,0 +1,64 @@
+PROBLEM STATEMENT
+The king is trying to find new ways to generate revenue, and he is currently exploring tourism as one potential avenue. The kingdom is a group of islands, and the amount of revenue that can be generated depends on the combined total length of beaches on all the islands.
+
+You are given a vector <string> kingdom consisting of '.' or '#' characters. '#' represents a land mass, whereas '.' represents water. kingdom[i][j] represents a regular-hexagon shaped area with each side of unit length. Since the cells are hexagonal in shape, the odd-numbered rows (0-based) are 'shifted' towards the right. A beach is a segment which has water on one side, and land on the other.
+An example vector <string> and the corresponding image are given below to illustrate. The beaches are marked in red.
+
+{"..#.##",
+ ".##.#.",
+ "#.#..."}
+
+
+
+Return the combined total length of beaches on all the islands.
+
+DEFINITION
+Class:Islands
+Method:beachLength
+Parameters:vector <string>
+Returns:int
+Method signature:int beachLength(vector <string> kingdom)
+
+
+CONSTRAINTS
+-kingdom will contain between 1 and 50 elements, inclusive.
+-Each element of kingdom will contain between 1 and 50 characters, inclusive.
+-Each element of kingdom will contain the same number of characters.
+-Each character in kingdom will be either '.' or '#'.
+
+
+EXAMPLES
+
+0)
+{".#...#.."}
+
+Returns: 4
+
+There are two small islands with water on two sides of each island. 
+
+1)
+{"..#.##", 
+ ".##.#.", 
+ "#.#..."}
+
+Returns: 19
+
+The example in the problem statement. 
+
+2)
+{"#...#.....",
+ "##..#...#."}
+
+Returns: 15
+
+
+
+3)
+{"....#.",
+ ".#....",
+ "..#..#",
+ "####.."}
+
+Returns: 24
+
+
