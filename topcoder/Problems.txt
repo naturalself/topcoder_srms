@@ -128,6 +128,17 @@ SRM 250 DIV2 Easy	ColorCode		completed.
 SRM 251 DIV2 Easy	Elections		completed.
 SRM 251 DIV2 Medium	SMS			
 SRM 252 DIV2 Easy	WarCry			
+SRM 253 DIV2 Easy	ObjectPacking		completed.
+SRM 254 DIV2 Easy	BalancedGame		
+SRM 255 DIV2 Easy	SequenceOfNumbers	completed.
+SRM 256 DIV2 Easy	GridGenerator		completed.
+
+SRM 257 DIV2 Easy	SubstitutionCode	completed.
+SRM 258 DIV2 Easy	ClassScores		completed.
+SRM 259 DIV2 Easy	CompetitionStatistics	completed.
+SRM 260 DIV2 Easy	IsingModel		completed.
+SRM 261 DIV2 Easy	SpreadsheetColumn	see result.
+
 
 
 ~
@@ -168,5 +179,7 @@ SRM 475 DIV2 Easy	RabbitVoting		completed.
 SRM 475 DIV2 Medium	RabbitStepping		completed.
 
 
+SRM 479 DIV2 Easy	TheAirTripDivTwo	completed.
+SRM 480 DIV2 Easy	Cryptography		completed.
 
 36/50
