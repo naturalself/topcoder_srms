@@ -1,0 +1,46 @@
+PROBLEM STATEMENT
+You have a list of rectangles divided into groups. The index of a group is the sum of the areas of all the rectangles in the group. You are to determine the group with the biggest index.
+You are given a vector <string> rectangles. Each element of rectangles represents a single rectangle, and is formatted as "G L W", where G is the name of the group to which the rectangle belongs, L is the rectangle's length, and W is the rectangle's width. Return a string formatted as "G I", where G is the name of the group with the maximal index, and I is the index of that group with no leading zeroes. If there are multiple groups with the same maximal index, return the one whose name comes first alphabetically.
+
+DEFINITION
+Class:RectangleGroups
+Method:maximalIndexed
+Parameters:vector <string>
+Returns:string
+Method signature:string maximalIndexed(vector <string> rectangles)
+
+
+CONSTRAINTS
+-rectangles will contain between 1 and 50 elements, inclusive.
+-Each element of rectangles will be formatted as "G L W", where G is an uppercase letter ('A' - 'Z') and L and W are integers with no leading zeroes.
+-Each L and W will be between 1 and 1000, inclusive.
+
+
+EXAMPLES
+
+0)
+{"A 1 2", "A 3 3"}
+
+Returns: "A 11"
+
+There is only one group, and its index is 11 (1*2 + 3*3).
+
+1)
+{"A 1 2", "B 3 3", "A 2 1"}
+
+Returns: "B 9"
+
+The index of A is 4, and the index of B is 9.
+
+2)
+{"D 1 6", "F 2 3", "G 1 1", "G 5 1", "C 3 2"}
+
+Returns: "C 6"
+
+All groups have the same index, and C comes first alphabetically.
+
+3)
+{"S 2 54", "Y 34 65", "F 234 23", "D 84 127", "R 603 46",
+"S 36 192", "Y 76 32", "T 54 28", "S 22 22"}
+
+Returns: "R 27738"

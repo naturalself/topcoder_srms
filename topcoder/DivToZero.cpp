@@ -33,40 +33,33 @@ using namespace std;
 class DivToZero {
 public:
 	string lastTwo(int num, int factor) {
-	string ret;
+	string ret="";
+
+	stringstream ss;
+	string str;
 
 	int u_digit = num/100;
 	u_digit *=100;
-	debug(u_digit);
 	
-	debug(u_digit/factor);
+	if(u_digit%factor ==0){
+		ss << u_digit;
+		ss >> str;
+		ret = str[(int)str.size()-2];
+		ret += str[(int)str.size()-1];
+		return ret;
+	}
+
 	int near = u_digit/factor;
 	near *= factor;
 
-	if(near == num){
-		printf("return this!! end.\n");
-		stringstream ss;
-		ss << near;
-		string str;
-		ss >> str;
-		debug(str);
-		//ret = str[0] + str[1];
-		return ret;
-	}else{
+	if(near != num){
 		near += factor;
-		debug(near);
-		printf("this?\n");
 	}
 
-	debug(near);
-#if 0
-	int tmp=1;
-	while(tmp < u_digit){
-		tmp *= factor;
-	}
-	debug(tmp);
-#endif
-
+	ss << near;
+	ss >> str;
+	ret = str[(int)str.size()-2];
+	ret += str[(int)str.size()-1];
 	return ret;
 	}
 	

@@ -1,0 +1,204 @@
+PROBLEM STATEMENT
+
+You are installing square tiles on the floor of a rectangular room.
+Each tile measures 1 foot on a side, and the dimensions of the room are each an integer number of feet in length.
+The tiles are to be laid out in a regular grid pattern, with sides parallel to the sides of the room.
+
+
+
+In an empty room, this would be trivial.
+However, in this room 6-inch square decorative tiles have already been placed (each 1/4 the size of the larger tiles).
+You must cut the larger tiles in order to fill the remaining area of the floor.
+The larger tiles may not overlap the 1-foot by 1-foot grid lines.
+However, if you cut a piece off of one tile, you may use the remaining piece elsewhere (see the examples). Also, you may use these remaining pieces to compleate a bigger tile (for example, two 1 by 1 pieces can be used to cover a 1 by 2 slot).
+Each cut will be 6 inches in length, and you are to compute the minimum number of cuts you need to make.
+
+
+
+The placement of the decorative tiles will be given as a vector <string> layout,
+with each character representing a 6-inch square area of the floor.
+A lowercase 'x' indicates the location of a decorative tile, and a '.' (period) represents empty floor to be covered.
+Both dimensions of layout will be even.
+
+
+
+For example, given the following layout:
+
+
+
+
+    x..x....
+    x..xx...
+    ..xx....
+    ...x....
+    ......xx
+    ......xx
+
+
+
+you would tile the floor like this:
+
+
+
+
+    
+
+
+In addition to 7 whole tiles, you need two half pieces, which you can get by cutting one tile in half (two 6-inch cuts).
+You also need a single quarter piece and a single L-shaped piece, both of which you can get by making two more cuts in another tile.
+Therefore, this arrangement requires 4 cuts.
+Note that you cannot save 2 cuts by replacing the two half tiles in the upper-left with a single whole tile, because that tile would overlap the 1-foot grid lines (grey lines in the figure).
+
+
+DEFINITION
+Class:TileCutting
+Method:cuts
+Parameters:vector <string>
+Returns:int
+Method signature:int cuts(vector <string> layout)
+
+
+CONSTRAINTS
+-layout will contain between 2 and 50 elements, inclusive.
+-layout will contain an even number of elements.
+-Each element of layout will have the same length.
+-The length of each element of layout will be between 2 and 50, inclusive.
+-The length of each element of layout will be even.
+-Each element of layout will contain only the characters '.' and lowercase 'x'.
+
+
+EXAMPLES
+
+0)
+{ "..",
+  ".." }
+
+Returns: 0
+
+1)
+{ "x.",
+  ".." }
+
+Returns: 2
+
+2)
+{ ".x",
+  "xx" }
+
+Returns: 2
+
+3)
+{ "xxxx..xxxx",
+  "x..x..xx..",
+  "x..xxxxx..",
+  "xxxxxxxxxx" }
+
+Returns: 6
+
+
+
+You cannot just use three whole tiles, because two of them would overlap the 1-foot grid lines.  You must cut one into four quarter-tile pieces (four 6-inch cuts), and another into two half-tile pieces (two more 6-inch cuts) for a total of six cuts.
+
+4)
+{ "xxxxxx",
+  "x....x" }
+
+Returns: 3
+
+
+
+This arrangement requires two quarter-tile pieces and one half-tile piece, which you can get by making three cuts in one tile.
+
+5)
+{ "x..x....",
+  "x..xx...",
+  "..xx....",
+  "...x....",
+  "......xx",
+  "......xx" }
+
+Returns: 4
+
+This is the example from the problem statement.
+
+6)
+{ "x..xx.x..x.xx..x.xx.",
+  "..x..x..x.x..xx...x.",
+  ".xx...x...x...x..x..",
+  ".xx...x.x.x...x..xx.",
+  ".x..x...x.....x...x.",
+  ".x.x.x..x..x..x..x.x",
+  "...x.x.x.x.x.x.x...x",
+  ".x..x..x...x..x...x.",
+  "...x.x.x..x.x.x.....",
+  "...x.x.x..x.x.xxx.x.",
+  "xx.xx.xx.x.x.x.x..x.",
+  ".x..xxx...x.xx...x.x",
+  "xx..x.x...x.x.x.x..x",
+  ".xx..x.xx.xxxxx...xx",
+  "x....x.x...x...x.x..",
+  ".x.xx.x..x.x.xxx.x..",
+  "...xx.xxx.....xx.xxx",
+  ".xx..x..xx.x...x.xx.",
+  "x.x...x.x.xx.x..x.xx",
+  ".....xx.x.......xx.x",
+  "x...x.xx.x..x....x..",
+  ".x..xxx.....x.x.x.xx" }
+
+
+Returns: 121
+
+7)
+{ "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  "..................................................",
+  ".................................................." }
+
+
+Returns: 0

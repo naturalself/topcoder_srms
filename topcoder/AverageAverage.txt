@@ -1,0 +1,44 @@
+PROBLEM STATEMENT
+Given a vector <int> numList, for each non-empty subset of numList, compute the average of its elements, then return the average of those averages.
+
+
+DEFINITION
+Class:AverageAverage
+Method:average
+Parameters:vector <int>
+Returns:double
+Method signature:double average(vector <int> numList)
+
+
+NOTES
+-The returned value must have an absolute or relative error less than 1e-9.
+
+
+CONSTRAINTS
+-numList will contain between 1 and 8 elements, inclusive.
+-All elements of numList will be between -1000 and 1000, inclusive.
+-All elements of numList will be distinct.
+
+
+EXAMPLES
+
+0)
+{1,2,3}
+
+Returns: 2.0
+
+The non-empty subsets of numList are: {1}, {2}, {3}, {1,2}, {1,3}, {2,3}, and {1,2,3}, whose respective averages are: 1, 2, 3, 1.5, 2, 2.5, and 2.  The average of the averages is 2.
+
+1)
+{42}
+
+Returns: 42.0
+
+There is only one non-empty subset to consider.
+
+2)
+{3,1,4,15,9}
+
+Returns: 6.4
+
+

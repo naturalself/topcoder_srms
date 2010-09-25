@@ -1,0 +1,41 @@
+PROBLEM STATEMENT
+A hallway is filled with lockers numbered 1 through N, initially all closed.  Out of boredom, Dave and Earl decide to open all the lockers.  They make multiple passes through the hallway, each beginning at locker 1.  On the first pass, they open the first unopened locker, and every second unopened locker thereafter.  On the second pass, they open the first unopened locker, and every third unopened locker thereafter.  In general, on the nth pass, they open the first unopened locker, and every (n+1)th unopened locker thereafter.
+
+For example, with 9 lockers, on the first pass they open 1, 3, 5, 7, and 9, leaving 2, 4, 6, and 8.  On the second pass they open 2 and 8, leaving 4 and 6.  On the third pass they open locker 4, and on the final pass locker 6.
+
+You will be given N, the number of lockers.  Return the number of the locker opened last.
+
+DEFINITION
+Class:LockersDivTwo
+Method:lastOpened
+Parameters:int
+Returns:int
+Method signature:int lastOpened(int N)
+
+
+CONSTRAINTS
+-N will be between 1 and 10000, inclusive.
+
+
+EXAMPLES
+
+0)
+9
+
+Returns: 6
+
+The example from the problem statement.
+
+1)
+42
+
+Returns: 42
+
+
+
+2)
+314
+
+Returns: 282
+
+

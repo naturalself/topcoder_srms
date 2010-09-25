@@ -1,0 +1,69 @@
+PROBLEM STATEMENT
+You are visiting a market that is composed of many stores distributed in a circular shape. The stores are indexed from 0 to n-1 in clockwise order. You want to purchase exactly one item from each of the stores. You start at store 0 at time = 0 seconds, and will move between the stores in clockwise order. If you arrive at store i before openTime[i] or after closeTime[i], that means the store is closed and you cannot make a purchase.  If you arrive at a time between openTime[i] and closeTime[i], inclusive, and you have not yet purchased your one desired item from that store, then you must purchase it immediately (it doesn't take time to make a purchase).  In both cases, you must then proceed to the next store immediately. Traveling clockwise between two consecutive stores requires travelTime seconds. You will leave the market once it is no longer possible for you to make any new purchase.
+
+Return the total number of purchases you will make.
+
+DEFINITION
+Class:CircleMarket
+Method:makePurchases
+Parameters:vector <int>, vector <int>, int
+Returns:int
+Method signature:int makePurchases(vector <int> openTime, vector <int> closeTime, int travelTime)
+
+
+CONSTRAINTS
+-openTime will contain between 2 and 50 elements, inclusive.
+-closeTime will contain the same number of elements as openTime.
+-travelTime will be between 1 and 1000000, inclusive.
+-Each element of openTime will be between 0 and 999999, inclusive.
+-Element i of closeTime will be between openTime[i]+1 and 1000000, inclusive.
+
+
+EXAMPLES
+
+0)
+{0, 0, 0}
+{100, 100, 100}
+3
+
+Returns: 3
+
+
+
+1)
+{45, 45, 0}
+{50, 50, 20}
+15
+
+Returns: 1
+
+The first time stores 0 and 1 are visited, they will be closed. Store 2 can only be visited after 30 seconds which is after its closing time. Store 0 will be open the next time it is visited at 45 seconds. The second time store 1 is visited the time will be 60 seconds and it will be closed.
+
+
+
+2)
+{1000, 1000}
+{1010, 1010}
+1
+
+Returns: 2
+
+The stores will be closed for the first 500 visits. The 501-th time you visit each of the stores, they will finally be open.
+
+3)
+{999999, 2, 4}
+{1000000, 22, 44}
+2
+
+Returns: 2
+
+
+
+4)
+{363, 237, 382, 232, 392, 3829, 99999, 12}
+{365, 1239, 2384, 234, 394, 3831, 100001, 15}
+3
+
+Returns: 3
+
+

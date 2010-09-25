@@ -1,0 +1,59 @@
+PROBLEM STATEMENT
+Run-length encoding is a simple compression technique which compresses strings of letters by replacing repeated consecutive letters (called runs) by the number of occurrences of the letter, followed by that letter. For example, AAAABBBCDDE compresses to 4A3BC2DE. The number 1 may be omitted in runs consisting of a single letter, as with letters 'C' and 'E' in the previous example.
+
+Any string consisting of uppercase letters where each letter is optionally preceded by a positive integer is called a properly encoded string. Given a properly encoded string text, return the decoded string. If the decoded string would be more than 50 characters long, return "TOO LONG" (without the quotes).
+
+
+DEFINITION
+Class:RunLengthEncoding
+Method:decode
+Parameters:string
+Returns:string
+Method signature:string decode(string text)
+
+
+CONSTRAINTS
+-text will contain between 0 and 50 characters ('0'-'9', 'A'-'Z'), inclusive.
+-text will be a properly encoded string: all numbers contained will be positive integers with no leading zeros and each number will precede a letter.
+
+
+EXAMPLES
+
+0)
+"4A3BC2DE"
+
+Returns: "AAAABBBCDDE"
+
+This is the example in the problem statement.
+
+1)
+"1A1B1C1D1E"
+
+Returns: "ABCDE"
+
+1's can be omitted, but also may appear in the input. This input is valid, although we'd doubled the size of the string by "compressing" it.
+
+
+2)
+"1A3A5A4BCCCC"
+
+Returns: "AAAAAAAAABBBBCCCC"
+
+Although it isn't the best possible, this is also a properly encoded string.
+
+3)
+"50A"
+
+Returns: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+
+4)
+"21Z13S9A8M"
+
+Returns: "TOO LONG"
+
+5)
+"123456789012345678901234567890B"
+
+Returns: "TOO LONG"
+
+The decoded string would be more than 10^30 characters long, which is more than 50.
