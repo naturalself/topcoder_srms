@@ -1,7 +1,7 @@
 // BEGIN CUT HERE
 
 // END CUT HERE
-#line 5 "CrossWord.cpp"
+#line 5 "MooingCows.cpp"
 #include <cstdio>
 #include <cstdlib>
 #include <cmath>
@@ -30,10 +30,33 @@ using namespace std;
 #define all(a) a.begin(), a.end() 
 #define pb push_back
 
-class CrossWord {
+class MooingCows {
 public:
-	int countWords(vector <string> board, int size) {
+	int dissatisfaction(vector <string> farml) {
+	int ret=INT_MAX;
+	vector<int> x;
+	vector<int> y;
 
+	forv(i,farml){
+		fors(j,farml[i]){
+			if(farml[i][j]=='C'){
+				x.pb(i);
+				y.pb(j);
+			}
+		}
+	}
+	
+	forv(i,x){
+		int dis = 0;
+		forv(j,x){
+			if(i!=j){
+				dis += (int)pow((double)(x[i]-x[j]),2.0) + (int)pow((double)(y[i]-y[j]),2.0);
+			}
+		}
+		ret = min(ret,dis);
+	}
+
+	return ret;
 	}
 };
 
@@ -108,107 +131,70 @@ namespace moj_harness {
 	int run_test_case(int casenum) {
 		switch (casenum) {
 		case 0: {
-			string board[]            = {"X....X",
- "X.XX.X",
- "...X..",
- "X.XX.X",
- "..X..."};
-			int size                  = 3;
-			int expected__            = 2;
+			string farmland[]         = {"C..",
+ ".C.",
+ ".C."};
+			int expected__            = 3;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = MooingCows().dissatisfaction(vector <string>(farmland, farmland + (sizeof farmland / sizeof farmland[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 1: {
-			string board[]            = {"...X...",
- ".X...X.",
- "..X.X..",
- "X..X..X",
- "..X.X..",
- ".X...X.",
- "...X..."};
-			int size                  = 3;
-			int expected__            = 6;
+			string farmland[]         = {"CCCC",
+ "CCCC",
+ "CCCC"};
+			int expected__            = 26;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = MooingCows().dissatisfaction(vector <string>(farmland, farmland + (sizeof farmland / sizeof farmland[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 2: {
-			string board[]            = {".....X....X....",
- ".....X....X....",
- "..........X....",
- "....X....X.....",
- "...X....X....XX",
- "XXX...X....X...",
- ".....X....X....",
- ".......X.......",
- "....X....X.....",
- "...X....X...XXX",
- "XX....X....X...",
- ".....X....X....",
- "....X..........",
- "....X....X.....",
- "....X....X....."}
-;
-			int size                  = 5;
-			int expected__            = 8;
+			string farmland[]         = {"C"};
+			int expected__            = 0;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = MooingCows().dissatisfaction(vector <string>(farmland, farmland + (sizeof farmland / sizeof farmland[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 3: {
-			string board[]            = {"...",
- "...",
- "..."};
-			int size                  = 50;
-			int expected__            = 0;
+			string farmland[]         = {"CCC....",
+ "C......",
+ "....C.C",
+ ".C.CC..",
+ "C......"};
+			int expected__            = 81;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
-			return verify_case(casenum, expected__, received__, clock()-start__);
-		}
-		case 4: {
-			string board[]            = {"....",
- "....",
- "...."};
-			int size                  = 3;
-			int expected__            = 0;
-
-			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = MooingCows().dissatisfaction(vector <string>(farmland, farmland + (sizeof farmland / sizeof farmland[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 
 		// custom cases
 
-/*      case 5: {
-			string board[]            = ;
-			int size                  = ;
+/*      case 4: {
+			string farmland[]         = ;
 			int expected__            = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = MooingCows().dissatisfaction(vector <string>(farmland, farmland + (sizeof farmland / sizeof farmland[0])));
+			return verify_case(casenum, expected__, received__, clock()-start__);
+		}*/
+/*      case 5: {
+			string farmland[]         = ;
+			int expected__            = ;
+
+			clock_t start__           = clock();
+			int received__            = MooingCows().dissatisfaction(vector <string>(farmland, farmland + (sizeof farmland / sizeof farmland[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 /*      case 6: {
-			string board[]            = ;
-			int size                  = ;
+			string farmland[]         = ;
 			int expected__            = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
-			return verify_case(casenum, expected__, received__, clock()-start__);
-		}*/
-/*      case 7: {
-			string board[]            = ;
-			int size                  = ;
-			int expected__            = ;
-
-			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = MooingCows().dissatisfaction(vector <string>(farmland, farmland + (sizeof farmland / sizeof farmland[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 		default:

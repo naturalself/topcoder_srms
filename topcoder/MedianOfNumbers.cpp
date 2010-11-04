@@ -1,7 +1,7 @@
 // BEGIN CUT HERE
 
 // END CUT HERE
-#line 5 "CrossWord.cpp"
+#line 5 "MedianOfNumbers.cpp"
 #include <cstdio>
 #include <cstdlib>
 #include <cmath>
@@ -30,10 +30,14 @@ using namespace std;
 #define all(a) a.begin(), a.end() 
 #define pb push_back
 
-class CrossWord {
+class MedianOfNumbers {
 public:
-	int countWords(vector <string> board, int size) {
-
+	int findMedian(vector <int> numbers) {
+	int n=(int)numbers.size();
+	if(n%2==0)	return -1;
+	sort(all(numbers));
+	
+	return numbers[n/2];
 	}
 };
 
@@ -108,107 +112,78 @@ namespace moj_harness {
 	int run_test_case(int casenum) {
 		switch (casenum) {
 		case 0: {
-			string board[]            = {"X....X",
- "X.XX.X",
- "...X..",
- "X.XX.X",
- "..X..."};
-			int size                  = 3;
-			int expected__            = 2;
+			int numbers[]             = {1, 4, 2, 5, 7};
+			int expected__            = 4;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = MedianOfNumbers().findMedian(vector <int>(numbers, numbers + (sizeof numbers / sizeof numbers[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 1: {
-			string board[]            = {"...X...",
- ".X...X.",
- "..X.X..",
- "X..X..X",
- "..X.X..",
- ".X...X.",
- "...X..."};
-			int size                  = 3;
-			int expected__            = 6;
+			int numbers[]             = {1, 5, 8, 3};
+			int expected__            = -1;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = MedianOfNumbers().findMedian(vector <int>(numbers, numbers + (sizeof numbers / sizeof numbers[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 2: {
-			string board[]            = {".....X....X....",
- ".....X....X....",
- "..........X....",
- "....X....X.....",
- "...X....X....XX",
- "XXX...X....X...",
- ".....X....X....",
- ".......X.......",
- "....X....X.....",
- "...X....X...XXX",
- "XX....X....X...",
- ".....X....X....",
- "....X..........",
- "....X....X.....",
- "....X....X....."}
-;
-			int size                  = 5;
-			int expected__            = 8;
+			int numbers[]             = {7};
+			int expected__            = 7;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = MedianOfNumbers().findMedian(vector <int>(numbers, numbers + (sizeof numbers / sizeof numbers[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 3: {
-			string board[]            = {"...",
- "...",
- "..."};
-			int size                  = 50;
-			int expected__            = 0;
+			int numbers[]             = {7, 12};
+			int expected__            = -1;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = MedianOfNumbers().findMedian(vector <int>(numbers, numbers + (sizeof numbers / sizeof numbers[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 4: {
-			string board[]            = {"....",
- "....",
- "...."};
-			int size                  = 3;
-			int expected__            = 0;
+			int numbers[]             = {66, 53, 47, 86, 18, 21, 97, 92, 15};
+			int expected__            = 53;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = MedianOfNumbers().findMedian(vector <int>(numbers, numbers + (sizeof numbers / sizeof numbers[0])));
+			return verify_case(casenum, expected__, received__, clock()-start__);
+		}
+		case 5: {
+			int numbers[]             = {32, 54, 27, 4, 69, 96, 73, 1, 100, 15, 21};
+			int expected__            = 32;
+
+			clock_t start__           = clock();
+			int received__            = MedianOfNumbers().findMedian(vector <int>(numbers, numbers + (sizeof numbers / sizeof numbers[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 
 		// custom cases
 
-/*      case 5: {
-			string board[]            = ;
-			int size                  = ;
-			int expected__            = ;
-
-			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
-			return verify_case(casenum, expected__, received__, clock()-start__);
-		}*/
 /*      case 6: {
-			string board[]            = ;
-			int size                  = ;
+			int numbers[]             = ;
 			int expected__            = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = MedianOfNumbers().findMedian(vector <int>(numbers, numbers + (sizeof numbers / sizeof numbers[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 /*      case 7: {
-			string board[]            = ;
-			int size                  = ;
+			int numbers[]             = ;
 			int expected__            = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = MedianOfNumbers().findMedian(vector <int>(numbers, numbers + (sizeof numbers / sizeof numbers[0])));
+			return verify_case(casenum, expected__, received__, clock()-start__);
+		}*/
+/*      case 8: {
+			int numbers[]             = ;
+			int expected__            = ;
+
+			clock_t start__           = clock();
+			int received__            = MedianOfNumbers().findMedian(vector <int>(numbers, numbers + (sizeof numbers / sizeof numbers[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 		default:

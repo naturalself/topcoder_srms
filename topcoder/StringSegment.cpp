@@ -1,7 +1,7 @@
 // BEGIN CUT HERE
 
 // END CUT HERE
-#line 5 "CrossWord.cpp"
+#line 5 "StringSegment.cpp"
 #include <cstdio>
 #include <cstdlib>
 #include <cmath>
@@ -30,10 +30,25 @@ using namespace std;
 #define all(a) a.begin(), a.end() 
 #define pb push_back
 
-class CrossWord {
+class StringSegment {
 public:
-	int countWords(vector <string> board, int size) {
+	double average(string s) {
+	double ret=0.0;
+	vector<int> vlen;
+	int len=1;
 
+	for(int i=0;i<(int)s.size()-1;i++){
+		if(s[i]!=s[i+1]){
+			vlen.pb(len);
+			len=1;
+		}else{
+			len++;
+		}
+	}
+	vlen.pb(len);
+
+	ret = (double)accumulate(all(vlen),0)/(double)vlen.size();
+	return ret;
 	}
 };
 
@@ -68,7 +83,10 @@ namespace moj_harness {
 		}
 	}
 	
-	int verify_case(int casenum, const int &expected, const int &received, clock_t elapsed) { 
+	static const double MAX_DOUBLE_ERROR = 1e-9; static bool topcoder_fequ(double expected, double result) { if (isnan(expected)) { return isnan(result); } else if (isinf(expected)) { if (expected > 0) { return result > 0 && isinf(result); } else { return result < 0 && isinf(result); } } else if (isnan(result) || isinf(result)) { return false; } else if (fabs(result - expected) < MAX_DOUBLE_ERROR) { return true; } else { double mmin = min(expected * (1.0 - MAX_DOUBLE_ERROR), expected * (1.0 + MAX_DOUBLE_ERROR)); double mmax = max(expected * (1.0 - MAX_DOUBLE_ERROR), expected * (1.0 + MAX_DOUBLE_ERROR)); return result > mmin && result < mmax; } }
+	double moj_relative_error(double expected, double result) { if (isnan(expected) || isinf(expected) || isnan(result) || isinf(result) || expected == 0) return 0; return fabs(result-expected) / fabs(expected); }
+	
+	int verify_case(int casenum, const double &expected, const double &received, clock_t elapsed) { 
 		cerr << "Example " << casenum << "... "; 
 		
 		string verdict;
@@ -80,8 +98,13 @@ namespace moj_harness {
 			info.push_back(buf);
 		}
 		
-		if (expected == received) {
+		if (topcoder_fequ(expected, received)) {
 			verdict = "PASSED";
+			double rerr = moj_relative_error(expected, received); 
+			if (rerr > 0) {
+				sprintf(buf, "relative error %.3e", rerr);
+				info.push_back(buf);
+			}
 		} else {
 			verdict = "FAILED";
 		}
@@ -108,107 +131,54 @@ namespace moj_harness {
 	int run_test_case(int casenum) {
 		switch (casenum) {
 		case 0: {
-			string board[]            = {"X....X",
- "X.XX.X",
- "...X..",
- "X.XX.X",
- "..X..."};
-			int size                  = 3;
-			int expected__            = 2;
+			string s                  = "aaabbaaac";
+			double expected__         = 2.25;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			double received__         = StringSegment().average(s);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 1: {
-			string board[]            = {"...X...",
- ".X...X.",
- "..X.X..",
- "X..X..X",
- "..X.X..",
- ".X...X.",
- "...X..."};
-			int size                  = 3;
-			int expected__            = 6;
+			string s                  = "aabbccdd";
+			double expected__         = 2.0;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			double received__         = StringSegment().average(s);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 2: {
-			string board[]            = {".....X....X....",
- ".....X....X....",
- "..........X....",
- "....X....X.....",
- "...X....X....XX",
- "XXX...X....X...",
- ".....X....X....",
- ".......X.......",
- "....X....X.....",
- "...X....X...XXX",
- "XX....X....X...",
- ".....X....X....",
- "....X..........",
- "....X....X.....",
- "....X....X....."}
-;
-			int size                  = 5;
-			int expected__            = 8;
+			string s                  = "abba";
+			double expected__         = 1.3333333333333333;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
-			return verify_case(casenum, expected__, received__, clock()-start__);
-		}
-		case 3: {
-			string board[]            = {"...",
- "...",
- "..."};
-			int size                  = 50;
-			int expected__            = 0;
-
-			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
-			return verify_case(casenum, expected__, received__, clock()-start__);
-		}
-		case 4: {
-			string board[]            = {"....",
- "....",
- "...."};
-			int size                  = 3;
-			int expected__            = 0;
-
-			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			double received__         = StringSegment().average(s);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 
 		// custom cases
 
+/*      case 3: {
+			string s                  = ;
+			double expected__         = ;
+
+			clock_t start__           = clock();
+			double received__         = StringSegment().average(s);
+			return verify_case(casenum, expected__, received__, clock()-start__);
+		}*/
+/*      case 4: {
+			string s                  = ;
+			double expected__         = ;
+
+			clock_t start__           = clock();
+			double received__         = StringSegment().average(s);
+			return verify_case(casenum, expected__, received__, clock()-start__);
+		}*/
 /*      case 5: {
-			string board[]            = ;
-			int size                  = ;
-			int expected__            = ;
+			string s                  = ;
+			double expected__         = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
-			return verify_case(casenum, expected__, received__, clock()-start__);
-		}*/
-/*      case 6: {
-			string board[]            = ;
-			int size                  = ;
-			int expected__            = ;
-
-			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
-			return verify_case(casenum, expected__, received__, clock()-start__);
-		}*/
-/*      case 7: {
-			string board[]            = ;
-			int size                  = ;
-			int expected__            = ;
-
-			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			double received__         = StringSegment().average(s);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 		default:

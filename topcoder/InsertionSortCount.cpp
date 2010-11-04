@@ -1,7 +1,7 @@
 // BEGIN CUT HERE
 
 // END CUT HERE
-#line 5 "Truckloads.cpp"
+#line 5 "InsertionSortCount.cpp"
 #include <cstdio>
 #include <cstdlib>
 #include <cmath>
@@ -30,32 +30,22 @@ using namespace std;
 #define all(a) a.begin(), a.end() 
 #define pb push_back
 
-class Truckloads {
+class InsertionSortCount {
 public:
-	int numTrucks(int numC, int load) {
+	int countMoves(vector <int> A) {
+	int n = A.size();
 	int ret=0;
-	
-	ret += divpile(numC,load);
 
-	return ret;
-	}
-private:
-	int divpile(int sz,int lo){
-	int r=0;
-	
-	if(sz <= lo){
-		return 1;
-	}else{
-		if(sz%2 == 0){
-			r += divpile(sz/2,lo);
-			r += divpile(sz/2,lo);
-		}else{
-			r += divpile(sz/2,lo);
-			r += divpile(sz/2+1,lo);
+	for(int i=n-1;i>=1;i--){
+		for(int j=i-1;j>=0;j--){
+			if(A[i]<=A[j]){
+				swap(A[i],A[j]);
+				ret++;
+			}
 		}
 	}
-
-	return r;
+	
+	return ret;
 	}
 	
 // BEGIN CUT HERE
@@ -64,9 +54,9 @@ private:
 	private:
 	template <typename T> string print_array(const vector<T> &V) { ostringstream os; os << "{ "; for (typename vector<T>::const_iterator iter = V.begin(); iter != V.end(); ++iter) os << '\"' << *iter << "\","; os << " }"; return os.str(); }
 	void verify_case(int Case, const int &Expected, const int &Received) { cerr << "Test Case #" << Case << "..."; if (Expected == Received) cerr << "PASSED" << endl; else { cerr << "FAILED" << endl; cerr << "\tExpected: \"" << Expected << '\"' << endl; cerr << "\tReceived: \"" << Received << '\"' << endl; } }
-	void test_case_0() { int Arg0 = 14; int Arg1 = 3; int Arg2 = 6; verify_case(0, Arg2, numTrucks(Arg0, Arg1)); }
-	void test_case_1() { int Arg0 = 15; int Arg1 = 1; int Arg2 = 15; verify_case(1, Arg2, numTrucks(Arg0, Arg1)); }
-	void test_case_2() { int Arg0 = 1024; int Arg1 = 5; int Arg2 = 256; verify_case(2, Arg2, numTrucks(Arg0, Arg1)); }
+	void test_case_0() { int Arr0[] = {20,40,30,10}; vector <int> Arg0(Arr0, Arr0 + (sizeof(Arr0) / sizeof(Arr0[0]))); int Arg1 = 4; verify_case(0, Arg1, countMoves(Arg0)); }
+	void test_case_1() { int Arr0[] = {-1,1,0}; vector <int> Arg0(Arr0, Arr0 + (sizeof(Arr0) / sizeof(Arr0[0]))); int Arg1 = 1; verify_case(1, Arg1, countMoves(Arg0)); }
+	void test_case_2() { int Arr0[] = {-1000,0,1000}; vector <int> Arg0(Arr0, Arr0 + (sizeof(Arr0) / sizeof(Arr0[0]))); int Arg1 = 0; verify_case(2, Arg1, countMoves(Arg0)); }
 
 // END CUT HERE
 
@@ -74,7 +64,7 @@ private:
 
 // BEGIN CUT HERE
 int main() {
-	Truckloads ___test;
+	InsertionSortCount ___test;
 	___test.run_test(-1);
 }
 // END CUT HERE

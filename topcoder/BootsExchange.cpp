@@ -1,7 +1,7 @@
 // BEGIN CUT HERE
 
 // END CUT HERE
-#line 5 "CrossWord.cpp"
+#line 5 "BootsExchange.cpp"
 #include <cstdio>
 #include <cstdlib>
 #include <cmath>
@@ -30,10 +30,29 @@ using namespace std;
 #define all(a) a.begin(), a.end() 
 #define pb push_back
 
-class CrossWord {
+class BootsExchange {
 public:
-	int countWords(vector <string> board, int size) {
+	int leastAmount(vector <int> left, vector <int> right) {
+	int n = (int)left.size();
+	int ret=n;
+	bool memo[n];
 
+	memset(memo,false,sizeof(memo));
+
+	sort(all(left));
+	sort(all(right));
+
+	forv(i,left){
+		forv(j,right){
+			if(left[i]==right[j] && memo[j]!=true){
+				ret--;
+				memo[j]=true;
+				break;
+			}
+		}
+	}
+
+	return ret;
 	}
 };
 
@@ -108,107 +127,60 @@ namespace moj_harness {
 	int run_test_case(int casenum) {
 		switch (casenum) {
 		case 0: {
-			string board[]            = {"X....X",
- "X.XX.X",
- "...X..",
- "X.XX.X",
- "..X..."};
-			int size                  = 3;
-			int expected__            = 2;
+			int left[]                = {1, 3, 1};
+			int right[]               = {2, 1, 3};
+			int expected__            = 1;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = BootsExchange().leastAmount(vector <int>(left, left + (sizeof left / sizeof left[0])), vector <int>(right, right + (sizeof right / sizeof right[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 1: {
-			string board[]            = {"...X...",
- ".X...X.",
- "..X.X..",
- "X..X..X",
- "..X.X..",
- ".X...X.",
- "...X..."};
-			int size                  = 3;
-			int expected__            = 6;
+			int left[]                = {1, 3};
+			int right[]               = {2, 2};
+			int expected__            = 2;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = BootsExchange().leastAmount(vector <int>(left, left + (sizeof left / sizeof left[0])), vector <int>(right, right + (sizeof right / sizeof right[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 2: {
-			string board[]            = {".....X....X....",
- ".....X....X....",
- "..........X....",
- "....X....X.....",
- "...X....X....XX",
- "XXX...X....X...",
- ".....X....X....",
- ".......X.......",
- "....X....X.....",
- "...X....X...XXX",
- "XX....X....X...",
- ".....X....X....",
- "....X..........",
- "....X....X.....",
- "....X....X....."}
-;
-			int size                  = 5;
-			int expected__            = 8;
-
-			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
-			return verify_case(casenum, expected__, received__, clock()-start__);
-		}
-		case 3: {
-			string board[]            = {"...",
- "...",
- "..."};
-			int size                  = 50;
+			int left[]                = {1, 2, 3, 4, 5, 6, 7};
+			int right[]               = {2, 4, 6, 1, 3, 7, 5};
 			int expected__            = 0;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
-			return verify_case(casenum, expected__, received__, clock()-start__);
-		}
-		case 4: {
-			string board[]            = {"....",
- "....",
- "...."};
-			int size                  = 3;
-			int expected__            = 0;
-
-			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = BootsExchange().leastAmount(vector <int>(left, left + (sizeof left / sizeof left[0])), vector <int>(right, right + (sizeof right / sizeof right[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 
 		// custom cases
 
+/*      case 3: {
+			int left[]                = ;
+			int right[]               = ;
+			int expected__            = ;
+
+			clock_t start__           = clock();
+			int received__            = BootsExchange().leastAmount(vector <int>(left, left + (sizeof left / sizeof left[0])), vector <int>(right, right + (sizeof right / sizeof right[0])));
+			return verify_case(casenum, expected__, received__, clock()-start__);
+		}*/
+/*      case 4: {
+			int left[]                = ;
+			int right[]               = ;
+			int expected__            = ;
+
+			clock_t start__           = clock();
+			int received__            = BootsExchange().leastAmount(vector <int>(left, left + (sizeof left / sizeof left[0])), vector <int>(right, right + (sizeof right / sizeof right[0])));
+			return verify_case(casenum, expected__, received__, clock()-start__);
+		}*/
 /*      case 5: {
-			string board[]            = ;
-			int size                  = ;
+			int left[]                = ;
+			int right[]               = ;
 			int expected__            = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
-			return verify_case(casenum, expected__, received__, clock()-start__);
-		}*/
-/*      case 6: {
-			string board[]            = ;
-			int size                  = ;
-			int expected__            = ;
-
-			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
-			return verify_case(casenum, expected__, received__, clock()-start__);
-		}*/
-/*      case 7: {
-			string board[]            = ;
-			int size                  = ;
-			int expected__            = ;
-
-			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = BootsExchange().leastAmount(vector <int>(left, left + (sizeof left / sizeof left[0])), vector <int>(right, right + (sizeof right / sizeof right[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 		default:

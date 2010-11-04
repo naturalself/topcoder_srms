@@ -1,7 +1,7 @@
 // BEGIN CUT HERE
 
 // END CUT HERE
-#line 5 "CrossWord.cpp"
+#line 5 "KDoubleSubstrings.cpp"
 #include <cstdio>
 #include <cstdlib>
 #include <cmath>
@@ -30,10 +30,13 @@ using namespace std;
 #define all(a) a.begin(), a.end() 
 #define pb push_back
 
-class CrossWord {
+class KDoubleSubstrings {
 public:
-	int countWords(vector <string> board, int size) {
+	int howMuch(vector <string> str, int k) {
+	int ret=0;
 
+
+	return ret;
 	}
 };
 
@@ -108,107 +111,78 @@ namespace moj_harness {
 	int run_test_case(int casenum) {
 		switch (casenum) {
 		case 0: {
-			string board[]            = {"X....X",
- "X.XX.X",
- "...X..",
- "X.XX.X",
- "..X..."};
-			int size                  = 3;
-			int expected__            = 2;
+			string str[]              = {"aa"};
+			int k                     = 0;
+			int expected__            = 1;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = KDoubleSubstrings().howMuch(vector <string>(str, str + (sizeof str / sizeof str[0])), k);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 1: {
-			string board[]            = {"...X...",
- ".X...X.",
- "..X.X..",
- "X..X..X",
- "..X.X..",
- ".X...X.",
- "...X..."};
-			int size                  = 3;
-			int expected__            = 6;
+			string str[]              = {"aaaa"};
+			int k                     = 0;
+			int expected__            = 4;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = KDoubleSubstrings().howMuch(vector <string>(str, str + (sizeof str / sizeof str[0])), k);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 2: {
-			string board[]            = {".....X....X....",
- ".....X....X....",
- "..........X....",
- "....X....X.....",
- "...X....X....XX",
- "XXX...X....X...",
- ".....X....X....",
- ".......X.......",
- "....X....X.....",
- "...X....X...XXX",
- "XX....X....X...",
- ".....X....X....",
- "....X..........",
- "....X....X.....",
- "....X....X....."}
-;
-			int size                  = 5;
-			int expected__            = 8;
+			string str[]              = {"contest", "kontest"};
+			int k                     = 1;
+			int expected__            = 14;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = KDoubleSubstrings().howMuch(vector <string>(str, str + (sizeof str / sizeof str[0])), k);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 3: {
-			string board[]            = {"...",
- "...",
- "..."};
-			int size                  = 50;
-			int expected__            = 0;
+			string str[]              = {"abacaba", "d", "abacaba"};
+			int k                     = 1;
+			int expected__            = 34;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = KDoubleSubstrings().howMuch(vector <string>(str, str + (sizeof str / sizeof str[0])), k);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 4: {
-			string board[]            = {"....",
- "....",
- "...."};
-			int size                  = 3;
-			int expected__            = 0;
+			string str[]              = {"areyouready"};
+			int k                     = 2;
+			int expected__            = 18;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = KDoubleSubstrings().howMuch(vector <string>(str, str + (sizeof str / sizeof str[0])), k);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 
 		// custom cases
 
 /*      case 5: {
-			string board[]            = ;
-			int size                  = ;
+			string str[]              = ;
+			int k                     = ;
 			int expected__            = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = KDoubleSubstrings().howMuch(vector <string>(str, str + (sizeof str / sizeof str[0])), k);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 /*      case 6: {
-			string board[]            = ;
-			int size                  = ;
+			string str[]              = ;
+			int k                     = ;
 			int expected__            = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = KDoubleSubstrings().howMuch(vector <string>(str, str + (sizeof str / sizeof str[0])), k);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 /*      case 7: {
-			string board[]            = ;
-			int size                  = ;
+			string str[]              = ;
+			int k                     = ;
 			int expected__            = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = KDoubleSubstrings().howMuch(vector <string>(str, str + (sizeof str / sizeof str[0])), k);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 		default:

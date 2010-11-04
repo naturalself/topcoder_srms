@@ -1,7 +1,7 @@
 // BEGIN CUT HERE
 
 // END CUT HERE
-#line 5 "CrossWord.cpp"
+#line 5 "Segments.cpp"
 #include <cstdio>
 #include <cstdlib>
 #include <cmath>
@@ -30,9 +30,9 @@ using namespace std;
 #define all(a) a.begin(), a.end() 
 #define pb push_back
 
-class CrossWord {
+class Segments {
 public:
-	int countWords(vector <string> board, int size) {
+	string intersection(vector <int> s1, vector <int> s2) {
 
 	}
 };
@@ -68,7 +68,7 @@ namespace moj_harness {
 		}
 	}
 	
-	int verify_case(int casenum, const int &expected, const int &received, clock_t elapsed) { 
+	int verify_case(int casenum, const string &expected, const string &received, clock_t elapsed) { 
 		cerr << "Example " << casenum << "... "; 
 		
 		string verdict;
@@ -98,8 +98,8 @@ namespace moj_harness {
 		cerr << endl;
 		
 		if (verdict == "FAILED") {
-			cerr << "    Expected: " << expected << endl; 
-			cerr << "    Received: " << received << endl; 
+			cerr << "    Expected: \"" << expected << "\"" << endl; 
+			cerr << "    Received: \"" << received << "\"" << endl; 
 		}
 		
 		return verdict == "PASSED";
@@ -108,107 +108,87 @@ namespace moj_harness {
 	int run_test_case(int casenum) {
 		switch (casenum) {
 		case 0: {
-			string board[]            = {"X....X",
- "X.XX.X",
- "...X..",
- "X.XX.X",
- "..X..."};
-			int size                  = 3;
-			int expected__            = 2;
+			int s1[]                  = {0, 0, 0, 1} ;
+			int s2[]                  = {1, 0, 1, 1};
+			string expected__         = "NO";
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = Segments().intersection(vector <int>(s1, s1 + (sizeof s1 / sizeof s1[0])), vector <int>(s2, s2 + (sizeof s2 / sizeof s2[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 1: {
-			string board[]            = {"...X...",
- ".X...X.",
- "..X.X..",
- "X..X..X",
- "..X.X..",
- ".X...X.",
- "...X..."};
-			int size                  = 3;
-			int expected__            = 6;
+			int s1[]                  = {0, 0, 0, 1};
+			int s2[]                  = {0, 1, 0, 2};
+			string expected__         = "POINT";
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = Segments().intersection(vector <int>(s1, s1 + (sizeof s1 / sizeof s1[0])), vector <int>(s2, s2 + (sizeof s2 / sizeof s2[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 2: {
-			string board[]            = {".....X....X....",
- ".....X....X....",
- "..........X....",
- "....X....X.....",
- "...X....X....XX",
- "XXX...X....X...",
- ".....X....X....",
- ".......X.......",
- "....X....X.....",
- "...X....X...XXX",
- "XX....X....X...",
- ".....X....X....",
- "....X..........",
- "....X....X.....",
- "....X....X....."}
-;
-			int size                  = 5;
-			int expected__            = 8;
+			int s1[]                  = {0, -1, 0, 1};
+			int s2[]                  = {-1, 0, 1, 0};
+			string expected__         = "POINT";
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = Segments().intersection(vector <int>(s1, s1 + (sizeof s1 / sizeof s1[0])), vector <int>(s2, s2 + (sizeof s2 / sizeof s2[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 3: {
-			string board[]            = {"...",
- "...",
- "..."};
-			int size                  = 50;
-			int expected__            = 0;
+			int s1[]                  = {0, 0, 2, 0};
+			int s2[]                  = {1, 0, 10, 0};
+			string expected__         = "SEGMENT";
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = Segments().intersection(vector <int>(s1, s1 + (sizeof s1 / sizeof s1[0])), vector <int>(s2, s2 + (sizeof s2 / sizeof s2[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 4: {
-			string board[]            = {"....",
- "....",
- "...."};
-			int size                  = 3;
-			int expected__            = 0;
+			int s1[]                  = {5, 5, 5, 5};
+			int s2[]                  = {6, 6, 6, 6};
+			string expected__         = "NO";
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = Segments().intersection(vector <int>(s1, s1 + (sizeof s1 / sizeof s1[0])), vector <int>(s2, s2 + (sizeof s2 / sizeof s2[0])));
+			return verify_case(casenum, expected__, received__, clock()-start__);
+		}
+		case 5: {
+			int s1[]                  = {10, 0, -10, 0};
+			int s2[]                  = {5, 0, -5, 0};
+			string expected__         = "SEGMENT";
+
+			clock_t start__           = clock();
+			string received__         = Segments().intersection(vector <int>(s1, s1 + (sizeof s1 / sizeof s1[0])), vector <int>(s2, s2 + (sizeof s2 / sizeof s2[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 
 		// custom cases
 
-/*      case 5: {
-			string board[]            = ;
-			int size                  = ;
-			int expected__            = ;
-
-			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
-			return verify_case(casenum, expected__, received__, clock()-start__);
-		}*/
 /*      case 6: {
-			string board[]            = ;
-			int size                  = ;
-			int expected__            = ;
+			int s1[]                  = ;
+			int s2[]                  = ;
+			string expected__         = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = Segments().intersection(vector <int>(s1, s1 + (sizeof s1 / sizeof s1[0])), vector <int>(s2, s2 + (sizeof s2 / sizeof s2[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 /*      case 7: {
-			string board[]            = ;
-			int size                  = ;
-			int expected__            = ;
+			int s1[]                  = ;
+			int s2[]                  = ;
+			string expected__         = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = Segments().intersection(vector <int>(s1, s1 + (sizeof s1 / sizeof s1[0])), vector <int>(s2, s2 + (sizeof s2 / sizeof s2[0])));
+			return verify_case(casenum, expected__, received__, clock()-start__);
+		}*/
+/*      case 8: {
+			int s1[]                  = ;
+			int s2[]                  = ;
+			string expected__         = ;
+
+			clock_t start__           = clock();
+			string received__         = Segments().intersection(vector <int>(s1, s1 + (sizeof s1 / sizeof s1[0])), vector <int>(s2, s2 + (sizeof s2 / sizeof s2[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 		default:

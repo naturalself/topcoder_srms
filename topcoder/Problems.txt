@@ -141,17 +141,18 @@ SRM 261 DIV2 Easy	SpreadsheetColumn	see result.
 SRM 262 DIV2 Easy	DivToZero		completed.
 SRM 263 DIV2 Easy				
 SRM 264 DIV2 Easy	GradingSystem		
+
 SRM 265 DIV2 Easy	FontSize		completed.
 SRM 266 DIV2 Easy	SwimmersDelight		completed.
 SRM 267 DIV2 Easy	TaxTable		completed.
-SRM 267 DIV2 Easy	CrossWordPuzzle		completed.	same as 174 DIV2 Easy
-SRM 268 DIV2 Easy						300 point.
+SRM 268 DIV2 Easy	CrossWordPuzzle		completed.	same as 174 DIV2 Easy
 SRM 269 DIV2 Easy	UniqueDigits		completed.
 SRM 270 DIV2 Easy	BuyingCheap		completed.
 SRM 270 DIV2 Easy	BuyingCheap		completed.
 SRM 271 DIV2 Easy	CheckFunction		completed.
 SRM 272 DIV2 Easy	HammingDistance		completed.
 SRM 272 DIV2 Medium	FewestFactors		completed.
+
 SRM 273 DIV2 Easy	AimToTen		completed.
 SRM 273 DIV2 Medium	FewestFactors		
 SRM 274 DIV2 Easy	SimpleDuplicateRemover	completed.
@@ -161,17 +162,60 @@ SRM 277 DIV2 Easy	SandwitchBar		completed.
 SRM 278 DIV2 Easy	RectangleGroups		completed.	//300 points.
 SRM 279 DIV2 Easy	DancingSentence		completed.	//300 points.
 SRM 280 DIV2 Easy	UniqDigits		completed.	same as 269 DIV2 Easy
+
 SRM 281 DIV2 Easy	RunLengthEncoding	
 SRM 282 DIV2 Easy	FixTheAverage		completed.
 SRM 282 DIV2 Medium	TileCutting		
 SRM 283 DIV2 Easy	DiagonalDisproportion	completed.
-SRM 284 DIV2 Easy	Truckloads		
-SRM 285 DIV2 Easy	BasketsWithApples	
+SRM 284 DIV2 Easy	Truckloads		completed.	//recursive.
+SRM 285 DIV2 Easy	BasketsWithApples	completed.
 SRM 286 DIV2 Easy	CuttingPoles		completed.
 SRM 287 DIV2 Easy	CustomerStatistics	completed.
 SRM 288 DIV2 Easy	AccountBalance		completed.
+
 SRM 289 DIV2 Easy	ObjectFall				//300 points.
 SRM 290 DIV2 Easy	SpeedTyper		completed.
+SRM 291 DIV2 Easy	FarFromPrimes		completed.	//memo search.
+SRM 292 DIV2 Easy	FowlRoad		
+SRM 293 DIV2 Easy	Aquarium		
+SRM 294 DIV2 Easy	ThreeCardMonte		completed.
+SRM 295 DIV2 Easy	PaperRockScisQuals	
+SRM 296 DIV2 Easy	EratosthenSieve2	completed.
+
+SRM 297 DIV2 Easy	PackingParts		completed.
+SRM 298 DIV2 Easy	IndicatorMotion		completed.
+SRM 299 DIV2 Easy	TemperatureScales	
+SRM 300 DIV2 Easy	Taxi			see answer.	//need long long.
+SRM 301 DIV2 Easy	InsertionSortCount	completed.
+SRM 302 DIV2 Easy	NounReform		completed.
+SRM 303 DIV2 Easy	Segments		
+SRM 304 DIV2 Easy	RugSizes		completed.
+
+SRM 305 DIV2 Easy	MultiRead		completed.
+SRM 306 DIV2 Easy	SortMachine		see answer.
+SRM 307 DIV2 Easy	BootsExchange		completed.
+SRM 308 DIV2 Easy	MedianOfNumbers		completed.
+SRM 308 DIV2 Medium	HuffmanDecoding		
+SRM 309 DIV2 Easy	ContestCoordinator	completed.
+SRM 310 DIV2 Easy	MeasuringTemperature	see answer.
+SRM 311 DIV2 Easy	EscapeFromRectangle	
+SRM 312 DIV2 Easy	EsperantoNumbers	
+
+SRM 313 DIV2 Easy	CyclesInPermutations	completed.
+SRM 314 DIV2 Easy	MooingCows		completed.
+SRM 315 DIV2 Easy	RosePetals		completed.
+SRM 315 DIV2 Medium	DigitsSum		completed.
+SRM 315 DIV2 Hard	KthKid			
+SRM 316 DIV2 Easy	HiddenMessage		completed.
+SRM 317 DIV2 Easy	ReversingBrackets	completed.
+SRM 318 DIV2 Easy	BiggestRectangleEasy	completed.
+SRM 319 DIV2 Easy	SkewSymmetric				difficult.
+SRM 320 DIV2 Easy	StringSegment		completed.
+
+SRM 321 DIV2 Easy	KDoubleSubstrings	
+SRM 322 DIV2 Easy	DerivativeSequence	completed.
+SRM 323 DIV2 Easy	IrreducibleNumber	completed.
+
 
 
 
@@ -218,6 +262,11 @@ SRM 479 DIV2 Easy	TheAirTripDivTwo	completed.
 SRM 480 DIV2 Easy	Cryptography		completed.
 SRM 481 DIV2 Easy	CircleMarket		completed.
 SRM 482 DIV2 Easy	
+SRM 483 DIV2 Easy	DigitHoles		completed.	easy.
+SRM 483 DIV2 Medium	MovieSeating		completed.
+SRM 484 DIV2 Easy	NumberMagicEasy		completed.
+SRM 484 DIV2 Medium	RabbitNumber		
+
 
 
 36/50

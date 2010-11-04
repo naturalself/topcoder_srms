@@ -1,0 +1,67 @@
+PROBLEM STATEMENT
+
+A k-double string is a non-empty string consisting of two equal length halves, where the first half differs from the second half at no more than k positions. For example, "contestcontest", "oopoop" and "aa" are 0-double strings. "contestkontest" is a 1-double string, and "poorpork", "artbat", and "yesyep" are 2-double strings. Obviously, all 0-double strings are also 1-double strings, all 1-double strings are also 2-double strings, etc.
+
+
+You will be given a vector <string> str and an int k. Concatenate the elements of str to form one long string, and return the number of k-double substrings contained in that string.
+
+
+If the same string exists in several different positions, count it as many times as it exists. Also, k-double substrings can overlap. See the examples for more details.
+
+
+DEFINITION
+Class:KDoubleSubstrings
+Method:howMuch
+Parameters:vector <string>, int
+Returns:int
+Method signature:int howMuch(vector <string> str, int k)
+
+
+CONSTRAINTS
+-str will contain between 1 and 5 elements, inclusive.
+-Each element of str will contain between 1 and 50 characters, inclusive.
+-Each element of str will contain only lowercase letters ('a'-'z').
+-k will be between 0 and 100, inclusive.
+
+
+EXAMPLES
+
+0)
+{"aa"}
+0
+
+Returns: 1
+
+"aa" is the only 0-double substring.
+
+1)
+{"aaaa"}
+0
+
+Returns: 4
+
+There are four substrings of even length and all of them are 0-double strings.
+
+2)
+{"contest", "kontest"}
+1
+
+Returns: 14
+
+Each pair of consecutive letters form a 1-double substring and the whole string form one more 1-double substring.
+
+3)
+{"abacaba", "d", "abacaba"}
+1
+
+Returns: 34
+
+
+
+4)
+{"areyouready"}
+2
+
+Returns: 18
+
+

@@ -1,7 +1,7 @@
 // BEGIN CUT HERE
 
 // END CUT HERE
-#line 5 "CrossWord.cpp"
+#line 5 "RosePetals.cpp"
 #include <cstdio>
 #include <cstdlib>
 #include <cmath>
@@ -30,10 +30,17 @@ using namespace std;
 #define all(a) a.begin(), a.end() 
 #define pb push_back
 
-class CrossWord {
+class RosePetals {
 public:
-	int countWords(vector <string> board, int size) {
+	int getScore(vector <int> dice) {
+	int ret=0;
+	int pet[6]={0,0,2,0,4,0};
 
+	forv(i,dice){
+		ret += pet[dice[i]-1];
+	}
+
+	return ret;
 	}
 };
 
@@ -108,107 +115,70 @@ namespace moj_harness {
 	int run_test_case(int casenum) {
 		switch (casenum) {
 		case 0: {
-			string board[]            = {"X....X",
- "X.XX.X",
- "...X..",
- "X.XX.X",
- "..X..."};
-			int size                  = 3;
+			int dice[]                = {1, 2, 3, 2, 1};
 			int expected__            = 2;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = RosePetals().getScore(vector <int>(dice, dice + (sizeof dice / sizeof dice[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 1: {
-			string board[]            = {"...X...",
- ".X...X.",
- "..X.X..",
- "X..X..X",
- "..X.X..",
- ".X...X.",
- "...X..."};
-			int size                  = 3;
-			int expected__            = 6;
-
-			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
-			return verify_case(casenum, expected__, received__, clock()-start__);
-		}
-		case 2: {
-			string board[]            = {".....X....X....",
- ".....X....X....",
- "..........X....",
- "....X....X.....",
- "...X....X....XX",
- "XXX...X....X...",
- ".....X....X....",
- ".......X.......",
- "....X....X.....",
- "...X....X...XXX",
- "XX....X....X...",
- ".....X....X....",
- "....X..........",
- "....X....X.....",
- "....X....X....."}
-;
-			int size                  = 5;
+			int dice[]                = {4, 4, 5, 6, 5};
 			int expected__            = 8;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = RosePetals().getScore(vector <int>(dice, dice + (sizeof dice / sizeof dice[0])));
+			return verify_case(casenum, expected__, received__, clock()-start__);
+		}
+		case 2: {
+			int dice[]                = {1, 2, 3, 3, 5};
+			int expected__            = 8;
+
+			clock_t start__           = clock();
+			int received__            = RosePetals().getScore(vector <int>(dice, dice + (sizeof dice / sizeof dice[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 3: {
-			string board[]            = {"...",
- "...",
- "..."};
-			int size                  = 50;
-			int expected__            = 0;
+			int dice[]                = {3, 3, 3, 3, 3};
+			int expected__            = 10;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = RosePetals().getScore(vector <int>(dice, dice + (sizeof dice / sizeof dice[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 4: {
-			string board[]            = {"....",
- "....",
- "...."};
-			int size                  = 3;
+			int dice[]                = {2, 2, 2, 2, 2};
 			int expected__            = 0;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = RosePetals().getScore(vector <int>(dice, dice + (sizeof dice / sizeof dice[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 
 		// custom cases
 
 /*      case 5: {
-			string board[]            = ;
-			int size                  = ;
+			int dice[]                = ;
 			int expected__            = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = RosePetals().getScore(vector <int>(dice, dice + (sizeof dice / sizeof dice[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 /*      case 6: {
-			string board[]            = ;
-			int size                  = ;
+			int dice[]                = ;
 			int expected__            = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = RosePetals().getScore(vector <int>(dice, dice + (sizeof dice / sizeof dice[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 /*      case 7: {
-			string board[]            = ;
-			int size                  = ;
+			int dice[]                = ;
 			int expected__            = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = RosePetals().getScore(vector <int>(dice, dice + (sizeof dice / sizeof dice[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 		default:

@@ -1,0 +1,47 @@
+PROBLEM STATEMENT
+
+There is an unsafe way to write encrypted messages that works as follows.  At most one contiguous substring of the original string is reversed and enclosed in square brackets.  For example, the encrypted string "he[row oll]ld" represents the string "hello world".  You will be given s, a string encrypted with this method, and you must return the original unencrypted string.
+
+
+
+DEFINITION
+Class:ReversingBrackets
+Method:removeBrackets
+Parameters:string
+Returns:string
+Method signature:string removeBrackets(string s)
+
+
+CONSTRAINTS
+-s will contain between 1 and 50 characters, inclusive.
+-Each character of s will be a lowercase letter ('a'-'z'), a space (' ') or a bracket ('[' and ']').
+-s will contain either no bracket or exactly one '[' and one ']', and the '[' character will appear before the ']'.
+
+
+EXAMPLES
+
+0)
+"he[row oll]ld"
+
+Returns: "hello world"
+
+The example from the problem statement.
+
+1)
+"ab[edc]f"
+
+Returns: "abcdef"
+
+
+
+2)
+"topcoder"
+
+Returns: "topcoder"
+
+Note that there can be no brackets.
+
+3)
+"[desrever lla]"
+
+Returns: "all reversed"

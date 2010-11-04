@@ -1,7 +1,7 @@
 // BEGIN CUT HERE
 
 // END CUT HERE
-#line 5 "CrossWord.cpp"
+#line 5 "MultiRead.cpp"
 #include <cstdio>
 #include <cstdlib>
 #include <cmath>
@@ -30,10 +30,39 @@ using namespace std;
 #define all(a) a.begin(), a.end() 
 #define pb push_back
 
-class CrossWord {
+class MultiRead {
 public:
-	int countWords(vector <string> board, int size) {
+	int minCycles(string tr, int pr) {
+	int ret=0;
 
+	vector<int> r;
+	int r_cnt=0;
+	bool st_w=false;
+	fors(i,tr){
+		if(tr[i] == 'R'){
+			st_w=false;
+			r_cnt++;
+			if(i==(int)tr.size()-1) r.pb(r_cnt); 
+		}else{
+			if(st_w==false){
+				r.pb(r_cnt);
+				r_cnt = 0;
+				st_w=true;
+			}
+			ret++;
+		}
+	}
+	forv(i,r){
+		if(r[i] >= pr){
+			ret += (int)ceil((double)r[i]/(double)pr);
+		}else{
+			if(r[i]!=0){
+				ret +=1;
+			}
+		}
+	}
+
+	return ret;
 	}
 };
 
@@ -108,107 +137,78 @@ namespace moj_harness {
 	int run_test_case(int casenum) {
 		switch (casenum) {
 		case 0: {
-			string board[]            = {"X....X",
- "X.XX.X",
- "...X..",
- "X.XX.X",
- "..X..."};
-			int size                  = 3;
-			int expected__            = 2;
+			string trace              = "RWWRRR";
+			int procs                 = 3;
+			int expected__            = 4;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = MultiRead().minCycles(trace, procs);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 1: {
-			string board[]            = {"...X...",
- ".X...X.",
- "..X.X..",
- "X..X..X",
- "..X.X..",
- ".X...X.",
- "...X..."};
-			int size                  = 3;
-			int expected__            = 6;
+			string trace              = "RWWRRRR";
+			int procs                 = 3;
+			int expected__            = 5;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = MultiRead().minCycles(trace, procs);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 2: {
-			string board[]            = {".....X....X....",
- ".....X....X....",
- "..........X....",
- "....X....X.....",
- "...X....X....XX",
- "XXX...X....X...",
- ".....X....X....",
- ".......X.......",
- "....X....X.....",
- "...X....X...XXX",
- "XX....X....X...",
- ".....X....X....",
- "....X..........",
- "....X....X.....",
- "....X....X....."}
-;
-			int size                  = 5;
-			int expected__            = 8;
+			string trace              = "WWWWW";
+			int procs                 = 5;
+			int expected__            = 5;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = MultiRead().minCycles(trace, procs);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 3: {
-			string board[]            = {"...",
- "...",
- "..."};
-			int size                  = 50;
-			int expected__            = 0;
+			string trace              = "RRRRRRRRRR";
+			int procs                 = 4;
+			int expected__            = 3;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = MultiRead().minCycles(trace, procs);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 4: {
-			string board[]            = {"....",
- "....",
- "...."};
-			int size                  = 3;
-			int expected__            = 0;
+			string trace              = "RWRRWWRWRWRRRWWRRRRWRRWRRWRRRRRRRRRWRWRWRRRRWRRRRR";
+			int procs                 = 4;
+			int expected__            = 30;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = MultiRead().minCycles(trace, procs);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 
 		// custom cases
 
 /*      case 5: {
-			string board[]            = ;
-			int size                  = ;
+			string trace              = ;
+			int procs                 = ;
 			int expected__            = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = MultiRead().minCycles(trace, procs);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 /*      case 6: {
-			string board[]            = ;
-			int size                  = ;
+			string trace              = ;
+			int procs                 = ;
 			int expected__            = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = MultiRead().minCycles(trace, procs);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 /*      case 7: {
-			string board[]            = ;
-			int size                  = ;
+			string trace              = ;
+			int procs                 = ;
 			int expected__            = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = MultiRead().minCycles(trace, procs);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 		default:

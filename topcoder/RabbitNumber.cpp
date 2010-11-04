@@ -1,7 +1,7 @@
 // BEGIN CUT HERE
 
 // END CUT HERE
-#line 5 "Truckloads.cpp"
+#line 5 "RabbitNumber.cpp"
 #include <cstdio>
 #include <cstdlib>
 #include <cmath>
@@ -21,6 +21,7 @@
 #include <complex>
 #include <stack>
 #include <queue>
+#include <iomanip>
 
 using namespace std;
 
@@ -30,43 +31,52 @@ using namespace std;
 #define all(a) a.begin(), a.end() 
 #define pb push_back
 
-class Truckloads {
+class RabbitNumber {
 public:
-	int numTrucks(int numC, int load) {
+	int theCount(int low, int high) {
 	int ret=0;
-	
-	ret += divpile(numC,load);
 
-	return ret;
-	}
-private:
-	int divpile(int sz,int lo){
-	int r=0;
-	
-	if(sz <= lo){
-		return 1;
-	}else{
-		if(sz%2 == 0){
-			r += divpile(sz/2,lo);
-			r += divpile(sz/2,lo);
-		}else{
-			r += divpile(sz/2,lo);
-			r += divpile(sz/2+1,lo);
+	for(int i=low;i<=high;i++){
+		int sum1=0;
+		for(int j=i;j!=0;j/=10){
+			sum1 += j%10;
+		}
+
+		sum1 *= sum1;
+		//debug(sum1);
+
+		//if(sum1 <1 || sum1 > 13) continue;
+		
+		debug(sum1);
+		unsigned long p = i*i;
+		//debug(p);
+		int sum2=0;
+
+		for(unsigned long j=p;j!=0;j/=10){
+			sum2 += j%10;
+		}
+
+		//debug(sum2);
+		if(sum1 == sum2){
+			debug(sum1);
+			ret++;
 		}
 	}
 
-	return r;
+	return ret;
 	}
 	
 // BEGIN CUT HERE
 	public:
-	void run_test(int Case) { if ((Case == -1) || (Case == 0)) test_case_0(); if ((Case == -1) || (Case == 1)) test_case_1(); if ((Case == -1) || (Case == 2)) test_case_2(); }
+	void run_test(int Case) { if ((Case == -1) || (Case == 0)) test_case_0(); if ((Case == -1) || (Case == 1)) test_case_1(); if ((Case == -1) || (Case == 2)) test_case_2(); if ((Case == -1) || (Case == 3)) test_case_3(); if ((Case == -1) || (Case == 4)) test_case_4(); }
 	private:
 	template <typename T> string print_array(const vector<T> &V) { ostringstream os; os << "{ "; for (typename vector<T>::const_iterator iter = V.begin(); iter != V.end(); ++iter) os << '\"' << *iter << "\","; os << " }"; return os.str(); }
 	void verify_case(int Case, const int &Expected, const int &Received) { cerr << "Test Case #" << Case << "..."; if (Expected == Received) cerr << "PASSED" << endl; else { cerr << "FAILED" << endl; cerr << "\tExpected: \"" << Expected << '\"' << endl; cerr << "\tReceived: \"" << Received << '\"' << endl; } }
-	void test_case_0() { int Arg0 = 14; int Arg1 = 3; int Arg2 = 6; verify_case(0, Arg2, numTrucks(Arg0, Arg1)); }
-	void test_case_1() { int Arg0 = 15; int Arg1 = 1; int Arg2 = 15; verify_case(1, Arg2, numTrucks(Arg0, Arg1)); }
-	void test_case_2() { int Arg0 = 1024; int Arg1 = 5; int Arg2 = 256; verify_case(2, Arg2, numTrucks(Arg0, Arg1)); }
+	void test_case_0() { int Arg0 = 22; int Arg1 = 22; int Arg2 = 1; verify_case(0, Arg2, theCount(Arg0, Arg1)); }
+	void test_case_1() { int Arg0 = 484; int Arg1 = 484; int Arg2 = 0; verify_case(1, Arg2, theCount(Arg0, Arg1)); }
+	void test_case_2() { int Arg0 = 1; int Arg1 = 58; int Arg2 = 12; verify_case(2, Arg2, theCount(Arg0, Arg1)); }
+	void test_case_3() { int Arg0 = 58; int Arg1 = 484; int Arg2 = 24; verify_case(3, Arg2, theCount(Arg0, Arg1)); }
+	void test_case_4() { int Arg0 = 1000000000; int Arg1 = 1000000000; int Arg2 = 1; verify_case(4, Arg2, theCount(Arg0, Arg1)); }
 
 // END CUT HERE
 
@@ -74,7 +84,7 @@ private:
 
 // BEGIN CUT HERE
 int main() {
-	Truckloads ___test;
+	RabbitNumber ___test;
 	___test.run_test(-1);
 }
 // END CUT HERE

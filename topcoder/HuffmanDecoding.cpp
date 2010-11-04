@@ -1,7 +1,7 @@
 // BEGIN CUT HERE
 
 // END CUT HERE
-#line 5 "CrossWord.cpp"
+#line 5 "HuffmanDecoding.cpp"
 #include <cstdio>
 #include <cstdlib>
 #include <cmath>
@@ -30,10 +30,18 @@ using namespace std;
 #define all(a) a.begin(), a.end() 
 #define pb push_back
 
-class CrossWord {
+class HuffmanDecoding {
 public:
-	int countWords(vector <string> board, int size) {
+	string decode(string arc, vector <string> dic) {
+	int n = (int)dic.size();
+	string ret;
+	int st[n];
+	for(int i=0;i<n;i++){
+		char tmp = 'A'+i;
+		st[i]=tmp;
+	}
 
+	return ret;
 	}
 };
 
@@ -68,7 +76,7 @@ namespace moj_harness {
 		}
 	}
 	
-	int verify_case(int casenum, const int &expected, const int &received, clock_t elapsed) { 
+	int verify_case(int casenum, const string &expected, const string &received, clock_t elapsed) { 
 		cerr << "Example " << casenum << "... "; 
 		
 		string verdict;
@@ -98,8 +106,8 @@ namespace moj_harness {
 		cerr << endl;
 		
 		if (verdict == "FAILED") {
-			cerr << "    Expected: " << expected << endl; 
-			cerr << "    Received: " << received << endl; 
+			cerr << "    Expected: \"" << expected << "\"" << endl; 
+			cerr << "    Received: \"" << received << "\"" << endl; 
 		}
 		
 		return verdict == "PASSED";
@@ -108,107 +116,78 @@ namespace moj_harness {
 	int run_test_case(int casenum) {
 		switch (casenum) {
 		case 0: {
-			string board[]            = {"X....X",
- "X.XX.X",
- "...X..",
- "X.XX.X",
- "..X..."};
-			int size                  = 3;
-			int expected__            = 2;
+			string archive            = "101101";
+			string dictionary[]       = {"00","10","01","11"};
+			string expected__         = "BDC";
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = HuffmanDecoding().decode(archive, vector <string>(dictionary, dictionary + (sizeof dictionary / sizeof dictionary[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 1: {
-			string board[]            = {"...X...",
- ".X...X.",
- "..X.X..",
- "X..X..X",
- "..X.X..",
- ".X...X.",
- "...X..."};
-			int size                  = 3;
-			int expected__            = 6;
+			string archive            = "10111010";
+			string dictionary[]       = {"0","111","10"};
+			string expected__         = "CBAC";
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = HuffmanDecoding().decode(archive, vector <string>(dictionary, dictionary + (sizeof dictionary / sizeof dictionary[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 2: {
-			string board[]            = {".....X....X....",
- ".....X....X....",
- "..........X....",
- "....X....X.....",
- "...X....X....XX",
- "XXX...X....X...",
- ".....X....X....",
- ".......X.......",
- "....X....X.....",
- "...X....X...XXX",
- "XX....X....X...",
- ".....X....X....",
- "....X..........",
- "....X....X.....",
- "....X....X....."}
-;
-			int size                  = 5;
-			int expected__            = 8;
+			string archive            = "0001001100100111001";
+			string dictionary[]       = {"1","0"};
+			string expected__         = "BBBABBAABBABBAAABBA";
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = HuffmanDecoding().decode(archive, vector <string>(dictionary, dictionary + (sizeof dictionary / sizeof dictionary[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 3: {
-			string board[]            = {"...",
- "...",
- "..."};
-			int size                  = 50;
-			int expected__            = 0;
+			string archive            = "111011011000100110";
+			string dictionary[]       = {"010","00","0110","0111","11","100","101"};
+			string expected__         = "EGGFAC";
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = HuffmanDecoding().decode(archive, vector <string>(dictionary, dictionary + (sizeof dictionary / sizeof dictionary[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 4: {
-			string board[]            = {"....",
- "....",
- "...."};
-			int size                  = 3;
-			int expected__            = 0;
+			string archive            = "001101100101100110111101011001011001010";
+			string dictionary[]       = {"110","011","10","0011","00011","111","00010","0010","010","0000"};
+			string expected__         = "DBHABBACAIAIC";
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = HuffmanDecoding().decode(archive, vector <string>(dictionary, dictionary + (sizeof dictionary / sizeof dictionary[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 
 		// custom cases
 
 /*      case 5: {
-			string board[]            = ;
-			int size                  = ;
-			int expected__            = ;
+			string archive            = ;
+			string dictionary[]       = ;
+			string expected__         = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = HuffmanDecoding().decode(archive, vector <string>(dictionary, dictionary + (sizeof dictionary / sizeof dictionary[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 /*      case 6: {
-			string board[]            = ;
-			int size                  = ;
-			int expected__            = ;
+			string archive            = ;
+			string dictionary[]       = ;
+			string expected__         = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = HuffmanDecoding().decode(archive, vector <string>(dictionary, dictionary + (sizeof dictionary / sizeof dictionary[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 /*      case 7: {
-			string board[]            = ;
-			int size                  = ;
-			int expected__            = ;
+			string archive            = ;
+			string dictionary[]       = ;
+			string expected__         = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = HuffmanDecoding().decode(archive, vector <string>(dictionary, dictionary + (sizeof dictionary / sizeof dictionary[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 		default:

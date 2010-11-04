@@ -1,0 +1,64 @@
+PROBLEM STATEMENT
+
+Strange abbreviations are often used to write text messages on uncomfortable mobile devices.  One particular strategy for encoding texts composed of alphabetic characters and spaces is the following:
+
+Spaces are maintained, and each word is encoded individually. A word is a consecutive string of alphabetic characters.
+If the word is composed only of vowels, it is written exactly as in the original message.
+If the word has at least one consonant, write only the consonants that do not have another consonant immediately before them.  Do not write any vowels.
+The letters considered vowels in these rules are 'a', 'e', 'i', 'o' and 'u'. All other letters are considered consonants.
+
+For instance, "ps i love u" would be abbreviated as "p i lv u" while "please please me" would be abbreviated as "ps ps m".
+
+You will be given the original message in the string original. Return a string with the message abbreviated using the described strategy.
+
+
+DEFINITION
+Class:TxMsg
+Method:getMessage
+Parameters:string
+Returns:string
+Method signature:string getMessage(string original)
+
+
+CONSTRAINTS
+-original will contain between 1 and 50 characters, inclusive.
+-Each character of original will be a lowercase letter ('a'-'z'), or a space.
+-There will not be two consecutive spaces in original, nor will the first or last character be a space.
+
+
+EXAMPLES
+
+0)
+"text message"
+
+Returns: "tx msg"
+
+
+
+1)
+"ps i love u"
+
+Returns: "p i lv u"
+
+First example from the problem statement.
+
+2)
+"please please me"
+
+Returns: "ps ps m"
+
+Second example from the problem statement.
+
+3)
+"back to the ussr"
+
+Returns: "bc t t s"
+
+
+
+4)
+"aeiou bcdfghjklmnpqrstvwxyz"
+
+Returns: "aeiou b"
+
+

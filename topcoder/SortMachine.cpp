@@ -1,7 +1,7 @@
 // BEGIN CUT HERE
 
 // END CUT HERE
-#line 5 "CrossWord.cpp"
+#line 5 "SortMachine.cpp"
 #include <cstdio>
 #include <cstdlib>
 #include <cmath>
@@ -21,6 +21,7 @@
 #include <complex>
 #include <stack>
 #include <queue>
+#include <list>
 
 using namespace std;
 
@@ -30,10 +31,27 @@ using namespace std;
 #define all(a) a.begin(), a.end() 
 #define pb push_back
 
-class CrossWord {
+class SortMachine {
 public:
-	int countWords(vector <string> board, int size) {
+	int countMoves(vector <int> a) {
+	int ret=0;
+	vector<int> va=a;
 
+	forv(i,a){
+		int cnt=0;
+		for(int j=i+1;j<(int)va.size();j++){
+			if(a[i]>va[j]){
+				cnt = 1;
+				break;
+			}
+		}
+		if(cnt){
+			ret++;
+			va.pb(a[i]);
+		}
+	}
+
+	return ret;
 	}
 };
 
@@ -108,107 +126,78 @@ namespace moj_harness {
 	int run_test_case(int casenum) {
 		switch (casenum) {
 		case 0: {
-			string board[]            = {"X....X",
- "X.XX.X",
- "...X..",
- "X.XX.X",
- "..X..."};
-			int size                  = 3;
+			int a[]                   = {19,7,8,25};
 			int expected__            = 2;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = SortMachine().countMoves(vector <int>(a, a + (sizeof a / sizeof a[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 1: {
-			string board[]            = {"...X...",
- ".X...X.",
- "..X.X..",
- "X..X..X",
- "..X.X..",
- ".X...X.",
- "...X..."};
-			int size                  = 3;
-			int expected__            = 6;
+			int a[]                   = {1,2,3,4,5};
+			int expected__            = 0;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = SortMachine().countMoves(vector <int>(a, a + (sizeof a / sizeof a[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 2: {
-			string board[]            = {".....X....X....",
- ".....X....X....",
- "..........X....",
- "....X....X.....",
- "...X....X....XX",
- "XXX...X....X...",
- ".....X....X....",
- ".......X.......",
- "....X....X.....",
- "...X....X...XXX",
- "XX....X....X...",
- ".....X....X....",
- "....X..........",
- "....X....X.....",
- "....X....X....."}
-;
-			int size                  = 5;
-			int expected__            = 8;
+			int a[]                   = {1000,-1000,0};
+			int expected__            = 1;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = SortMachine().countMoves(vector <int>(a, a + (sizeof a / sizeof a[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 3: {
-			string board[]            = {"...",
- "...",
- "..."};
-			int size                  = 50;
-			int expected__            = 0;
+			int a[]                   = {1,3,4,5,6,7,8,9,2};
+			int expected__            = 7;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = SortMachine().countMoves(vector <int>(a, a + (sizeof a / sizeof a[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 4: {
-			string board[]            = {"....",
- "....",
- "...."};
-			int size                  = 3;
-			int expected__            = 0;
+			int a[]                   = {-2, -8, 9, 0};
+			int expected__            = 3;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = SortMachine().countMoves(vector <int>(a, a + (sizeof a / sizeof a[0])));
+			return verify_case(casenum, expected__, received__, clock()-start__);
+		}
+		case 5: {
+			int a[]                   = {976, -946, -824, 680, -644, -95, 128, -892, 816, -263, -592, -669, 887, 447, -653, -759, 572, 171, 635, 98, -904, 78, 143, -416, -40, -846, 784, -702, -738, -858, 582, 603, -535, 529, 84, -964, 934, 36, 783} ;
+			int expected__            = 38;
+
+			clock_t start__           = clock();
+			int received__            = SortMachine().countMoves(vector <int>(a, a + (sizeof a / sizeof a[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 
 		// custom cases
 
-/*      case 5: {
-			string board[]            = ;
-			int size                  = ;
-			int expected__            = ;
-
-			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
-			return verify_case(casenum, expected__, received__, clock()-start__);
-		}*/
 /*      case 6: {
-			string board[]            = ;
-			int size                  = ;
+			int a[]                   = ;
 			int expected__            = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = SortMachine().countMoves(vector <int>(a, a + (sizeof a / sizeof a[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 /*      case 7: {
-			string board[]            = ;
-			int size                  = ;
+			int a[]                   = ;
 			int expected__            = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = SortMachine().countMoves(vector <int>(a, a + (sizeof a / sizeof a[0])));
+			return verify_case(casenum, expected__, received__, clock()-start__);
+		}*/
+/*      case 8: {
+			int a[]                   = ;
+			int expected__            = ;
+
+			clock_t start__           = clock();
+			int received__            = SortMachine().countMoves(vector <int>(a, a + (sizeof a / sizeof a[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 		default:

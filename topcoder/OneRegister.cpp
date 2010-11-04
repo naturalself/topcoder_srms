@@ -1,7 +1,7 @@
 // BEGIN CUT HERE
 
 // END CUT HERE
-#line 5 "CrossWord.cpp"
+#line 5 "OneRegister.cpp"
 #include <cstdio>
 #include <cstdlib>
 #include <cmath>
@@ -30,11 +30,41 @@ using namespace std;
 #define all(a) a.begin(), a.end() 
 #define pb push_back
 
-class CrossWord {
+class OneRegister {
 public:
-	int countWords(vector <string> board, int size) {
+	int goal;
+	string str;
+	string res="wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww";
 
+	string getProgram(int s, int t) {
+	string ret;
+	
+	goal = t;
+	ret = calc((long long)s); 
+
+	if(res.size()>35 && str.size()>35) return ":-(";
+
+	return ret;
 	}
+private:
+	string calc(long long cur){
+
+	if(cur==goal){
+		return "";
+	}else if(cur > goal){
+		return "f";
+	}else{
+		if(cur!=1)	r = '*'+calc(cur*cur);
+		str = '+'+calc(cur+cur);
+
+		if(res.size()>str.size()){
+			return str;
+		}else{
+			return res;
+		}
+	}
+	}
+
 };
 
 // BEGIN CUT HERE
@@ -68,7 +98,7 @@ namespace moj_harness {
 		}
 	}
 	
-	int verify_case(int casenum, const int &expected, const int &received, clock_t elapsed) { 
+	int verify_case(int casenum, const string &expected, const string &received, clock_t elapsed) { 
 		cerr << "Example " << casenum << "... "; 
 		
 		string verdict;
@@ -98,8 +128,8 @@ namespace moj_harness {
 		cerr << endl;
 		
 		if (verdict == "FAILED") {
-			cerr << "    Expected: " << expected << endl; 
-			cerr << "    Received: " << received << endl; 
+			cerr << "    Expected: \"" << expected << "\"" << endl; 
+			cerr << "    Received: \"" << received << "\"" << endl; 
 		}
 		
 		return verdict == "PASSED";
@@ -108,107 +138,87 @@ namespace moj_harness {
 	int run_test_case(int casenum) {
 		switch (casenum) {
 		case 0: {
-			string board[]            = {"X....X",
- "X.XX.X",
- "...X..",
- "X.XX.X",
- "..X..."};
-			int size                  = 3;
-			int expected__            = 2;
+			int s                     = 7;
+			int t                     = 392;
+			string expected__         = "+*+";
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = OneRegister().getProgram(s, t);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 1: {
-			string board[]            = {"...X...",
- ".X...X.",
- "..X.X..",
- "X..X..X",
- "..X.X..",
- ".X...X.",
- "...X..."};
-			int size                  = 3;
-			int expected__            = 6;
+			int s                     = 7;
+			int t                     = 256;
+			string expected__         = "/+***";
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = OneRegister().getProgram(s, t);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 2: {
-			string board[]            = {".....X....X....",
- ".....X....X....",
- "..........X....",
- "....X....X.....",
- "...X....X....XX",
- "XXX...X....X...",
- ".....X....X....",
- ".......X.......",
- "....X....X.....",
- "...X....X...XXX",
- "XX....X....X...",
- ".....X....X....",
- "....X..........",
- "....X....X.....",
- "....X....X....."}
-;
-			int size                  = 5;
-			int expected__            = 8;
+			int s                     = 4;
+			int t                     = 256;
+			string expected__         = "**";
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = OneRegister().getProgram(s, t);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 3: {
-			string board[]            = {"...",
- "...",
- "..."};
-			int size                  = 50;
-			int expected__            = 0;
+			int s                     = 7;
+			int t                     = 7;
+			string expected__         = "";
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = OneRegister().getProgram(s, t);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 4: {
-			string board[]            = {"....",
- "....",
- "...."};
-			int size                  = 3;
-			int expected__            = 0;
+			int s                     = 7;
+			int t                     = 9;
+			string expected__         = ":-(";
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = OneRegister().getProgram(s, t);
+			return verify_case(casenum, expected__, received__, clock()-start__);
+		}
+		case 5: {
+			int s                     = 10;
+			int t                     = 1;
+			string expected__         = "/";
+
+			clock_t start__           = clock();
+			string received__         = OneRegister().getProgram(s, t);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 
 		// custom cases
 
-/*      case 5: {
-			string board[]            = ;
-			int size                  = ;
-			int expected__            = ;
-
-			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
-			return verify_case(casenum, expected__, received__, clock()-start__);
-		}*/
 /*      case 6: {
-			string board[]            = ;
-			int size                  = ;
-			int expected__            = ;
+			int s                     = ;
+			int t                     = ;
+			string expected__         = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = OneRegister().getProgram(s, t);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 /*      case 7: {
-			string board[]            = ;
-			int size                  = ;
-			int expected__            = ;
+			int s                     = ;
+			int t                     = ;
+			string expected__         = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = OneRegister().getProgram(s, t);
+			return verify_case(casenum, expected__, received__, clock()-start__);
+		}*/
+/*      case 8: {
+			int s                     = ;
+			int t                     = ;
+			string expected__         = ;
+
+			clock_t start__           = clock();
+			string received__         = OneRegister().getProgram(s, t);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 		default:

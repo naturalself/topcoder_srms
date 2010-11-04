@@ -1,7 +1,7 @@
 // BEGIN CUT HERE
 
 // END CUT HERE
-#line 5 "CrossWord.cpp"
+#line 5 "IrreducibleNumber.cpp"
 #include <cstdio>
 #include <cstdlib>
 #include <cmath>
@@ -30,10 +30,36 @@ using namespace std;
 #define all(a) a.begin(), a.end() 
 #define pb push_back
 
-class CrossWord {
+class IrreducibleNumber {
 public:
-	int countWords(vector <string> board, int size) {
+	int getIrreducible(vector <int> A) {
+	int ret=0;
+	int n = (int)A.size();
+	unsigned int bits=0x0001;
+	unsigned int lim = 0x0001 << n;	
+	set<int> pmute;
 
+	while(bits != lim){
+		int sum=0;
+		unsigned int bits_s=bits; 
+		for(int i=0;i<n;i++){
+			if(bits_s & 0x0001){
+				sum += A[n-1-i];
+			}
+			bits_s = bits_s >> 1;
+		}
+		pmute.insert(sum);
+		bits++;
+	}
+	
+	for(int i=1;i<=(accumulate(all(A),0)+1);i++){
+		if(pmute.find(i)==pmute.end()){
+			ret = i;
+			break;
+		}
+	}
+
+	return ret;
 	}
 };
 
@@ -108,107 +134,62 @@ namespace moj_harness {
 	int run_test_case(int casenum) {
 		switch (casenum) {
 		case 0: {
-			string board[]            = {"X....X",
- "X.XX.X",
- "...X..",
- "X.XX.X",
- "..X..."};
-			int size                  = 3;
-			int expected__            = 2;
+			int A[]                   = {1,1};
+			int expected__            = 3;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = IrreducibleNumber().getIrreducible(vector <int>(A, A + (sizeof A / sizeof A[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 1: {
-			string board[]            = {"...X...",
- ".X...X.",
- "..X.X..",
- "X..X..X",
- "..X.X..",
- ".X...X.",
- "...X..."};
-			int size                  = 3;
-			int expected__            = 6;
+			int A[]                   = {1,2};
+			int expected__            = 4;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = IrreducibleNumber().getIrreducible(vector <int>(A, A + (sizeof A / sizeof A[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 2: {
-			string board[]            = {".....X....X....",
- ".....X....X....",
- "..........X....",
- "....X....X.....",
- "...X....X....XX",
- "XXX...X....X...",
- ".....X....X....",
- ".......X.......",
- "....X....X.....",
- "...X....X...XXX",
- "XX....X....X...",
- ".....X....X....",
- "....X..........",
- "....X....X.....",
- "....X....X....."}
-;
-			int size                  = 5;
-			int expected__            = 8;
+			int A[]                   = {1,3};
+			int expected__            = 2;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = IrreducibleNumber().getIrreducible(vector <int>(A, A + (sizeof A / sizeof A[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 3: {
-			string board[]            = {"...",
- "...",
- "..."};
-			int size                  = 50;
-			int expected__            = 0;
+			int A[]                   = {4, 1, 3};
+			int expected__            = 2;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
-			return verify_case(casenum, expected__, received__, clock()-start__);
-		}
-		case 4: {
-			string board[]            = {"....",
- "....",
- "...."};
-			int size                  = 3;
-			int expected__            = 0;
-
-			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = IrreducibleNumber().getIrreducible(vector <int>(A, A + (sizeof A / sizeof A[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 
 		// custom cases
 
-/*      case 5: {
-			string board[]            = ;
-			int size                  = ;
+/*      case 4: {
+			int A[]                   = ;
 			int expected__            = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = IrreducibleNumber().getIrreducible(vector <int>(A, A + (sizeof A / sizeof A[0])));
+			return verify_case(casenum, expected__, received__, clock()-start__);
+		}*/
+/*      case 5: {
+			int A[]                   = ;
+			int expected__            = ;
+
+			clock_t start__           = clock();
+			int received__            = IrreducibleNumber().getIrreducible(vector <int>(A, A + (sizeof A / sizeof A[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 /*      case 6: {
-			string board[]            = ;
-			int size                  = ;
+			int A[]                   = ;
 			int expected__            = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
-			return verify_case(casenum, expected__, received__, clock()-start__);
-		}*/
-/*      case 7: {
-			string board[]            = ;
-			int size                  = ;
-			int expected__            = ;
-
-			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = IrreducibleNumber().getIrreducible(vector <int>(A, A + (sizeof A / sizeof A[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 		default:

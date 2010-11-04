@@ -1,0 +1,72 @@
+PROBLEM STATEMENT
+When cat Taro and rabbit Hanako were practicing hard for SRM 484, they noticed an interesting property of 484. They called it Rabbit Number.
+
+
+Let S(n) be the sum of the digits of n. For example, S(484) = 4+8+4 = 16 and S(22) = 2+2 = 4.
+A positive integer x is called a Rabbit Number if S(x*x) = S(x)*S(x). For example, 22 is a Rabbit Number because S(484) = S(22)*S(22).
+
+
+Return the number of Rabbit Numbers between low and high, inclusive.
+
+DEFINITION
+Class:RabbitNumber
+Method:theCount
+Parameters:int, int
+Returns:int
+Method signature:int theCount(int low, int high)
+
+
+CONSTRAINTS
+-low will be between 1 and 1,000,000,000, inclusive.
+-high will be between low and 1,000,000,000, inclusive.
+
+
+EXAMPLES
+
+0)
+22
+22
+
+Returns: 1
+
+22 is a Rabbit Number because
+
+S(22*22) = S(484) = 16
+
+S(22) * S(22) = 4 * 4 = 16
+
+1)
+484
+484
+
+Returns: 0
+
+484 is not a Rabbit Number because
+
+S(484*484) = S(234256) = 22
+
+S(484) * S(484) = 16 * 16 = 256
+
+2)
+1
+58
+
+Returns: 12
+
+
+
+3)
+58
+484
+
+Returns: 24
+
+
+
+4)
+1000000000
+1000000000
+
+Returns: 1
+
+

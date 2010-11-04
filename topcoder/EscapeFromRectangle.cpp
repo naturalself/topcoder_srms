@@ -1,7 +1,7 @@
 // BEGIN CUT HERE
 
 // END CUT HERE
-#line 5 "CrossWord.cpp"
+#line 5 "EscapeFromRectangle.cpp"
 #include <cstdio>
 #include <cstdlib>
 #include <cmath>
@@ -30,9 +30,9 @@ using namespace std;
 #define all(a) a.begin(), a.end() 
 #define pb push_back
 
-class CrossWord {
+class EscapeFromRectangle {
 public:
-	int countWords(vector <string> board, int size) {
+	int shortest(int x, int y, int w, int h) {
 
 	}
 };
@@ -108,107 +108,83 @@ namespace moj_harness {
 	int run_test_case(int casenum) {
 		switch (casenum) {
 		case 0: {
-			string board[]            = {"X....X",
- "X.XX.X",
- "...X..",
- "X.XX.X",
- "..X..."};
-			int size                  = 3;
-			int expected__            = 2;
+			int x                     = 1;
+			int y                     = 1;
+			int w                     = 5;
+			int h                     = 5;
+			int expected__            = 1;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = EscapeFromRectangle().shortest(x, y, w, h);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 1: {
-			string board[]            = {"...X...",
- ".X...X.",
- "..X.X..",
- "X..X..X",
- "..X.X..",
- ".X...X.",
- "...X..."};
-			int size                  = 3;
-			int expected__            = 6;
+			int x                     = 6;
+			int y                     = 2;
+			int w                     = 10;
+			int h                     = 3;
+			int expected__            = 1;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = EscapeFromRectangle().shortest(x, y, w, h);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 2: {
-			string board[]            = {".....X....X....",
- ".....X....X....",
- "..........X....",
- "....X....X.....",
- "...X....X....XX",
- "XXX...X....X...",
- ".....X....X....",
- ".......X.......",
- "....X....X.....",
- "...X....X...XXX",
- "XX....X....X...",
- ".....X....X....",
- "....X..........",
- "....X....X.....",
- "....X....X....."}
-;
-			int size                  = 5;
-			int expected__            = 8;
+			int x                     = 653;
+			int y                     = 375;
+			int w                     = 1000;
+			int h                     = 1000;
+			int expected__            = 347;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = EscapeFromRectangle().shortest(x, y, w, h);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 3: {
-			string board[]            = {"...",
- "...",
- "..."};
-			int size                  = 50;
-			int expected__            = 0;
+			int x                     = 161;
+			int y                     = 181;
+			int w                     = 762;
+			int h                     = 375;
+			int expected__            = 161;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
-			return verify_case(casenum, expected__, received__, clock()-start__);
-		}
-		case 4: {
-			string board[]            = {"....",
- "....",
- "...."};
-			int size                  = 3;
-			int expected__            = 0;
-
-			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = EscapeFromRectangle().shortest(x, y, w, h);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 
 		// custom cases
 
-/*      case 5: {
-			string board[]            = ;
-			int size                  = ;
+/*      case 4: {
+			int x                     = ;
+			int y                     = ;
+			int w                     = ;
+			int h                     = ;
 			int expected__            = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = EscapeFromRectangle().shortest(x, y, w, h);
+			return verify_case(casenum, expected__, received__, clock()-start__);
+		}*/
+/*      case 5: {
+			int x                     = ;
+			int y                     = ;
+			int w                     = ;
+			int h                     = ;
+			int expected__            = ;
+
+			clock_t start__           = clock();
+			int received__            = EscapeFromRectangle().shortest(x, y, w, h);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 /*      case 6: {
-			string board[]            = ;
-			int size                  = ;
+			int x                     = ;
+			int y                     = ;
+			int w                     = ;
+			int h                     = ;
 			int expected__            = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
-			return verify_case(casenum, expected__, received__, clock()-start__);
-		}*/
-/*      case 7: {
-			string board[]            = ;
-			int size                  = ;
-			int expected__            = ;
-
-			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = EscapeFromRectangle().shortest(x, y, w, h);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 		default:

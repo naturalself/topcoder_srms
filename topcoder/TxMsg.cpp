@@ -1,7 +1,7 @@
 // BEGIN CUT HERE
 
 // END CUT HERE
-#line 5 "CrossWord.cpp"
+#line 5 "TxMsg.cpp"
 #include <cstdio>
 #include <cstdlib>
 #include <cmath>
@@ -30,10 +30,57 @@ using namespace std;
 #define all(a) a.begin(), a.end() 
 #define pb push_back
 
-class CrossWord {
+class TxMsg {
 public:
-	int countWords(vector <string> board, int size) {
+	string getMessage(string ori) {
+	string ret;
 
+	stringstream ss(ori);
+	
+	int space=1;
+	fors(i,ori){
+		if(ori[i]==' '){
+			space++;
+		}
+	}
+
+	while(space){
+		string w;
+		ss >> w;
+		bool cons=false;
+		fors(i,w){
+			if(w[i]=='a' || w[i]=='i' || w[i]=='u' || 
+			   w[i]=='e' || w[i]=='o'){
+				
+			}else{
+				cons=true;
+			}
+		}
+		
+		if(cons){
+			fors(i,w){
+				if(w[i]=='a' || w[i]=='i' || w[i]=='u' || 
+				   w[i]=='e' || w[i]=='o'){
+					
+				}else{
+					if(i==0 || w[i-1]=='a' ||w[i-1]=='i' ||
+					   w[i-1]=='u' ||w[i-1]=='e' ||w[i-1]=='o'){
+						ret += w[i];
+					}
+				}
+			}
+		}else{
+			ret += w;
+		}
+
+		
+		ret += " ";
+		space--;
+	}
+	int siz=(int)ret.size();
+	ret = ret.substr(0,siz-1);
+
+	return ret;
 	}
 };
 
@@ -68,7 +115,7 @@ namespace moj_harness {
 		}
 	}
 	
-	int verify_case(int casenum, const int &expected, const int &received, clock_t elapsed) { 
+	int verify_case(int casenum, const string &expected, const string &received, clock_t elapsed) { 
 		cerr << "Example " << casenum << "... "; 
 		
 		string verdict;
@@ -98,8 +145,8 @@ namespace moj_harness {
 		cerr << endl;
 		
 		if (verdict == "FAILED") {
-			cerr << "    Expected: " << expected << endl; 
-			cerr << "    Received: " << received << endl; 
+			cerr << "    Expected: \"" << expected << "\"" << endl; 
+			cerr << "    Received: \"" << received << "\"" << endl; 
 		}
 		
 		return verdict == "PASSED";
@@ -108,107 +155,70 @@ namespace moj_harness {
 	int run_test_case(int casenum) {
 		switch (casenum) {
 		case 0: {
-			string board[]            = {"X....X",
- "X.XX.X",
- "...X..",
- "X.XX.X",
- "..X..."};
-			int size                  = 3;
-			int expected__            = 2;
+			string original           = "text message";
+			string expected__         = "tx msg";
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = TxMsg().getMessage(original);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 1: {
-			string board[]            = {"...X...",
- ".X...X.",
- "..X.X..",
- "X..X..X",
- "..X.X..",
- ".X...X.",
- "...X..."};
-			int size                  = 3;
-			int expected__            = 6;
+			string original           = "ps i love u";
+			string expected__         = "p i lv u";
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = TxMsg().getMessage(original);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 2: {
-			string board[]            = {".....X....X....",
- ".....X....X....",
- "..........X....",
- "....X....X.....",
- "...X....X....XX",
- "XXX...X....X...",
- ".....X....X....",
- ".......X.......",
- "....X....X.....",
- "...X....X...XXX",
- "XX....X....X...",
- ".....X....X....",
- "....X..........",
- "....X....X.....",
- "....X....X....."}
-;
-			int size                  = 5;
-			int expected__            = 8;
+			string original           = "please please me";
+			string expected__         = "ps ps m";
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = TxMsg().getMessage(original);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 3: {
-			string board[]            = {"...",
- "...",
- "..."};
-			int size                  = 50;
-			int expected__            = 0;
+			string original           = "back to the ussr";
+			string expected__         = "bc t t s";
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = TxMsg().getMessage(original);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 4: {
-			string board[]            = {"....",
- "....",
- "...."};
-			int size                  = 3;
-			int expected__            = 0;
+			string original           = "aeiou bcdfghjklmnpqrstvwxyz";
+			string expected__         = "aeiou b";
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = TxMsg().getMessage(original);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 
 		// custom cases
 
-/*      case 5: {
-			string board[]            = ;
-			int size                  = ;
-			int expected__            = ;
+      case 5: {
+			string original           = "a";
+			string expected__         = "a";
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = TxMsg().getMessage(original);
 			return verify_case(casenum, expected__, received__, clock()-start__);
-		}*/
-/*      case 6: {
-			string board[]            = ;
-			int size                  = ;
-			int expected__            = ;
+		}
+      case 6: {
+			string original           = "b";
+			string expected__         = "b";
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = TxMsg().getMessage(original);
 			return verify_case(casenum, expected__, received__, clock()-start__);
-		}*/
+		}
 /*      case 7: {
-			string board[]            = ;
-			int size                  = ;
-			int expected__            = ;
+			string original           = ;
+			string expected__         = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = TxMsg().getMessage(original);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 		default:

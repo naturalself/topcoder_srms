@@ -1,7 +1,7 @@
 // BEGIN CUT HERE
 
 // END CUT HERE
-#line 5 "CrossWord.cpp"
+#line 5 "SkewSymmetric.cpp"
 #include <cstdio>
 #include <cstdlib>
 #include <cmath>
@@ -30,10 +30,26 @@ using namespace std;
 #define all(a) a.begin(), a.end() 
 #define pb push_back
 
-class CrossWord {
+class SkewSymmetric {
 public:
-	int countWords(vector <string> board, int size) {
+	int minChanges(vector <string> M) {
+	int ret=0;
 
+	forv(i,M){
+		fors(j,M[i]){
+			if(i>=j){
+				if(i==j && (M[i][j]-48)!=0){
+					ret++;
+					debug(M[i][j]-48);
+					printf("i:%d j:%d\n",i,j);
+					}else{
+					//if(M[i][j]!=-M[j][i]) ret++;
+				}
+			}
+		}
+	}
+
+	return ret;
 	}
 };
 
@@ -108,107 +124,63 @@ namespace moj_harness {
 	int run_test_case(int casenum) {
 		switch (casenum) {
 		case 0: {
-			string board[]            = {"X....X",
- "X.XX.X",
- "...X..",
- "X.XX.X",
- "..X..."};
-			int size                  = 3;
-			int expected__            = 2;
+			string M[]                = {"1 2 8", "-2 1 0", "3 99 3"};
+			int expected__            = 5;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = SkewSymmetric().minChanges(vector <string>(M, M + (sizeof M / sizeof M[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 1: {
-			string board[]            = {"...X...",
- ".X...X.",
- "..X.X..",
- "X..X..X",
- "..X.X..",
- ".X...X.",
- "...X..."};
-			int size                  = 3;
-			int expected__            = 6;
+			string M[]                = {"0 1 1 1 1 1", "-1 0 1 1 1 1", "-1 -1 0 1 1 1", 
+"-1 -1 -1 0 1 1", "-1 -1 -1 -1 0 1", "0 0 0 0 0 0"};
+			int expected__            = 5;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = SkewSymmetric().minChanges(vector <string>(M, M + (sizeof M / sizeof M[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 2: {
-			string board[]            = {".....X....X....",
- ".....X....X....",
- "..........X....",
- "....X....X.....",
- "...X....X....XX",
- "XXX...X....X...",
- ".....X....X....",
- ".......X.......",
- "....X....X.....",
- "...X....X...XXX",
- "XX....X....X...",
- ".....X....X....",
- "....X..........",
- "....X....X.....",
- "....X....X....."}
-;
-			int size                  = 5;
-			int expected__            = 8;
+			string M[]                = {"0 0 0 0", "0 0 0 0", "0 0 0 0", "0 0 0 0"};
+			int expected__            = 0;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = SkewSymmetric().minChanges(vector <string>(M, M + (sizeof M / sizeof M[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 3: {
-			string board[]            = {"...",
- "...",
- "..."};
-			int size                  = 50;
-			int expected__            = 0;
+			string M[]                = {"1 0", "0 1"};
+			int expected__            = 2;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
-			return verify_case(casenum, expected__, received__, clock()-start__);
-		}
-		case 4: {
-			string board[]            = {"....",
- "....",
- "...."};
-			int size                  = 3;
-			int expected__            = 0;
-
-			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = SkewSymmetric().minChanges(vector <string>(M, M + (sizeof M / sizeof M[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 
 		// custom cases
 
-/*      case 5: {
-			string board[]            = ;
-			int size                  = ;
+/*      case 4: {
+			string M[]                = ;
 			int expected__            = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = SkewSymmetric().minChanges(vector <string>(M, M + (sizeof M / sizeof M[0])));
+			return verify_case(casenum, expected__, received__, clock()-start__);
+		}*/
+/*      case 5: {
+			string M[]                = ;
+			int expected__            = ;
+
+			clock_t start__           = clock();
+			int received__            = SkewSymmetric().minChanges(vector <string>(M, M + (sizeof M / sizeof M[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 /*      case 6: {
-			string board[]            = ;
-			int size                  = ;
+			string M[]                = ;
 			int expected__            = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
-			return verify_case(casenum, expected__, received__, clock()-start__);
-		}*/
-/*      case 7: {
-			string board[]            = ;
-			int size                  = ;
-			int expected__            = ;
-
-			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = SkewSymmetric().minChanges(vector <string>(M, M + (sizeof M / sizeof M[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 		default:

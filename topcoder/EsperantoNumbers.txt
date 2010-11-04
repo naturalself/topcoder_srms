@@ -1,0 +1,46 @@
+PROBLEM STATEMENT
+Numbers are far easier to spell in Esperanto than in English.  Numbers 1 through 10 are spelled as follows: "unu", "du", "tri", "kvar", "kvin", "ses", "sep", "ok", "nau", "dek".  Numbers 11 through 19 are spelled: "dek unu", "dek du", ..., "dek nau" - a "dek" followed by a single space and the number for the last digit.  Numbers 20 through 29 are spelled: "dudek", "dudek unu", "dudek du", ..., "dudek nau".  Similarly, 30 is "tridek", ..., 90 is "naudek" - we just join together the number of tens and "dek".  There are no exceptions like "twelve" or "thirty" in English.
+
+Given an int x between 1 and 99, inclusive, return its Esperanto spelling.
+
+DEFINITION
+Class:EsperantoNumbers
+Method:nameThisNumber
+Parameters:int
+Returns:string
+Method signature:string nameThisNumber(int x)
+
+
+CONSTRAINTS
+-x will be between 1 and 99, inclusive.
+
+
+EXAMPLES
+
+0)
+1
+
+Returns: "unu"
+
+
+
+1)
+90
+
+Returns: "naudek"
+
+
+
+2)
+11
+
+Returns: "dek unu"
+
+
+
+3)
+57
+
+Returns: "kvindek sep"
+
+

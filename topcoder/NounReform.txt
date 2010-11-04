@@ -1,0 +1,53 @@
+PROBLEM STATEMENT
+In the English language, the plural form of a noun is created according to many difficult rules, but for the most part, a noun can be transformed into its plural form using four simple rules. These rules are: 
+
+
+If the word ends in 's', 'z', 'x', 'ch' or 'sh', add 'es' to the end of the word;
+
+
+If the word ends in 'ay', 'ey', 'iy', 'oy' or 'uy', add 's' to the end of the word;
+
+
+If the word ends in 'y', but doesn't satisfy the previous rule, replace the trailing 'y' with 'ies';
+
+
+In all other cases, just add 's' to the end of the word.
+
+
+
+
+
+You will be given a vector <string> nouns. Transform each element of nouns into its plural form using the rules above and return the resulting vector <string>. 
+
+
+
+DEFINITION
+Class:NounReform
+Method:makePlural
+Parameters:vector <string>
+Returns:vector <string>
+Method signature:vector <string> makePlural(vector <string> nouns)
+
+
+CONSTRAINTS
+-nouns will contain between 1 and 50 elements, inclusive. 
+-Each element of nouns will contain between 1 and 20 characters, inclusive. 
+-Each element of nouns will consist of only lower-case letters ('a'-'z'). 
+
+
+EXAMPLES
+
+0)
+{"box", "church", "elephant", "stereo"}
+
+Returns: {"boxes", "churches", "elephants", "stereos" }
+
+1)
+{"tray", "key", "enemy", "baby"}
+
+Returns: {"trays", "keys", "enemies", "babies" }
+
+2)
+{"a", "s", "oy", "y", "yy"}
+
+Returns: {"as", "ses", "oys", "ies", "yies" }

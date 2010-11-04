@@ -1,7 +1,7 @@
 // BEGIN CUT HERE
 
 // END CUT HERE
-#line 5 "CrossWord.cpp"
+#line 5 "ReversingBrackets.cpp"
 #include <cstdio>
 #include <cstdlib>
 #include <cmath>
@@ -30,10 +30,22 @@ using namespace std;
 #define all(a) a.begin(), a.end() 
 #define pb push_back
 
-class CrossWord {
+class ReversingBrackets {
 public:
-	int countWords(vector <string> board, int size) {
+	string removeBrackets(string s) {
+	string ret;
+	int forward = (int)s.find("[");;
+	int back = (int)s.find("]");
 
+	if(forward == -1) return s;
+		
+	ret += s.substr(0,forward);
+	string rev = s.substr(forward+1,back-forward-1);
+	reverse(all(rev));
+	ret += rev;
+	ret += s.substr(back+1,s.size());
+
+	return ret;
 	}
 };
 
@@ -68,7 +80,7 @@ namespace moj_harness {
 		}
 	}
 	
-	int verify_case(int casenum, const int &expected, const int &received, clock_t elapsed) { 
+	int verify_case(int casenum, const string &expected, const string &received, clock_t elapsed) { 
 		cerr << "Example " << casenum << "... "; 
 		
 		string verdict;
@@ -98,8 +110,8 @@ namespace moj_harness {
 		cerr << endl;
 		
 		if (verdict == "FAILED") {
-			cerr << "    Expected: " << expected << endl; 
-			cerr << "    Received: " << received << endl; 
+			cerr << "    Expected: \"" << expected << "\"" << endl; 
+			cerr << "    Received: \"" << received << "\"" << endl; 
 		}
 		
 		return verdict == "PASSED";
@@ -108,107 +120,62 @@ namespace moj_harness {
 	int run_test_case(int casenum) {
 		switch (casenum) {
 		case 0: {
-			string board[]            = {"X....X",
- "X.XX.X",
- "...X..",
- "X.XX.X",
- "..X..."};
-			int size                  = 3;
-			int expected__            = 2;
+			string s                  = "he[row oll]ld";
+			string expected__         = "hello world";
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = ReversingBrackets().removeBrackets(s);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 1: {
-			string board[]            = {"...X...",
- ".X...X.",
- "..X.X..",
- "X..X..X",
- "..X.X..",
- ".X...X.",
- "...X..."};
-			int size                  = 3;
-			int expected__            = 6;
+			string s                  = "ab[edc]f";
+			string expected__         = "abcdef";
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = ReversingBrackets().removeBrackets(s);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 2: {
-			string board[]            = {".....X....X....",
- ".....X....X....",
- "..........X....",
- "....X....X.....",
- "...X....X....XX",
- "XXX...X....X...",
- ".....X....X....",
- ".......X.......",
- "....X....X.....",
- "...X....X...XXX",
- "XX....X....X...",
- ".....X....X....",
- "....X..........",
- "....X....X.....",
- "....X....X....."}
-;
-			int size                  = 5;
-			int expected__            = 8;
+			string s                  = "topcoder";
+			string expected__         = "topcoder";
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = ReversingBrackets().removeBrackets(s);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 3: {
-			string board[]            = {"...",
- "...",
- "..."};
-			int size                  = 50;
-			int expected__            = 0;
+			string s                  = "[desrever lla]";
+			string expected__         = "all reversed";
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
-			return verify_case(casenum, expected__, received__, clock()-start__);
-		}
-		case 4: {
-			string board[]            = {"....",
- "....",
- "...."};
-			int size                  = 3;
-			int expected__            = 0;
-
-			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = ReversingBrackets().removeBrackets(s);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 
 		// custom cases
 
-/*      case 5: {
-			string board[]            = ;
-			int size                  = ;
-			int expected__            = ;
+/*      case 4: {
+			string s                  = ;
+			string expected__         = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = ReversingBrackets().removeBrackets(s);
+			return verify_case(casenum, expected__, received__, clock()-start__);
+		}*/
+/*      case 5: {
+			string s                  = ;
+			string expected__         = ;
+
+			clock_t start__           = clock();
+			string received__         = ReversingBrackets().removeBrackets(s);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 /*      case 6: {
-			string board[]            = ;
-			int size                  = ;
-			int expected__            = ;
+			string s                  = ;
+			string expected__         = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
-			return verify_case(casenum, expected__, received__, clock()-start__);
-		}*/
-/*      case 7: {
-			string board[]            = ;
-			int size                  = ;
-			int expected__            = ;
-
-			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			string received__         = ReversingBrackets().removeBrackets(s);
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 		default:

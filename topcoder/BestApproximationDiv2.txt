@@ -1,0 +1,82 @@
+PROBLEM STATEMENT
+Elly is not a big fan of mathematical constants.  Most of them are infinite, and therefore hard to memorize.  Fractions, on the other hand, are often easier to remember and can provide good approximations.  For example, 22/7 = 3.1428... is one way to approximate Pi.  Unfortunately, it's only accurate to 2 places after the decimal point, so it doesn't help at all.  A slightly better example is 355/113 = 3.14159292... which is correct up to 6 digits after the decimal point.
+
+Elly understands that working with infinite decimal fractions is going to be very difficult, so she first wants to find a good way to approximate floating point numbers with decimal representations that are finite.  Your task is to help her in this mission.  You will be given a string number containing the decimal representation of a non-negative fraction strictly less than 1 (possibly with trailing zeros).  More precisely, number will be formatted "0.dd...d" (quotes for clarity) where each d is a decimal digit ('0'-'9') and the number of d's is between 1 and 48, inclusive.
+
+Given a fraction F = A/B, where 0 <= A < B, its quality of approximation with respect to number is calculated as follows:
+
+
+Let S be the decimal fraction (infinite or finite) representation of F.
+Let N be the number of digits after the decimal point in number. If number has trailing zeros, all of them are considered to be significant and are counted towards N.
+If S is infinite or the number of digits after the decimal point in S is greater than N, only consider the first N decimals after the decimal point in S.  Truncate the rest of the digits without performing any kind of rounding.
+If the number of digits after the decimal point in S is less than N, append trailing zeroes to the right side until there are exactly N digits after the decimal point.
+The quality of approximation is the number of digits in the longest common prefix of S and number.  The longest common prefix of two numbers is the longest string which is a prefix of the decimal representations of both numbers with no extra leading zeroes.  For example, "3.14" is the longest common prefix of 3.1428 and 3.1415.
+
+
+Elly doesn't like long approximations either, so you are only allowed to use fractions where the denominator is less than or equal to maxDen. Find an approximation F = A/B of number such that 1 <= B <= maxDen, 0 <= A < B, and the quality of approximation is maximized.  Return a string formatted "A/B has X exact digits" (quotes for clarity) where A/B is the approximation you have found and X is its quality.  If there are several such approximations, choose the one with the smallest denominator among all of them.  If there is still a tie, choose the one among those with the smallest numerator.
+
+
+DEFINITION
+Class:BestApproximationDiv2
+Method:findFraction
+Parameters:int, string
+Returns:string
+Method signature:string findFraction(int maxDen, string number)
+
+
+CONSTRAINTS
+-maxDen will be between 1 and 100,000, inclusive.
+-number will contain between 3 and 50 characters, inclusive.
+-number will consist of a digit '0', followed by a period ('.'), followed by one or more digits ('0'-'9').
+
+
+EXAMPLES
+
+0)
+42
+"0.141592658"
+
+Returns: "1/7 has 3 exact digits"
+
+3 plus the current approximation yields an approximation of Pi.
+
+1)
+3
+"0.1337"
+
+Returns: "0/1 has 1 exact digits"
+
+Not a lot of options here.
+
+2)
+80000
+"0.1234567891011121314151617181920"
+
+Returns: "10/81 has 8 exact digits"
+
+
+
+3)
+1000
+"0.42"
+
+Returns: "3/7 has 3 exact digits"
+
+This one can be represented in more than one way. Be sure to choose the one with the lowest denominator.
+Note that 21/50 is an even more accurate approximation (it is, in fact, exact), but it has the same number of matching digits (all three) and has a greater denominator.
+
+4)
+100
+"0.420"
+
+Returns: "21/50 has 4 exact digits"
+
+All trailing zeros in number are significant.
+
+5)
+115
+"0.141592658"
+
+Returns: "16/113 has 7 exact digits"
+
+A better approximation for the decimal part of Pi.

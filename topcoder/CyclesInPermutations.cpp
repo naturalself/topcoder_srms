@@ -1,7 +1,7 @@
 // BEGIN CUT HERE
 
 // END CUT HERE
-#line 5 "CrossWord.cpp"
+#line 5 "CyclesInPermutations.cpp"
 #include <cstdio>
 #include <cstdlib>
 #include <cmath>
@@ -30,10 +30,28 @@ using namespace std;
 #define all(a) a.begin(), a.end() 
 #define pb push_back
 
-class CrossWord {
+class CyclesInPermutations {
 public:
-	int countWords(vector <string> board, int size) {
+	int maxCycle(vector <int> board) {
+	int n=(int)board.size();
+	int ret=0;
 
+	for(int i=1;i<=n;i++){
+		int cnt=1;
+		int next=i;
+		while(1){
+			int j=board[next-1];
+			if(i==j){
+				break;
+			}else{
+				next=j;
+			}
+			cnt++;
+		}
+		ret=max(ret,cnt);
+	}
+
+	return ret;
 	}
 };
 
@@ -108,107 +126,62 @@ namespace moj_harness {
 	int run_test_case(int casenum) {
 		switch (casenum) {
 		case 0: {
-			string board[]            = {"X....X",
- "X.XX.X",
- "...X..",
- "X.XX.X",
- "..X..."};
-			int size                  = 3;
-			int expected__            = 2;
+			int board[]               = {3,2,4,1,6,5};
+			int expected__            = 3;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = CyclesInPermutations().maxCycle(vector <int>(board, board + (sizeof board / sizeof board[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 1: {
-			string board[]            = {"...X...",
- ".X...X.",
- "..X.X..",
- "X..X..X",
- "..X.X..",
- ".X...X.",
- "...X..."};
-			int size                  = 3;
-			int expected__            = 6;
+			int board[]               = {1,2,3,4,5,6};
+			int expected__            = 1;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = CyclesInPermutations().maxCycle(vector <int>(board, board + (sizeof board / sizeof board[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 2: {
-			string board[]            = {".....X....X....",
- ".....X....X....",
- "..........X....",
- "....X....X.....",
- "...X....X....XX",
- "XXX...X....X...",
- ".....X....X....",
- ".......X.......",
- "....X....X.....",
- "...X....X...XXX",
- "XX....X....X...",
- ".....X....X....",
- "....X..........",
- "....X....X.....",
- "....X....X....."}
-;
-			int size                  = 5;
-			int expected__            = 8;
+			int board[]               = {5,1,2,3,4};
+			int expected__            = 5;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = CyclesInPermutations().maxCycle(vector <int>(board, board + (sizeof board / sizeof board[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 		case 3: {
-			string board[]            = {"...",
- "...",
- "..."};
-			int size                  = 50;
-			int expected__            = 0;
+			int board[]               = {5,7,14,6,16,10,8,17,11,12,18,3,4,13,2,15,9,1,20,19};
+			int expected__            = 11;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
-			return verify_case(casenum, expected__, received__, clock()-start__);
-		}
-		case 4: {
-			string board[]            = {"....",
- "....",
- "...."};
-			int size                  = 3;
-			int expected__            = 0;
-
-			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = CyclesInPermutations().maxCycle(vector <int>(board, board + (sizeof board / sizeof board[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}
 
 		// custom cases
 
-/*      case 5: {
-			string board[]            = ;
-			int size                  = ;
+/*      case 4: {
+			int board[]               = ;
 			int expected__            = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = CyclesInPermutations().maxCycle(vector <int>(board, board + (sizeof board / sizeof board[0])));
+			return verify_case(casenum, expected__, received__, clock()-start__);
+		}*/
+/*      case 5: {
+			int board[]               = ;
+			int expected__            = ;
+
+			clock_t start__           = clock();
+			int received__            = CyclesInPermutations().maxCycle(vector <int>(board, board + (sizeof board / sizeof board[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 /*      case 6: {
-			string board[]            = ;
-			int size                  = ;
+			int board[]               = ;
 			int expected__            = ;
 
 			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
-			return verify_case(casenum, expected__, received__, clock()-start__);
-		}*/
-/*      case 7: {
-			string board[]            = ;
-			int size                  = ;
-			int expected__            = ;
-
-			clock_t start__           = clock();
-			int received__            = CrossWord().countWords(vector <string>(board, board + (sizeof board / sizeof board[0])), size);
+			int received__            = CyclesInPermutations().maxCycle(vector <int>(board, board + (sizeof board / sizeof board[0])));
 			return verify_case(casenum, expected__, received__, clock()-start__);
 		}*/
 		default:
