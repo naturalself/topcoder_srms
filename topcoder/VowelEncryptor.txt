@@ -1,0 +1,41 @@
+PROBLEM STATEMENT
+
+You are given a vector <string> text, each element of which contains a single word.  Encrypt the text by removing 
+all vowels ('a', 'e', 'i', 'o', 'u') from every word that contains at least one non-vowel.  If a word consists only of vowels, leave it as is.  Return the result as a vector <string>, where the ith element is the encrypted version of the ith element in text.
+
+
+DEFINITION
+Class:VowelEncryptor
+Method:encrypt
+Parameters:vector <string>
+Returns:vector <string>
+Method signature:vector <string> encrypt(vector <string> text)
+
+
+CONSTRAINTS
+-text will contain between 1 and 50 elements, inclusive.
+-Each element of text will contain between 1 and 20 lowercase letters ('a'-'z'), inclusive.
+
+
+EXAMPLES
+
+0)
+{"hello", "world"}
+
+Returns: {"hll", "wrld" }
+
+
+
+1)
+{"a", "b", "c"}
+
+Returns: {"a", "b", "c" }
+
+
+
+2)
+{"he", "who", "is", "greedy", "is", "disgraced"}
+
+Returns: {"h", "wh", "s", "grdy", "s", "dsgrcd" }
+
+

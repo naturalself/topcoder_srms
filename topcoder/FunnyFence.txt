@@ -1,0 +1,59 @@
+PROBLEM STATEMENT
+A sequence of characters is called a fence if it consists of alternating '|' and '-' characters, like "|-|-|-|" or "-|-|" (quotes for clarity only). Notice that "|-||-|" or "--" are not fences, because each contains two equal characters adjacent to each other.
+
+Given a string s, find the longest consecutive substring of it that is a fence, and return its length.
+
+DEFINITION
+Class:FunnyFence
+Method:getLength
+Parameters:string
+Returns:int
+Method signature:int getLength(string s)
+
+
+CONSTRAINTS
+-s will contain between 1 and 50 characters, inclusive.
+-Each character of s will be either '|' or '-'.
+
+
+EXAMPLES
+
+0)
+"|-|-|"
+
+Returns: 5
+
+The entire string is a fence.
+
+1)
+"-|-|-|-"
+
+Returns: 7
+
+Still a fence.
+
+2)
+"||||||"
+
+Returns: 1
+
+A fence can be just 1 character long, so every 1 character substring here is a fence.
+
+3)
+"|-||-|-"
+
+Returns: 4
+
+The last 4 characters form the longest consecutive substring that is a fence.
+
+4)
+"|-|---|-|---|-|"
+
+Returns: 5
+
+"-|-|-" right in the middle gives the longest fence.
+
+5)
+"|||-||--|--|---|-||-|-|-|--||---||-||-||-|--||"
+
+Returns: 8

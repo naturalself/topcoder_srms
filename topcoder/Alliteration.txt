@@ -1,0 +1,39 @@
+PROBLEM STATEMENT
+An alliteration consists of two or more consecutive words which start with the same letter (ignoring case).
+You are given a sequence of words. Find out the number of alliterations in this sequence, considering only alliterations which cannot be extended.
+
+DEFINITION
+Class:Alliteration
+Method:count
+Parameters:vector <string>
+Returns:int
+Method signature:int count(vector <string> words)
+
+
+CONSTRAINTS
+-words will contain between 1 and 50 elements, inclusive.
+-Each element of words will contain between 1 and 50 letters ('a'-'z', 'A'-'Z'), inclusive.
+
+
+EXAMPLES
+
+0)
+{"He", "has", "four", "fanatic", "fantastic", "fans"}
+
+Returns: 2
+
+The first two words are an alliteration, and the last four words are another alliteration.
+
+1)
+{"There", "may", "be", "no", "alliteration", "in", "a", "sequence"}
+
+Returns: 0
+
+This sequence of words contains no alliteration.
+
+2)
+{"Round", "the", "rugged", "rock", "the", "ragged", "rascal", "ran"}
+
+Returns: 2
+
+

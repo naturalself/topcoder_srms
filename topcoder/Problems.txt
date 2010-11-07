@@ -215,9 +215,15 @@ SRM 320 DIV2 Easy	StringSegment		completed.
 SRM 321 DIV2 Easy	KDoubleSubstrings	
 SRM 322 DIV2 Easy	DerivativeSequence	completed.
 SRM 323 DIV2 Easy	IrreducibleNumber	completed.
+SRM 324 DIV2 Easy	Alliteration		completed.
+SRM 325 DIV2 Easy	SalaryCalculator	completed.
+SRM 326 DIV2 Easy	AdditionCycles		completed.
+SRM 327 DIV2 Easy	FunnyFence		completed.
+SRM 328 DIV2 Easy	MarbleNecklace		completed.
 
-
-
+SRM 329 DIV2 Easy	VowelEncryptor		completed.
+SRM 330 DIV2 Easy	Sortness		
+SRM 331 DIV2 Easy	SantaGifts		
 
 
 ~
