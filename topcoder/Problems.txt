@@ -224,6 +224,14 @@ SRM 328 DIV2 Easy	MarbleNecklace		completed.
 SRM 329 DIV2 Easy	VowelEncryptor		completed.
 SRM 330 DIV2 Easy	Sortness		
 SRM 331 DIV2 Easy	SantaGifts		
+SRM 332 DIV2 Easy	TextStatistics		completed.
+SRM 333 DIV2 Easy	ChessboardPattern	completed.
+SRM 334 DIV2 Easy	SupermarketDiscount	completed.
+SRM 335 DIV2 Easy	Palindromize		completed.
+SRM 336 DIV2 Easy	VowelLatin		completed.
+
+SRM 337 DIV2 Easy	Palindromize2		completed.
+
 
 
 ~

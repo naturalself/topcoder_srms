@@ -1,0 +1,59 @@
+PROBLEM STATEMENT
+Pig Latin is a simple way of encoding words. We have invented a competitor 
+called "Vowel Latin". It just changes the order of the 
+letters in a word by moving all the vowels to the end, keeping them in the
+same order as they appeared in the original word. 
+
+Vowels are defined to be the letters 'a', 'e', 'i', 'o', and 'u' (in either uppercase or
+lowercase). The reordering of the letters in a word does not change their case.
+So the Vowel Latin version of "AmplifierX" would be "mplfrXAiie" 
+
+Create a class VowelLatin that contains a method translate that is given a string
+word and that returns the Vowel Latin version of word.
+
+
+
+DEFINITION
+Class:VowelLatin
+Method:translate
+Parameters:string
+Returns:string
+Method signature:string translate(string word)
+
+
+CONSTRAINTS
+-word contains between 1 and 50 characters, inclusive.
+-Each character in word is a letter ('A'-'Z', 'a'-'z').
+
+
+EXAMPLES
+
+0)
+"XYz"
+
+Returns: "XYz"
+
+
+
+   The word contains no vowels so it is unchanged by translating to Vowel Latin.
+
+
+
+1)
+"application"
+
+Returns: "pplctnaiaio"
+
+
+
+   The 5 vowels in this word are all moved to the end of the word.
+
+2)
+"qwcvb"
+
+Returns: "qwcvb"
+
+3)
+"aeioOa"
+
+Returns: "aeioOa"
