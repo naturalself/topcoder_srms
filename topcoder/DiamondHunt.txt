@@ -1,0 +1,51 @@
+PROBLEM STATEMENT
+
+You are a diamond hunter looking for diamonds in a peculiar mine. This mine is a string of '<' and '>' characters, and each diamond is a substring of the form "<>". Each time you find a diamond, you remove it and the residual mine is updated by removing the 2 characters from the string.
+
+For example, if you have a mine like "><<><>>><", you can start by removing the first appearance of "<>" to get "><<>>><", then remove the only remaining diamond to get "><>><". Note that this produces a new diamond which you can remove to get ">><". Since there are no diamonds left, your expedition is done.
+
+Given a string mine, return the number of diamonds that can be found. Note that the order in which you remove simultaneous appearances of diamonds is irrelevant; any order will lead to the same result.
+
+
+DEFINITION
+Class:DiamondHunt
+Method:countDiamonds
+Parameters:string
+Returns:int
+Method signature:int countDiamonds(string mine)
+
+
+CONSTRAINTS
+-mine will contain between 1 and 50 characters, inclusive.
+-Each character of mine will be either '<' or '>'.
+
+
+EXAMPLES
+
+0)
+"><<><>>><"
+
+Returns: 3
+
+The example from the problem statement.
+
+1)
+">>>><<"
+
+Returns: 0
+
+No diamonds here.
+
+2)
+"<<<<<<<<<>>>>>>>>>"
+
+Returns: 9
+
+
+
+3)
+"><<><><<>>>><<>><<><<>><<<>>>>>><<<"
+
+Returns: 14
+
+

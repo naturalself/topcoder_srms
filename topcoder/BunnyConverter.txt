@@ -1,0 +1,90 @@
+PROBLEM STATEMENT
+Bunnies like programming and they sometimes make useless devices. 
+
+One group of bunnies made a device called Converter. 
+Converter has two fixed integers, n and z, 
+and works as follows: 
+
+	It receives a card on which an integer x is written. 
+	This card will not be returned. 
+	It selects an integer y between 1 and n, inclusive, 
+	such that x + y^2 + z^3 is a multiple of n. 
+	If there is more than one such y, Converter allows the user to choose exactly one of them. 
+	If there is no such y, Converter will break and will never be usable again. 
+	It returns a card on which the integer y is written. 
+
+Initially you have a card on which an integer start is written. 
+Your goal is to get a card on which an integer goal is written. 
+Return the minimum number of times you must use Converter in order to achieve the goal. 
+If it is impossible to get such a card, return -1 instead. 
+
+
+DEFINITION
+Class:BunnyConverter
+Method:getMinimum
+Parameters:int, int, int, int
+Returns:int
+Method signature:int getMinimum(int n, int z, int start, int goal)
+
+
+CONSTRAINTS
+-n will be between 1 and 500,000, inclusive. 
+-z, start and goal will each be between 1 and n, inclusive. 
+
+
+EXAMPLES
+
+0)
+5
+1
+5
+3
+
+Returns: 1
+
+By using Converter once for a card with 5, you can choose 2 or 3 as y. 
+
+For example, y = 3 can be chosen because 5 + 3^2 + 1^3 = 15 is a multiple of 5. 
+
+
+1)
+5
+1
+5
+1
+
+Returns: 2
+
+By using Converter once for a card with 5, you can choose 2 or 3 as y. 
+
+By using Converter once for a card with 3, you can choose 1 or 4 as y. 
+
+
+2)
+6
+2
+3
+4
+
+Returns: -1
+
+You will never get a card with 4. 
+
+
+3)
+7
+7
+7
+7
+
+Returns: 0
+
+4)
+499979
+499979
+499976
+3
+
+Returns: 249988
+
+

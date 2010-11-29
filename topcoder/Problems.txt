@@ -231,7 +231,22 @@ SRM 335 DIV2 Easy	Palindromize		completed.
 SRM 336 DIV2 Easy	VowelLatin		completed.
 
 SRM 337 DIV2 Easy	Palindromize2		completed.
+SRM 338 DIV2 Easy	BinaryIncrementation	completed.
+SRM 339 DIV2 Easy	BettingStrategy		completed.
+SRM 340 DIV2 Easy	CssPropertyConverter	completed.
+SRM 340 DIV2 Medium	
+SRM 341 DIV2 Easy	ChangingString		completed.
+SRM 342 DIV2 Easy	DegreesToRadians	
+SRM 343 DIV2 Easy	PersistentNumber	completed.
+SRM 344 DIV2 Easy	changeNotation		completed.
 
+SRM 345 DIV2 Easy	findCamps		completed.
+SRM 346 DIV2 Easy	DiamondHunt		completed.
+
+
+
+
+SRM 386 DIV2 Easy	TrophyShelf		completed.
 
 
 ~

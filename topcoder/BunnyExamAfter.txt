@@ -1,0 +1,88 @@
+PROBLEM STATEMENT
+Bunnies like programming but they don't like programming exams. 
+
+
+Three bunnies, Black, Gray and White, had completed their final exam. 
+While they were discussing the problems, the Professor came and said, "Black, you got zero points! 
+To improve your knowledge, write a program which calculates the maximum possible sum of points 
+that Gray and White could have gotten." 
+
+
+There were N problems in the exam. 
+All bunnies were presented with the same problems. 
+For each problem, they had to write an uppercase letter ('A' - 'Z') as its answer. 
+Only one letter is considered to be a correct answer for a problem, 
+and all other 25 letters are considered to be incorrect answers. 
+Each correct answer was worth 1 point, 
+so the number of points received by a bunny was equal to the number of problems she answered correctly. 
+
+
+You are given three strings black, gray and white 
+representing the answers Black, Gray and White wrote, respectively. 
+Each contains exacty N characters and the i-th character represents the answer for the i-th problem of the respective bunny. 
+Return the maximum possible sum of points that Gray and White could have gotten for the exam, 
+considering all possible answers that leave Black with 0 points. 
+
+
+DEFINITION
+Class:BunnyExamAfter
+Method:getMaximum
+Parameters:string, string, string
+Returns:int
+Method signature:int getMaximum(string black, string gray, string white)
+
+
+CONSTRAINTS
+-black will contain between 1 and 50 characters, inclusive. 
+-black, gray and white will contain the same number of characters. 
+-Each character in black, gray and white will be an uppercase letter ('A' - 'Z'). 
+
+
+EXAMPLES
+
+0)
+"ABC"
+"ABC"
+"ABC"
+
+Returns: 0
+
+We know that all of Black's answers were incorrect, and since Gray and White had the exact same answers as Black, 
+they too got 0 points. 
+
+
+1)
+"A"
+"B"
+"B"
+
+Returns: 2
+
+The correct answer for the only problem is one of 'B' - 'Z'. 
+If it is 'B', Gray and White will each get 1 point and the total is 2 points. 
+If it is one of 'C' - 'Z', Gray and White will each get 0 points and the total is 0 points. 
+
+
+2)
+"ABC"
+"PQR"
+"XYZ"
+
+Returns: 3
+
+Gray might get 3 points and White might get 3 points, but the total will not exceed 3 points. 
+
+
+3)
+"AAAAA"
+"AABBB"
+"BBBAA"
+
+Returns: 6
+
+4)
+"TOPCODER"
+"TOPBUNNY"
+"THEHONEY"
+
+Returns: 9

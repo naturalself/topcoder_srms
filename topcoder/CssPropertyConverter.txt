@@ -1,0 +1,45 @@
+PROBLEM STATEMENT
+
+CSS property names are typically all lowercase and written in dash-separated notation, which means that each pair of adjacent words is separated by a single dash.  For example, "z-index", "padding-left", and "border-collapse" are typical names.  However, if you use JavaScript to set CSS style properties, you need to use camel notation, where each word except the first starts with an uppercase letter, and adjacent words are not separated. All other letters are lowercase. For example, "z-index" would become "zIndex" in camel notation.
+
+
+You are given a String cssPropertyName containing a property name written in dash-separated notation.  Convert cssPropertyName to camel notation and return the result.
+
+
+
+DEFINITION
+Class:CssPropertyConverter
+Method:getCamelized
+Parameters:string
+Returns:string
+Method signature:string getCamelized(string cssPropertyName)
+
+
+CONSTRAINTS
+-cssPropertyName will contain between 1 and 50 characters, inclusive.
+-cssPropertyName will contain only lowercase letters ('a'-'z') and dashes ('-').
+-Each dash in cssPropertyName will be surrounded by two letters.
+
+
+EXAMPLES
+
+0)
+"z-index"
+
+Returns: "zIndex"
+
+
+
+1)
+"border-collapse"
+
+Returns: "borderCollapse"
+
+
+
+2)
+"top-border-width"
+
+Returns: "topBorderWidth"
+
+

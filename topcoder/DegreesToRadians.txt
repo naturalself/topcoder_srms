@@ -1,0 +1,61 @@
+PROBLEM STATEMENT
+
+In some forms of geometry, like the kind used in geographical longitude/latitude measurements, angles are measured in base-60.  The base unit is the degree.  One degree contains 60 minutes, and one minute contains 60 seconds.
+
+
+You will be given the measurement of an angle in degrees, minutes, and seconds.  Return the given angle in radians.  Note that n degrees is equal to  n*PI/180 radians.
+
+
+DEFINITION
+Class:DegreesToRadians
+Method:convertToRadians
+Parameters:int, int, int
+Returns:double
+Method signature:double convertToRadians(int degrees, int minutes, int seconds)
+
+
+NOTES
+-The return value must have an absolute or relative error less than 1e-9.
+
+
+CONSTRAINTS
+-degrees will be between 0 and 359, inclusive.
+-minutes will be between 0 and 59, inclusive.
+-seconds will be between 0 and 59, inclusive.
+
+
+EXAMPLES
+
+0)
+0
+0
+0
+
+Returns: 0.0
+
+Zero is zero, in either measurement system.
+
+1)
+180
+0
+0
+
+Returns: 3.141592653589793
+
+180 degrees is PI radians.
+
+2)
+359
+59
+59
+
+Returns: 6.283180459042776
+
+This is as close to a full circle as it gets.
+
+3)
+23
+30
+5
+
+Returns: 0.41017661490272295
